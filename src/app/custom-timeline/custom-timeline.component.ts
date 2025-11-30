@@ -280,12 +280,9 @@ export class CustomTimelineComponent implements OnInit, AfterViewInit, OnDestroy
     const viewportHeight =
       window.innerHeight || document.documentElement.clientHeight;
 
-    // Distance from top of viewport to bottom of timeline container
+    // Distance from top of viewport to top of timeline container
     const distanceFromTop = rect.top;
-    const distanceFromBottom = rect.bottom;
 
-    // Trigger start: when timeline starts entering viewport
-    const triggerStart = viewportHeight;
     // Trigger end: when timeline completely leaves viewport from bottom (with offset to fill to bottom)
     const triggerEnd = -rect.height;
 
