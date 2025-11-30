@@ -1,3 +1,6 @@
+/* Timeline Component Styles - Using Design Tokens */
+@import './design-tokens.scss';
+
 /* Timeline wrapper takes 90% of viewport width */
 .timeline-wrapper {
   width: 90vw;
@@ -27,7 +30,7 @@
 }
 
 .connector-path.connector-bg {
-  stroke: #1a1a23;
+  stroke: $bg-dark-stroke;
 }
 
 .connector-path.connector-fill {
@@ -96,7 +99,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #1a1a23;
+  background-color: $bg-dark-stroke;
   border-radius: 999px;
 }
 
@@ -108,13 +111,13 @@
   height: 0%;
   background: linear-gradient(
     180deg,
-    rgba(139, 92, 246, 0.25) 0%,
-    #7c3aed 20%,
+    rgba($primary-purple, 0.25) 0%,
+    $primary-purple 20%,
     #a855f7 50%,
-    #d946ef 100%
+    $primary-magenta 100%
   );
-  box-shadow: 0 0 16px rgba(139, 92, 246, 0.6);
-  transition: height 0.15s ease-out;
+  box-shadow: 0 0 16px rgba($primary-purple, 0.6);
+  transition: $transition-fill;
   border-radius: 999px;
 }
 
@@ -177,47 +180,47 @@
 
 /* Item content layout */
 .item-content {
-  width: 35%;
-  padding: 2rem;
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.06) 0%, rgba(217, 70, 239, 0.04) 100%);
-  border: 1.5px solid rgba(139, 92, 246, 0.15);
-  border-radius: 20px;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  transition: all 0.3s ease;
+  width: $card-width;
+  padding: $card-padding;
+  background: $gradient-primary;
+  border: $card-border-width solid $border-base;
+  border-radius: $card-border-radius;
+  backdrop-filter: blur($blur-amount);
+  -webkit-backdrop-filter: blur($blur-amount);
+  transition: $transition-default;
   position: relative;
   z-index: 15;
   cursor: pointer;
   margin: 0;
-  box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  box-shadow: $shadow-sm, $inset-base;
   transform: scale(1);
 }
 
 .item-content:hover {
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(217, 70, 239, 0.1) 100%);
-  border-color: rgba(139, 92, 246, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.15), inset 0 0 0 1px rgba(255, 255, 255, 0.06), 0 0 40px rgba(139, 92, 246, 0.3), 0 0 60px rgba(217, 70, 239, 0.15);
+  background: $gradient-hover;
+  border-color: $border-hover;
+  box-shadow: $shadow-hover, $inset-hover, $glow-hover-extended;
   transform: scale(1.05);
 }
 
 /* Highlighted state when scrolled past */
 .timeline-item.highlighted .item-content {
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(217, 70, 239, 0.1) 100%);
-  border-color: rgba(139, 92, 246, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.15), inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 0 20px rgba(139, 92, 246, 0.1);
+  background: $gradient-highlighted;
+  border-color: $border-highlighted;
+  box-shadow: $shadow-highlighted, $inset-highlighted;
 }
 
 /* Hover state for highlighted cards */
 .timeline-item.highlighted .item-content:hover {
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.14) 0%, rgba(217, 70, 239, 0.12) 100%);
-  border-color: rgba(139, 92, 246, 0.35);
-  box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 0 40px rgba(139, 92, 246, 0.35), 0 0 60px rgba(217, 70, 239, 0.2);
+  background: $gradient-highlighted-hover;
+  border-color: $border-highlighted-hover;
+  box-shadow: $shadow-highlighted-hover, $inset-highlighted-hover, $glow-highlighted-hover-extended;
 }
 
 /* Item header */
 .item-header {
   margin-bottom: 1.5rem;
-  border-bottom: 2px solid rgba(139, 92, 246, 0.2);
+  border-bottom: 2px solid rgba($primary-purple, 0.2);
   padding-bottom: 1rem;
 }
 
@@ -234,7 +237,7 @@
 .item-year {
   font-size: 1.8rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #8b5cf6, #d946ef);
+  background: linear-gradient(135deg, $primary-purple, $primary-magenta);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -247,50 +250,38 @@
 .item-title {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #d1d5db;
+  color: $text-primary;
   margin: 0;
   padding: 0;
 }
 
 /* Item dot indicator (centered on year) */
 .item-dot {
-  width: 16px;
-  height: 16px;
-  background: #6b7280;
-  border: 3px solid #0a0a0f;
+  width: $dot-size;
+  height: $dot-size;
+  background: $dot-default;
+  border: $dot-border-width solid $dot-border;
   border-radius: 50%;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
   z-index: 25;
-  transition: all 0.3s ease;
+  transition: $transition-default;
   flex-shrink: 0;
 }
 
 .timeline-item:hover .item-dot {
-  box-shadow: 0 0 20px rgba(107, 114, 128, 0.7);
+  box-shadow: $glow-hover;
 }
 
 /* Highlighted dot (when gradient reaches it) */
 .timeline-item.highlighted .item-dot {
-  background: linear-gradient(135deg, #8b5cf6, #d946ef);
-  box-shadow: 0 0 16px rgba(139, 92, 246, 0.5);
+  background: linear-gradient(135deg, $primary-purple, $primary-magenta);
+  box-shadow: $glow-base;
 }
 
 /* Glowing dot (when gradient is actively touching) */
 .timeline-item.glowing .item-dot {
-  background: linear-gradient(135deg, #8b5cf6, #d946ef);
-  box-shadow: 0 0 25px rgba(139, 92, 246, 0.8), 0 0 40px rgba(100, 150, 246, 0.4);
-}
-
-/* Highlighted dot (when gradient reaches it) */
-.timeline-item.highlighted .item-dot {
-  background: linear-gradient(135deg, #8b5cf6, #d946ef);
-  box-shadow: 0 0 16px rgba(139, 92, 246, 0.5);
-}
-
-/* Glowing dot (when gradient is actively touching) */
-.timeline-item.glowing .item-dot {
-  background: linear-gradient(135deg, #8b5cf6, #d946ef);
-  box-shadow: 0 0 25px rgba(139, 92, 246, 0.8), 0 0 40px rgba(100, 150, 246, 0.4);
+  background: linear-gradient(135deg, $primary-purple, $primary-magenta);
+  box-shadow: $glow-glowing;
 }
 .item-body {
   display: flex;
@@ -300,7 +291,7 @@
 
 .item-description {
   font-size: 0.95rem;
-  color: #9ca3af;
+  color: $text-secondary;
   line-height: 1.6;
   margin: 0;
   padding: 0;
@@ -317,7 +308,7 @@
 
 .item-details li {
   font-size: 0.9rem;
-  color: #6b7280;
+  color: $text-tertiary;
   line-height: 1.5;
   padding-left: 1.5rem;
   position: relative;
@@ -327,7 +318,7 @@
   content: '•';
   position: absolute;
   left: 0;
-  color: #8b5cf6;
+  color: $primary-purple;
   font-weight: bold;
   font-size: 1.2rem;
 }

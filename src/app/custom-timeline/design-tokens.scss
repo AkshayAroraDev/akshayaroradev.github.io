@@ -1,0 +1,135 @@
+/**
+ * Design Tokens for Custom Timeline Component
+ * Centralized color and theme definitions for easy theme customization
+ */
+
+// ============================================================================
+// PRIMARY COLORS - Main Brand Colors
+// ============================================================================
+$primary-purple: #8b5cf6;
+$primary-magenta: #d946ef;
+$primary-pink: #d946ef;
+$accent-blue: #6496f6;
+
+// ============================================================================
+// BACKGROUND COLORS - Ultra-dark Theme
+// ============================================================================
+$bg-base: #0a0a0f;           // Primary background
+$bg-secondary: #0f0f1a;       // Secondary background
+$bg-tertiary: #0d0d1a;        // Tertiary background
+$bg-dark-stroke: #1a1a23;     // Connector line background
+
+// ============================================================================
+// NEUTRAL COLORS - Text & Borders
+// ============================================================================
+$text-primary: #d1d5db;       // Primary text (light gray)
+$text-secondary: #9ca3af;     // Secondary text (medium gray)
+$text-tertiary: #6b7280;      // Tertiary text (darker gray)
+$border-light: #ffffff;        // Light border (for inset)
+$border-default: #6b7280;     // Default border color
+
+// ============================================================================
+// DOT COLORS
+// ============================================================================
+$dot-default: #6b7280;        // Default dot color (gray)
+$dot-highlighted: linear-gradient(135deg, $primary-purple, $primary-magenta);
+$dot-border: $bg-base;        // Dot border color
+
+// ============================================================================
+// GRADIENT DEFINITIONS
+// ============================================================================
+// Main gradient for animated fill
+$gradient-primary: linear-gradient(
+  135deg,
+  rgba($primary-purple, 0.06) 0%,
+  rgba($primary-magenta, 0.04) 100%
+);
+
+// Hover gradient
+$gradient-hover: linear-gradient(
+  135deg,
+  rgba($primary-purple, 0.12) 0%,
+  rgba($primary-magenta, 0.1) 100%
+);
+
+// Highlighted gradient
+$gradient-highlighted: linear-gradient(
+  135deg,
+  rgba($primary-purple, 0.12) 0%,
+  rgba($primary-magenta, 0.1) 100%
+);
+
+// Highlighted hover gradient
+$gradient-highlighted-hover: linear-gradient(
+  135deg,
+  rgba($primary-purple, 0.14) 0%,
+  rgba($primary-magenta, 0.12) 100%
+);
+
+// ============================================================================
+// GLASS MORPHISM EFFECTS - Blur & Opacity
+// ============================================================================
+$blur-amount: 20px;
+$glass-opacity-base: 0.06;
+$glass-opacity-hover: 0.12;
+$glass-opacity-highlighted: 0.12;
+$glass-opacity-highlighted-hover: 0.14;
+
+// ============================================================================
+// BORDER & SHADOW COLORS
+// ============================================================================
+$border-base: rgba($primary-purple, 0.15);
+$border-hover: rgba($primary-purple, 0.3);
+$border-highlighted: rgba($primary-purple, 0.3);
+$border-highlighted-hover: rgba($primary-purple, 0.35);
+
+$shadow-sm: 0 8px 32px 0 rgba($primary-purple, 0.05);
+$shadow-hover: 0 8px 32px 0 rgba($primary-purple, 0.15);
+$shadow-highlighted: 0 8px 32px 0 rgba($primary-purple, 0.15);
+$shadow-highlighted-hover: 0 8px 32px 0 rgba($primary-purple, 0.2);
+
+$glow-base: 0 0 16px rgba($primary-purple, 0.5);
+$glow-hover: 0 0 20px rgba($border-default, 0.7);
+$glow-glowing: 0 0 25px rgba($primary-purple, 0.8), 0 0 40px rgba($accent-blue, 0.4);
+
+// Inset shadows
+$inset-base: inset 0 0 0 1px rgba($border-light, 0.03);
+$inset-hover: inset 0 0 0 1px rgba($border-light, 0.06);
+$inset-highlighted: inset 0 0 0 1px rgba($border-light, 0.05);
+$inset-highlighted-hover: inset 0 0 0 1px rgba($border-light, 0.08);
+
+// Additional glow for hover
+$glow-hover-extended: 0 0 40px rgba($primary-purple, 0.3), 0 0 60px rgba($primary-magenta, 0.15);
+$glow-highlighted-hover-extended: 0 0 40px rgba($primary-purple, 0.35), 0 0 60px rgba($primary-magenta, 0.2);
+
+// ============================================================================
+// COMPOSITE COLOR TOKENS
+// ============================================================================
+// For easy reference and potential future use
+$theme-colors: (
+  'purple': $primary-purple,
+  'magenta': $primary-magenta,
+  'blue': $accent-blue,
+  'gray-text-primary': $text-primary,
+  'gray-text-secondary': $text-secondary,
+  'gray-text-tertiary': $text-tertiary,
+);
+
+// ============================================================================
+// ANIMATION & TRANSITION
+// ============================================================================
+$transition-default: all 0.3s ease;
+$transition-fill: height 0.15s ease-out;
+
+// ============================================================================
+// SPACING & SIZING
+// ============================================================================
+$card-width: 35%;
+$card-padding: 2rem;
+$card-border-radius: 20px;
+$card-border-width: 1.5px;
+
+$dot-size: 16px;
+$dot-border-width: 3px;
+
+$connector-width: 3px;
