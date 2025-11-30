@@ -179,35 +179,37 @@
 .item-content {
   width: 35%;
   padding: 2rem;
-  background: rgba(15, 15, 26, 0.7);
-  border: 1px solid rgba(139, 92, 246, 0.15);
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.06) 0%, rgba(217, 70, 239, 0.04) 100%);
+  border: 1.5px solid rgba(139, 92, 246, 0.15);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   transition: all 0.3s ease;
   position: relative;
   z-index: 15;
   cursor: pointer;
   margin: 0;
+  box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.03);
 }
 
 .item-content:hover {
-  background: rgba(139, 92, 246, 0.15);
-  border-color: rgba(139, 92, 246, 0.5);
-  box-shadow: 0 0 40px rgba(139, 92, 246, 0.5), 0 0 60px rgba(217, 70, 239, 0.3), inset 0 0 20px rgba(139, 92, 246, 0.1);
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(217, 70, 239, 0.1) 100%);
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.15), inset 0 0 0 1px rgba(255, 255, 255, 0.06), 0 0 40px rgba(139, 92, 246, 0.3), 0 0 60px rgba(217, 70, 239, 0.15);
 }
 
 /* Highlighted state when scrolled past */
 .timeline-item.highlighted .item-content {
-  background: rgba(139, 92, 246, 0.12);
-  border-color: rgba(139, 92, 246, 0.4);
-  box-shadow: 0 0 24px rgba(139, 92, 246, 0.2), inset 0 0 20px rgba(139, 92, 246, 0.05);
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(217, 70, 239, 0.1) 100%);
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.15), inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 0 20px rgba(139, 92, 246, 0.1);
 }
 
 /* Hover state for highlighted cards */
 .timeline-item.highlighted .item-content:hover {
-  background: rgba(139, 92, 246, 0.15);
-  border-color: rgba(139, 92, 246, 0.5);
-  box-shadow: 0 0 40px rgba(139, 92, 246, 0.5), 0 0 60px rgba(217, 70, 239, 0.3), inset 0 0 20px rgba(139, 92, 246, 0.1);
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.14) 0%, rgba(217, 70, 239, 0.12) 100%);
+  border-color: rgba(139, 92, 246, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 0 40px rgba(139, 92, 246, 0.35), 0 0 60px rgba(217, 70, 239, 0.2);
 }
 
 /* Item header */
