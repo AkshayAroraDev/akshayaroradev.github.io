@@ -287,7 +287,7 @@ export class CustomTimelineComponent implements OnInit, AfterViewInit, OnDestroy
     // Trigger start: when timeline starts entering viewport
     const triggerStart = viewportHeight;
     // Trigger end: when timeline completely leaves viewport from bottom (with offset to fill to bottom)
-    const triggerEnd = -rect.height + viewportHeight * 0.8;
+    const triggerEnd = -rect.height;
 
     // Calculate progress: 0 (top not visible) to 1 (bottom completely scrolled past)
     let progress = (viewportHeight - distanceFromTop) / (viewportHeight - triggerEnd);

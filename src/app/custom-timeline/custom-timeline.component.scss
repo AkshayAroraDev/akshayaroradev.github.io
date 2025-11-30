@@ -2,7 +2,7 @@
 .timeline-wrapper {
   width: 90vw;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 100vh 2rem 100vh 2rem;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -254,17 +254,41 @@
 .item-dot {
   width: 16px;
   height: 16px;
-  background: linear-gradient(135deg, #8b5cf6, #d946ef);
+  background: #6b7280;
   border: 3px solid #0a0a0f;
   border-radius: 50%;
-  box-shadow: 0 0 16px rgba(139, 92, 246, 0.5);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
   z-index: 25;
   transition: all 0.3s ease;
   flex-shrink: 0;
 }
 
 .timeline-item:hover .item-dot {
-  box-shadow: 0 0 32px rgba(217, 70, 239, 0.8);
+  box-shadow: 0 0 20px rgba(107, 114, 128, 0.7);
+}
+
+/* Highlighted dot (when gradient reaches it) */
+.timeline-item.highlighted .item-dot {
+  background: linear-gradient(135deg, #8b5cf6, #d946ef);
+  box-shadow: 0 0 16px rgba(139, 92, 246, 0.5);
+}
+
+/* Glowing dot (when gradient is actively touching) */
+.timeline-item.glowing .item-dot {
+  background: linear-gradient(135deg, #8b5cf6, #d946ef);
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.8), 0 0 40px rgba(100, 150, 246, 0.4);
+}
+
+/* Highlighted dot (when gradient reaches it) */
+.timeline-item.highlighted .item-dot {
+  background: linear-gradient(135deg, #8b5cf6, #d946ef);
+  box-shadow: 0 0 16px rgba(139, 92, 246, 0.5);
+}
+
+/* Glowing dot (when gradient is actively touching) */
+.timeline-item.glowing .item-dot {
+  background: linear-gradient(135deg, #8b5cf6, #d946ef);
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.8), 0 0 40px rgba(100, 150, 246, 0.4);
 }
 .item-body {
   display: flex;
