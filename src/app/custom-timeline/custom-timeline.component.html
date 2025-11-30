@@ -27,6 +27,7 @@
       class="timeline-item"
       [class.left]="i % 2 === 0"
       [class.right]="i % 2 === 1"
+      [class.highlighted]="i <= highlightedItemIndex"
       [attr.data-year]="item.year"
     >
       <!-- Item content with centered dot -->
