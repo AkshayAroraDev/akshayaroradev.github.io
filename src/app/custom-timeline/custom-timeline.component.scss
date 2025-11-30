@@ -190,12 +190,14 @@
   cursor: pointer;
   margin: 0;
   box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  transform: scale(1);
 }
 
 .item-content:hover {
   background: linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(217, 70, 239, 0.1) 100%);
   border-color: rgba(139, 92, 246, 0.3);
   box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.15), inset 0 0 0 1px rgba(255, 255, 255, 0.06), 0 0 40px rgba(139, 92, 246, 0.3), 0 0 60px rgba(217, 70, 239, 0.15);
+  transform: scale(1.05);
 }
 
 /* Highlighted state when scrolled past */
