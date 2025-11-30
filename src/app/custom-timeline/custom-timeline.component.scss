@@ -1,0 +1,364 @@
+/* Timeline wrapper takes 90% of viewport width */
+.timeline-wrapper {
+  width: 90vw;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* SVG for drawing curved connector lines */
+.timeline-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.connector-path {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.connector-path.connector-bg {
+  stroke: #1a1a23;
+}
+
+.connector-path.connector-fill {
+  stroke: url(#gradientStroke);
+  filter: drop-shadow(0 0 16px rgba(139, 92, 246, 0.6));
+}
+
+/* Timeline items container */
+.timeline-items {
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+/* Individual timeline item */
+.timeline-item {
+  display: flex;
+  align-items: center;
+  min-height: 280px;
+  animation: fadeInUp 0.6s ease-out backwards;
+  position: relative;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stagger animation for items */
+.timeline-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.timeline-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.timeline-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.timeline-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* Vertical connector line styling */
+.timeline-connector {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 3px;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.connector-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a23;
+  border-radius: 999px;
+}
+
+.connector-fill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(
+    180deg,
+    rgba(139, 92, 246, 0.25) 0%,
+    #7c3aed 20%,
+    #a855f7 50%,
+    #d946ef 100%
+  );
+  box-shadow: 0 0 16px rgba(139, 92, 246, 0.6);
+  transition: height 0.15s ease-out;
+  border-radius: 999px;
+}
+
+/* Left aligned items (content on left) */
+.timeline-item.left {
+  justify-content: flex-start;
+}
+
+.timeline-item.left .item-content {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+/* Right aligned items (content on right) */
+.timeline-item.right {
+  justify-content: flex-end;
+}
+
+.timeline-item.right .item-content {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/* Item content layout */
+.item-content {
+  width: 45%;
+  padding: 2rem;
+  background: rgba(15, 15, 26, 0.7);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 15;
+}
+
+.item-content:hover {
+  background: rgba(139, 92, 246, 0.08);
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow: 0 8px 32px rgba(139, 92, 246, 0.1);
+  transform: translateY(-4px);
+}
+
+/* Item header */
+.item-header {
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid rgba(139, 92, 246, 0.2);
+  padding-bottom: 1rem;
+}
+
+.item-year-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+  width: 100%;
+}
+
+.item-year {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #8b5cf6, #d946ef);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 0;
+}
+
+.item-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #d1d5db;
+  margin: 0;
+  padding: 0;
+}
+
+/* Item dot indicator (centered on year) */
+.item-dot {
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(135deg, #8b5cf6, #d946ef);
+  border: 3px solid #0a0a0f;
+  border-radius: 50%;
+  box-shadow: 0 0 16px rgba(139, 92, 246, 0.5);
+  z-index: 25;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.timeline-item:hover .item-dot {
+  width: 24px;
+  height: 24px;
+  box-shadow: 0 0 24px rgba(217, 70, 239, 0.7);
+}
+.item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.item-description {
+  font-size: 0.95rem;
+  color: #9ca3af;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.item-details {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.item-details li {
+  font-size: 0.9rem;
+  color: #6b7280;
+  line-height: 1.5;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.item-details li:before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #8b5cf6;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .timeline-wrapper {
+    width: 95vw;
+    padding: 3rem 1.5rem;
+  }
+
+  .item-content {
+    width: 50%;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .item-year {
+    font-size: 1.5rem;
+  }
+
+  .item-title {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline-wrapper {
+    width: 100%;
+    padding: 2rem 1rem;
+  }
+
+  /* On mobile, show all items on the same side */
+  .timeline-item {
+    justify-content: flex-end;
+  }
+
+  .item-content {
+    width: 90%;
+  }
+
+  .timeline-item.left .item-content,
+  .timeline-item.right .item-content {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .item-dot {
+    left: auto;
+    right: -8px;
+  }
+
+  .item-year {
+    font-size: 1.3rem;
+  }
+
+  .item-title {
+    font-size: 1rem;
+  }
+
+  .item-description {
+    font-size: 0.85rem;
+  }
+
+  .item-details li {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-wrapper {
+    width: 100%;
+    padding: 1.5rem 1rem;
+  }
+
+  .timeline-item {
+    min-height: auto;
+    margin-bottom: 1.5rem;
+  }
+
+  .item-content {
+    width: 85%;
+    padding: 1rem;
+  }
+
+  .item-year {
+    font-size: 1.2rem;
+  }
+
+  .item-title {
+    font-size: 0.95rem;
+  }
+
+  .item-description {
+    font-size: 0.8rem;
+  }
+
+  .item-details {
+    gap: 0.4rem;
+  }
+
+  .item-details li {
+    font-size: 0.75rem;
+    padding-left: 1.2rem;
+  }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}

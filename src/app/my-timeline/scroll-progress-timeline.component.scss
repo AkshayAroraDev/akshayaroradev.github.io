@@ -1,0 +1,72 @@
+.timeline-wrapper {
+  position: relative;
+  padding: 2rem 0;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Base grey timeline line */
+.timeline-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  transform: translateX(-50%);
+  background: #e0e0e0;
+  border-radius: 999px;
+  overflow: hidden; /* Clip the fill inside the line */
+  z-index: 1;
+}
+
+/* Animated gradient fill that grows as user scrolls down */
+.timeline-line-fill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0; /* Controlled via binding */
+  background: linear-gradient(to top, #7f5af0, #ff6bcb);
+  border-radius: 999px;
+  transition: height 0.15s ease-out; /* Smooth animation */
+}
+
+/* Timeline content styling via ::ng-deep */
+::ng-deep {
+  om-timeline {
+    position: relative;
+    z-index: 2;
+  }
+
+  .timeline-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+  }
+
+  .timeline-subtitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #555;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .timeline-content {
+    color: #666;
+    line-height: 1.6;
+
+    p {
+      margin: 0 0 0.5rem 0;
+    }
+
+    ul {
+      margin: 0.5rem 0 0 0;
+      padding-left: 1.5rem;
+
+      li {
+        margin: 0.3rem 0;
+      }
+    }
+  }
+}

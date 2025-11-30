@@ -1,0 +1,81 @@
+<div class="timeline-wrapper" #timelineWrapper>
+
+  <!-- The vertical line behind events -->
+  <div class="timeline-line">
+    <div
+      class="timeline-line-fill"
+      [style.height.%]="timelineFill * 100"
+    ></div>
+  </div>
+
+  <!-- ngx-timeline component -->
+  <om-timeline
+    [entryGap]="'1rem'"
+    [titleMaxWidth]="'15rem'"
+    [orientation]="'vertical'"
+  >
+    <om-timeline-entry>
+      <ng-template #timelineTitle>
+        <p class="timeline-title">2022</p>
+      </ng-template>
+      <ng-template #timelineContent>
+        <div class="timeline-content">
+          <p>The team works on the design specifications and first mockups. Activities during this phase include:</p>
+          <ul>
+            <li>Creation of user interface designs</li>
+            <li>User experience workshops and feedback sessions</li>
+            <li>Finalizing design prototypes</li>
+          </ul>
+        </div>
+      </ng-template>
+    </om-timeline-entry>
+
+    <om-timeline-entry>
+      <ng-template #timelineTitle>
+        <p class="timeline-title">2023</p>
+      </ng-template>
+      <ng-template #timelineContent>
+        <div class="timeline-content">
+          <p>Development phase begins with full implementation.</p>
+          <ul>
+            <li>Backend API development</li>
+            <li>Frontend component library creation</li>
+            <li>Integration testing</li>
+          </ul>
+        </div>
+      </ng-template>
+    </om-timeline-entry>
+
+    <om-timeline-entry>
+      <ng-template #timelineTitle>
+        <p class="timeline-title">2024</p>
+      </ng-template>
+      <ng-template #timelineContent>
+        <div class="timeline-content">
+          <p>Launch and optimization phase.</p>
+          <ul>
+            <li>Production deployment</li>
+            <li>User feedback collection</li>
+            <li>Performance optimization</li>
+          </ul>
+        </div>
+      </ng-template>
+    </om-timeline-entry>
+
+    <om-timeline-entry>
+      <ng-template #timelineTitle>
+        <p class="timeline-title">2025</p>
+      </ng-template>
+      <ng-template #timelineContent>
+        <div class="timeline-content">
+          <p>Ongoing improvements and feature expansion.</p>
+          <ul>
+            <li>New features implementation</li>
+            <li>Enhanced user experience</li>
+            <li>Continuous monitoring and support</li>
+          </ul>
+        </div>
+      </ng-template>
+    </om-timeline-entry>
+  </om-timeline>
+</div>

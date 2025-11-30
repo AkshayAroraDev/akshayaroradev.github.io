@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { CustomTimelineComponent } from './custom-timeline/custom-timeline.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, CustomTimelineComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

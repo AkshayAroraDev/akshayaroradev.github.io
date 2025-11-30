@@ -1,0 +1,52 @@
+<div class="timeline-wrapper" #timelineContainer>
+  <!-- SVG for curved connector lines -->
+  <svg class="timeline-svg" [attr.viewBox]="'0 0 ' + svgWidth + ' ' + svgHeight">
+    <defs>
+      <!-- Gradient for animated fill -->
+      <linearGradient id="gradientStroke" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color: rgba(139, 92, 246, 0.25); stop-opacity: 1;" />
+        <stop offset="20%" style="stop-color: #7c3aed; stop-opacity: 1;" />
+        <stop offset="50%" style="stop-color: #a855f7; stop-opacity: 1;" />
+        <stop offset="100%" style="stop-color: #d946ef; stop-opacity: 1;" />
+      </linearGradient>
+      <!-- Clip path for scroll progress -->
+      <clipPath id="progressClip">
+        <rect x="0" y="0" [attr.width]="svgWidth" [attr.height]="svgHeight * (scrollProgress || 0)"></rect>
+      </clipPath>
+    </defs>
+    <!-- Background curve path -->
+    <path [attr.d]="backgroundPathData" class="connector-path connector-bg"></path>
+    <!-- Animated fill curve path (clipped based on scroll progress) -->
+    <path [attr.d]="backgroundPathData" class="connector-path connector-fill" clip-path="url(#progressClip)"></path>
+  </svg>
+
+  <!-- Timeline items -->
+  <div class="timeline-items">
+    <div
+      *ngFor="let item of timelineItems; let i = index"
+      class="timeline-item"
+      [class.left]="i % 2 === 0"
+      [class.right]="i % 2 === 1"
+      [attr.data-year]="item.year"
+    >
+      <!-- Item content with centered dot -->
+      <div class="item-content">
+        <div class="item-header">
+          <div class="item-year-row">
+            <h2 class="item-year">{{ item.year }}</h2>
+            <!-- Dot centered on year -->
+            <div class="item-dot"></div>
+          </div>
+          <h3 class="item-title">{{ item.title }}</h3>
+        </div>
+
+        <div class="item-body">
+          <p class="item-description">{{ item.description }}</p>
+          <ul class="item-details">
+            <li *ngFor="let detail of item.details">{{ detail }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
