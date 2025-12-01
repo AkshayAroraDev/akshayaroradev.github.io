@@ -1,0 +1,121 @@
+@import '../../custom-timeline/design-tokens.scss';
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+
+  // Base background with glass morphism
+  background: linear-gradient(
+    135deg,
+    rgba($primary-purple, $glass-opacity-base),
+    rgba($primary-magenta, $glass-opacity-base / 1.5)
+  );
+  backdrop-filter: blur($blur-amount);
+  border: 1px solid $border-base;
+  box-shadow: $shadow-sm, $inset-base;
+  color: $text-primary;
+
+  &:hover {
+    background: linear-gradient(
+      135deg,
+      rgba($primary-purple, $glass-opacity-hover),
+      rgba($primary-magenta, $glass-opacity-hover / 1.5)
+    );
+    border-color: $border-hover;
+    box-shadow: $shadow-hover, $inset-hover;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: $shadow-sm, $inset-base;
+  }
+
+  // Size variants
+  &--small {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  &--medium {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  &--large {
+    padding: 16px 32px;
+    font-size: 16px;
+  }
+
+  // Variant styles
+  &--primary {
+    background: linear-gradient(135deg, $primary-purple, $primary-magenta);
+    border: 1px solid rgba($primary-magenta, 0.3);
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba($primary-purple, 0.3), $inset-base;
+
+    &:hover {
+      box-shadow: 0 0 30px rgba($primary-magenta, 0.5), $inset-hover;
+      transform: translateY(-2px);
+    }
+  }
+
+  &--secondary {
+    background: linear-gradient(
+      135deg,
+      rgba($primary-purple, 0.1),
+      rgba($primary-magenta, 0.1)
+    );
+    border: 1px solid rgba($primary-purple, 0.2);
+    color: $text-primary;
+
+    &:hover {
+      background: linear-gradient(
+        135deg,
+        rgba($primary-purple, 0.15),
+        rgba($primary-magenta, 0.15)
+      );
+      border-color: rgba($primary-purple, 0.3);
+    }
+  }
+
+  &--outline {
+    background: transparent;
+    border: 1.5px solid $border-default;
+    color: $text-primary;
+    box-shadow: none;
+
+    &:hover {
+      border-color: $primary-purple;
+      background: rgba($primary-purple, 0.05);
+      box-shadow: 0 0 15px rgba($primary-purple, 0.2);
+    }
+  }
+
+  // Focus state for accessibility
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($primary-purple, 0.5);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+
+    &:hover {
+      transform: none;
+    }
+  }
+}
