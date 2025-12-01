@@ -1,5 +1,6 @@
 /* Global Styles - Importing Design Tokens */
 @use './app/custom-timeline/design-tokens.scss' as tokens;
+@use './styles/tracing-beam.scss';
 
 /* You can add global styles to this file, and also import other style files */
 
@@ -28,6 +29,14 @@ body {
 
 html {
   scroll-behavior: smooth;
+  /* Hide default scrollbar */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Webkit browsers (Chrome, Safari, Edge) */
+html::-webkit-scrollbar {
+  display: none;
 }
 
 body {
