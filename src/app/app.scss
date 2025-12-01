@@ -49,3 +49,17 @@ ol {
   margin: 0;
   padding: 0;
 }
+
+/* Tracing Beam Positioning */
+:host ::ng-deep om-tracing-beam.tracing-beam-right {
+  --svg-right: 10px;
+  --svg-left: auto;
+}
+
+:host ::ng-deep om-tracing-beam.tracing-beam-right svg {
+  position: fixed;
+  right: 10px !important;
+  left: auto !important;
+  top: 0;
+  z-index: 999;
+}
