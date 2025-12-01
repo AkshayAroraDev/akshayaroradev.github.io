@@ -83,10 +83,10 @@ $border-hover: rgba($primary-purple, 0.3);
 $border-highlighted: rgba($primary-purple, 0.3);
 $border-highlighted-hover: rgba($primary-purple, 0.35);
 
-$shadow-sm: 0 8px 32px 0 rgba($primary-purple, 0.05);
-$shadow-hover: 0 8px 32px 0 rgba($primary-purple, 0.15);
-$shadow-highlighted: 0 8px 32px 0 rgba($primary-purple, 0.15);
-$shadow-highlighted-hover: 0 8px 32px 0 rgba($primary-purple, 0.2);
+$shadow-sm: 0 4px 16px 0 rgba($primary-purple, 0.04);
+$shadow-hover: 0 6px 20px 0 rgba($primary-purple, 0.10);
+$shadow-highlighted: 0 6px 22px 0 rgba($primary-purple, 0.12);
+$shadow-highlighted-hover: 0 8px 28px 0 rgba($primary-purple, 0.16);
 
 $glow-base: 0 0 16px rgba($primary-purple, 0.5);
 $glow-hover: 0 0 20px rgba($border-default, 0.7);
