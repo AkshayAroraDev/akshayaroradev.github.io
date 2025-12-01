@@ -87,27 +87,63 @@ export class TracingBeamDirective implements OnInit, OnDestroy {
 
     // Only draw beam after hero section
     if (scrollTop > this.heroHeight) {
-      // Draw beam with increased height - 40% of viewport
-      const beamHeight = window.innerHeight * 0.4;
+      // Draw beam with increased height - 30% of viewport
+      const beamHeight = window.innerHeight * 0.3;
       const beamTop = progressAfterHero * (this.canvas.height - beamHeight);
 
-      // Main gradient for beam - smooth vertical transition
+      // Create main gradient for beam - smooth vertical transition
       const gradient = this.ctx.createLinearGradient(0, beamTop, 0, beamTop + beamHeight);
-      gradient.addColorStop(0, 'rgba(139, 92, 246, 0)');      // Transparent purple top
-      gradient.addColorStop(0.15, 'rgba(139, 92, 246, 0.6)'); // Purple
-      gradient.addColorStop(0.4, 'rgba(217, 70, 239, 0.8)');  // Magenta
-      gradient.addColorStop(0.65, 'rgba(100, 150, 246, 0.7)'); // Blue
-      gradient.addColorStop(0.85, 'rgba(100, 150, 246, 0.4)'); // Light blue
-      gradient.addColorStop(1, 'rgba(100, 150, 246, 0)');     // Transparent blue bottom
+      
+      // Top (thinner, more transparent)
+      gradient.addColorStop(0, 'rgba(139, 92, 246, 0)');       // Transparent purple top
+      gradient.addColorStop(0.1, 'rgba(139, 92, 246, 0.15)');  // Thin purple
+      gradient.addColorStop(0.25, 'rgba(139, 92, 246, 0.4)');  // Building purple
+      
+      // Middle (transitioning through magenta)
+      gradient.addColorStop(0.4, 'rgba(217, 70, 239, 0.7)');   // Magenta middle
+      gradient.addColorStop(0.55, 'rgba(217, 70, 239, 0.8)');  // Strong magenta
+      
+      // Lower middle (transitioning to blue)
+      gradient.addColorStop(0.7, 'rgba(100, 150, 246, 0.8)');  // Blue starts
+      gradient.addColorStop(0.85, 'rgba(100, 150, 246, 0.7)'); // Strong blue
+      
+      // Bottom (thicker, more opaque)
+      gradient.addColorStop(0.95, 'rgba(100, 150, 246, 0.3)'); // Thickening blue
+      gradient.addColorStop(1, 'rgba(100, 150, 246, 0.05)');   // Fades out bottom
 
       this.ctx.fillStyle = gradient;
       this.ctx.fillRect(0, beamTop, this.canvas.width, beamHeight);
 
-      // Draw subtle glow effect
-      this.ctx.shadowColor = 'rgba(100, 150, 246, 0.3)';
-      this.ctx.shadowBlur = 8;
-      this.ctx.fillStyle = 'rgba(139, 92, 246, 0.3)';
-      this.ctx.fillRect(0, beamTop + beamHeight / 2 - 1.5, this.canvas.width, 3);
+      // Add width variation by drawing with varying widths from top to bottom
+      // This creates the "thicker at bottom" effect
+      for (let i = 0; i < beamHeight; i += 2) {
+        const y = beamTop + i;
+        const progress = i / beamHeight; // 0 at top, 1 at bottom
+        
+        // Width increases towards bottom
+        const widthMultiplier = 0.5 + progress * 1.5; // 0.5x to 2x width
+        
+        // Opacity increases towards bottom
+        const opacityFactor = Math.pow(progress, 0.8);
+        
+        // Create gradient for this line
+        const lineGradient = this.ctx.createLinearGradient(0, y, 0, y + 2);
+        lineGradient.addColorStop(0, `rgba(100, 150, 246, ${0.1 * opacityFactor})`);
+        lineGradient.addColorStop(0.5, `rgba(217, 70, 239, ${0.3 * opacityFactor})`);
+        lineGradient.addColorStop(1, `rgba(139, 92, 246, ${0.1 * opacityFactor})`);
+        
+        this.ctx.fillStyle = lineGradient;
+        this.ctx.fillRect(0, y, this.canvas.width * widthMultiplier, 2);
+      }
+
+      // Draw subtle core glow (brighter at bottom)
+      const coreGradient = this.ctx.createLinearGradient(0, beamTop, 0, beamTop + beamHeight);
+      coreGradient.addColorStop(0, 'rgba(100, 150, 246, 0)');
+      coreGradient.addColorStop(0.5, 'rgba(217, 70, 239, 0.2)');
+      coreGradient.addColorStop(1, 'rgba(100, 150, 246, 0.3)');
+      
+      this.ctx.fillStyle = coreGradient;
+      this.ctx.fillRect(0, beamTop, this.canvas.width, beamHeight);
     }
   }
 
