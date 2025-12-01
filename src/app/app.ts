@@ -9,5 +9,5 @@ import { CustomTimelineComponent } from './custom-timeline/custom-timeline.compo
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('my-angular-app');
+  protected readonly title = signal('portfolio-app');
 }
