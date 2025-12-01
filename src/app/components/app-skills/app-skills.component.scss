@@ -81,6 +81,35 @@
   letter-spacing: -1.5px;
 }
 
+/* Typewriter for 'toolbox' line */
+.skills__typewriter-title {
+  display: block;
+  font-size: clamp(56px, 10vw, 132px);
+  color: $text-primary;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  padding-right: 0.5rem;
+}
+
+/* CSS typewriter fallback (7 chars: toolbox) */
+.skills__typewriter {
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0ch;
+  border-right: 0.12em solid rgba($primary-purple, 0.8);
+  animation: typing-tt 1.8s steps(7, end) 0.2s forwards, cursor-blink 0.9s step-end infinite;
+}
+
+@keyframes typing-tt {
+  from { width: 0ch; }
+  to { width: 7ch; }
+}
+
+@keyframes cursor-blink {
+  50% { border-color: transparent; }
+}
+
 .beam-wrapper {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -166,21 +195,33 @@ om-connection-beam {
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  background: linear-gradient(145deg, $primary-purple 0%, $primary-magenta 60%);
+  background: $bg-base; /* opaque base like pills */
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  box-shadow: 0 4px 32px -8px rgba($primary-purple, 0.28), 0 0 0 1px rgba($primary-magenta, 0.25) inset;
+  box-shadow: 0 4px 24px -10px rgba($primary-purple, 0.22);
   position: relative;
   z-index: 3;
 }
 
+.skills__center-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba($primary-purple, 0.16), rgba($primary-magenta, 0.14));
+  backdrop-filter: blur($blur-amount);
+  border: 1px solid rgba($primary-purple, 0.35);
+  box-shadow: 0 6px 28px -8px rgba($primary-purple,0.35), $inset-base;
+}
+
 .skills__center-icon {
-  width: 64px;
-  height: 64px;
+  width: 48px;
+  height: 48px;
   color: #fff;
-  filter: drop-shadow(0 2px 6px rgba($primary-purple,0.35));
 }
 
 .skills__skill-badge {
@@ -198,16 +239,16 @@ om-connection-beam {
   justify-content: center;
   padding: 14px 22px;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba($primary-purple, 0.10), rgba($primary-magenta, 0.08));
+  background: linear-gradient(135deg, rgba($primary-purple, 0.16), rgba($primary-magenta, 0.14));
   backdrop-filter: blur($blur-amount);
-  border: 1px solid rgba($primary-purple, 0.25);
+  border: 1px solid rgba($primary-purple, 0.35);
   color: $text-primary;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 0.3px;
   transition: all 0.3s ease;
   cursor: default;
-  box-shadow: 0 2px 10px -4px rgba($primary-purple,0.25), $inset-base;
+  box-shadow: 0 3px 14px -4px rgba($primary-purple,0.32), $inset-base;
   white-space: nowrap;
   min-width: 130px;
   text-align: center;
