@@ -1,5 +1,5 @@
 /* Global Styles - Importing Design Tokens */
-@import './app/custom-timeline/design-tokens.scss';
+@use './app/custom-timeline/design-tokens.scss' as tokens;
 
 /* You can add global styles to this file, and also import other style files */
 
@@ -15,11 +15,11 @@ body {
   height: 100%;
   background: linear-gradient(
     135deg,
-    $bg-base 0%,
-    $bg-secondary 50%,
-    $bg-tertiary 100%
+    tokens.$bg-base 0%,
+    tokens.$bg-secondary 50%,
+    tokens.$bg-tertiary 100%
   );
-  color: $text-primary;
+  color: tokens.$text-primary;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;

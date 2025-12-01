@@ -1,5 +1,5 @@
 /* Timeline Component Styles - Using Design Tokens */
-@import './design-tokens.scss';
+@use './design-tokens.scss' as tokens;
 
 /* Timeline wrapper takes 90% of viewport width */
 .timeline-wrapper {
@@ -30,7 +30,7 @@
 }
 
 .connector-path.connector-bg {
-  stroke: $bg-dark-stroke;
+  stroke: tokens.$bg-dark-stroke;
 }
 
 .connector-path.connector-fill {
@@ -99,7 +99,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: $bg-dark-stroke;
+  background-color: tokens.$bg-dark-stroke;
   border-radius: 999px;
 }
 
@@ -111,13 +111,13 @@
   height: 0%;
   background: linear-gradient(
     180deg,
-    rgba($primary-purple, 0.25) 0%,
-    $primary-purple 20%,
+    rgba(tokens.$primary-purple, 0.25) 0%,
+    tokens.$primary-purple 20%,
     #a855f7 50%,
-    $primary-magenta 100%
+    tokens.$primary-magenta 100%
   );
-  box-shadow: 0 0 16px rgba($primary-purple, 0.6);
-  transition: $transition-fill;
+  box-shadow: 0 0 16px rgba(tokens.$primary-purple, 0.6);
+  transition: tokens.$transition-fill;
   border-radius: 999px;
 }
 
@@ -180,47 +180,47 @@
 
 /* Item content layout */
 .item-content {
-  width: $card-width;
-  padding: $card-padding;
-  background: $gradient-primary;
-  border: $card-border-width solid $border-base;
-  border-radius: $card-border-radius;
-  backdrop-filter: blur($blur-amount);
-  -webkit-backdrop-filter: blur($blur-amount);
-  transition: $transition-default;
+  width: tokens.$card-width;
+  padding: tokens.$card-padding;
+  background: tokens.$gradient-primary;
+  border: tokens.$card-border-width solid tokens.$border-base;
+  border-radius: tokens.$card-border-radius;
+  backdrop-filter: blur(tokens.$blur-amount);
+  -webkit-backdrop-filter: blur(tokens.$blur-amount);
+  transition: tokens.$transition-default;
   position: relative;
   z-index: 15;
   cursor: pointer;
   margin: 0;
-  box-shadow: $shadow-sm, $inset-base;
+  box-shadow: tokens.$shadow-sm, tokens.$inset-base;
   transform: scale(1);
 }
 
 .item-content:hover {
-  background: $gradient-hover;
-  border-color: $border-hover;
-  box-shadow: $shadow-hover, $inset-hover, $glow-hover-extended;
+  background: tokens.$gradient-hover;
+  border-color: tokens.$border-hover;
+  box-shadow: tokens.$shadow-hover, tokens.$inset-hover, tokens.$glow-hover-extended;
   transform: scale(1.05);
 }
 
 /* Highlighted state when scrolled past */
 .timeline-item.highlighted .item-content {
-  background: $gradient-highlighted;
-  border-color: $border-highlighted;
-  box-shadow: $shadow-highlighted, $inset-highlighted;
+  background: tokens.$gradient-highlighted;
+  border-color: tokens.$border-highlighted;
+  box-shadow: tokens.$shadow-highlighted, tokens.$inset-highlighted;
 }
 
 /* Hover state for highlighted cards */
 .timeline-item.highlighted .item-content:hover {
-  background: $gradient-highlighted-hover;
-  border-color: $border-highlighted-hover;
-  box-shadow: $shadow-highlighted-hover, $inset-highlighted-hover, $glow-highlighted-hover-extended;
+  background: tokens.$gradient-highlighted-hover;
+  border-color: tokens.$border-highlighted-hover;
+  box-shadow: tokens.$shadow-highlighted-hover, tokens.$inset-highlighted-hover, tokens.$glow-highlighted-hover-extended;
 }
 
 /* Item header */
 .item-header {
   margin-bottom: 1.5rem;
-  border-bottom: 2px solid rgba($primary-purple, 0.2);
+  border-bottom: 2px solid rgba(tokens.$primary-purple, 0.2);
   padding-bottom: 1rem;
 }
 
@@ -237,7 +237,7 @@
 .item-year {
   font-size: 1.8rem;
   font-weight: 700;
-  background: linear-gradient(135deg, $primary-purple, $primary-magenta);
+  background: linear-gradient(135deg, tokens.$primary-purple, tokens.$primary-magenta);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -250,38 +250,38 @@
 .item-title {
   font-size: 1.3rem;
   font-weight: 600;
-  color: $text-primary;
+  color: tokens.$text-primary;
   margin: 0;
   padding: 0;
 }
 
 /* Item dot indicator (centered on year) */
 .item-dot {
-  width: $dot-size;
-  height: $dot-size;
-  background: $dot-default;
-  border: $dot-border-width solid $dot-border;
+  width: tokens.$dot-size;
+  height: tokens.$dot-size;
+  background: tokens.$dot-default;
+  border: tokens.$dot-border-width solid tokens.$dot-border;
   border-radius: 50%;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
   z-index: 25;
-  transition: $transition-default;
+  transition: tokens.$transition-default;
   flex-shrink: 0;
 }
 
 .timeline-item:hover .item-dot {
-  box-shadow: $glow-hover;
+  box-shadow: tokens.$glow-hover;
 }
 
 /* Highlighted dot (when gradient reaches it) */
 .timeline-item.highlighted .item-dot {
-  background: linear-gradient(135deg, $primary-purple, $primary-magenta);
-  box-shadow: $glow-base;
+  background: linear-gradient(135deg, tokens.$primary-purple, tokens.$primary-magenta);
+  box-shadow: tokens.$glow-base;
 }
 
 /* Glowing dot (when gradient is actively touching) */
 .timeline-item.glowing .item-dot {
-  background: linear-gradient(135deg, $primary-purple, $primary-magenta);
-  box-shadow: $glow-glowing;
+  background: linear-gradient(135deg, tokens.$primary-purple, tokens.$primary-magenta);
+  box-shadow: tokens.$glow-glowing;
 }
 .item-body {
   display: flex;
@@ -291,7 +291,7 @@
 
 .item-description {
   font-size: 0.95rem;
-  color: $text-secondary;
+  color: tokens.$text-secondary;
   line-height: 1.6;
   margin: 0;
   padding: 0;
@@ -308,7 +308,7 @@
 
 .item-details li {
   font-size: 0.9rem;
-  color: $text-tertiary;
+  color: tokens.$text-tertiary;
   line-height: 1.5;
   padding-left: 1.5rem;
   position: relative;
@@ -318,7 +318,7 @@
   content: '•';
   position: absolute;
   left: 0;
-  color: $primary-purple;
+  color: tokens.$primary-purple;
   font-weight: bold;
   font-size: 1.2rem;
 }
