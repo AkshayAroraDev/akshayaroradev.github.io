@@ -1,4 +1,4 @@
-import { Component, signal, CUSTOM_ELEMENTS_SCHEMA, ViewChild, ViewChildren, ElementRef, AfterViewInit, QueryList, ChangeDetectorRef } from '@angular/core';
+import { Component, signal, CUSTOM_ELEMENTS_SCHEMA, ViewChild, ViewChildren, ElementRef, AfterViewInit, QueryList, ChangeDetectorRef, NgZone } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgxConnectionBeamComponent } from '@omnedia/ngx-connection-beam';
 import { NgxTypewriterComponent } from '@omnedia/ngx-typewriter';
@@ -29,12 +29,17 @@ export class AppSkillsComponent implements AfterViewInit {
   skillRefs: { [key: string]: HTMLElement | null } = {};
   centerElement: HTMLElement | null = null;
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(private cdr: ChangeDetectorRef, private ngZone: NgZone) {}
 
   ngAfterViewInit() {
-    // Map skill names to their HTML element references
-    this.updateSkillReferences();
-    this.cdr.markForCheck();
+    // Run outside Angular zone to prevent change detection issues
+    this.ngZone.runOutsideAngular(() => {
+      this.updateSkillReferences();
+      // Re-enter Angular zone after references are updated
+      this.ngZone.run(() => {
+        this.cdr.detectChanges();
+      });
+    });
   }
 
   updateSkillReferences() {
@@ -172,7 +177,15 @@ export class AppSkillsComponent implements AfterViewInit {
 
   changeVariation(variation: number) {
     this.selectedVariation.set(variation);
-    setTimeout(() => this.updateSkillReferences(), 0);
+    // Use setTimeout with NgZone to avoid change detection issues
+    setTimeout(() => {
+      this.ngZone.runOutsideAngular(() => {
+        this.updateSkillReferences();
+        this.ngZone.run(() => {
+          this.cdr.detectChanges();
+        });
+      });
+    }, 0);
   }
 
   getAllSkills(): SkillItem[] {
