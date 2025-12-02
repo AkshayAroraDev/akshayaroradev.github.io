@@ -1,0 +1,76 @@
+<footer class="footer">
+  <div class="footer__container">
+    
+    <!-- Main Footer Content -->
+    <div class="footer__content">
+      
+      <!-- Brand Section -->
+      <div class="footer__section footer__brand">
+        <h2 class="footer__title">Akshay Arora</h2>
+        <p class="footer__subtitle">Senior UI/Front-End Developer</p>
+        <div class="footer__divider"></div>
+        <p class="footer__text">Building beautiful, accessible, and scalable user interfaces.</p>
+      </div>
+
+      <!-- Social Links -->
+      <div class="footer__section footer__social">
+        <h3 class="footer__section-title">Connect</h3>
+        <nav class="footer__social-links" aria-label="Social media links">
+          <a *ngFor="let link of socialLinks" 
+             [href]="link.url" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="footer__social-link"
+             [attr.aria-label]="link.label">
+            {{ link.label }}
+          </a>
+        </nav>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer__section footer__links">
+        <h3 class="footer__section-title">Navigation</h3>
+        <ul class="footer__link-list">
+          <li><a href="#hero" class="footer__link">Home</a></li>
+          <li><a href="#skills" class="footer__link">Skills</a></li>
+          <li><a href="#timeline" class="footer__link">Experience</a></li>
+          <li><a href="#contact" class="footer__link">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Attribution Section -->
+    <div class="footer__attribution-section" *ngIf="iconAttributions.length > 0">
+      <div class="footer__attribution-header">
+        <h4 class="footer__attribution-title">Icon Credits</h4>
+        <p class="footer__attribution-note">Icons from Flaticon</p>
+      </div>
+      
+      <div class="footer__attribution-grid">
+        <div *ngFor="let attribution of iconAttributions" class="footer__attribution-item">
+          <p class="footer__attribution-icon-name">{{ attribution.name }}</p>
+          <p class="footer__attribution-artist">by 
+            <a [href]="attribution.link" target="_blank" rel="noopener noreferrer" class="footer__attribution-link">
+              {{ attribution.artist }}
+            </a>
+          </p>
+          <p class="footer__attribution-source">via Flaticon</p>
+        </div>
+      </div>
+
+      <div class="footer__flaticon-credit">
+        <p>Icons sourced from <a href="https://www.flaticon.com" target="_blank" rel="noopener noreferrer" class="footer__flaticon-link">Flaticon</a></p>
+      </div>
+    </div>
+
+    <!-- Bottom Footer -->
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; {{ currentYear }} Akshay Arora. All rights reserved.</p>
+      <div class="footer__bottom-links">
+        <a href="#" class="footer__bottom-link">Privacy Policy</a>
+        <span class="footer__divider-dot">•</span>
+        <a href="#" class="footer__bottom-link">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>

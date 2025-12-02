@@ -6,6 +6,7 @@ import skillsData from '@src/json/skills.json';
 
 interface SkillItem {
   name: string;
+  icon?: string;
 }
 
 interface SkillGroup {
@@ -81,5 +82,5 @@ export class AppSkillsComponent implements AfterViewInit {
     }
   }
 
-  skillGroups: SkillGroup[] = skillsData.skillGroups;
+  skillGroups: SkillGroup[] = skillsData.skillGroups as SkillGroup[];
 }

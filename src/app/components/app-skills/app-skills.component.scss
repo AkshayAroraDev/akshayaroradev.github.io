@@ -194,11 +194,31 @@ om-connection-beam {
   z-index: 2; /* stays above beams */
 }
 
+.skills__skill-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.skills__skill-icon {
+  width: 22px;
+  height: 22px;
+  transition: all 0.3s ease;
+  object-fit: contain;
+  
+  .skills__skill-badge:hover & {
+    transform: scale(1.2);
+  }
+}
+
 .skills__pill-inner {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   padding: 14px 22px;
   border-radius: inherit;
   background: linear-gradient(135deg, rgba(tokens.$primary-purple, 0.16), rgba(tokens.$primary-magenta, 0.14));
@@ -206,13 +226,13 @@ om-connection-beam {
   border: 1px solid rgba(tokens.$primary-purple, 0.35);
   color: tokens.$text-primary;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 0.3px;
   transition: all 0.3s ease;
   cursor: default;
   box-shadow: 0 3px 14px -4px rgba(tokens.$primary-purple,0.32), tokens.$inset-base;
   white-space: nowrap;
-  min-width: 130px;
+  min-width: auto;
   text-align: center;
   position: relative;
 }
