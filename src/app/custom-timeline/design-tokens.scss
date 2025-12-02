@@ -41,39 +41,39 @@ $dot-border: $bg-base;        // Dot border color
 // Main gradient for animated fill
 $gradient-primary: linear-gradient(
   135deg,
-  rgba($primary-purple, 0.06) 0%,
-  rgba($primary-magenta, 0.04) 100%
+  rgba($primary-purple, 0.12) 0%,
+  rgba($primary-magenta, 0.10) 100%
 );
 
 // Hover gradient
 $gradient-hover: linear-gradient(
   135deg,
-  rgba($primary-purple, 0.12) 0%,
-  rgba($primary-magenta, 0.1) 100%
+  rgba($primary-purple, 0.18) 0%,
+  rgba($primary-magenta, 0.16) 100%
 );
 
 // Highlighted gradient
 $gradient-highlighted: linear-gradient(
   135deg,
-  rgba($primary-purple, 0.12) 0%,
-  rgba($primary-magenta, 0.1) 100%
+  rgba($primary-purple, 0.18) 0%,
+  rgba($primary-magenta, 0.16) 100%
 );
 
 // Highlighted hover gradient
 $gradient-highlighted-hover: linear-gradient(
   135deg,
-  rgba($primary-purple, 0.14) 0%,
-  rgba($primary-magenta, 0.12) 100%
+  rgba($primary-purple, 0.22) 0%,
+  rgba($primary-magenta, 0.20) 100%
 );
 
 // ============================================================================
 // GLASS MORPHISM EFFECTS - Blur & Opacity
 // ============================================================================
 $blur-amount: 20px;
-$glass-opacity-base: 0.06;
-$glass-opacity-hover: 0.12;
-$glass-opacity-highlighted: 0.12;
-$glass-opacity-highlighted-hover: 0.14;
+$glass-opacity-base: 0.12;
+$glass-opacity-hover: 0.18;
+$glass-opacity-highlighted: 0.18;
+$glass-opacity-highlighted-hover: 0.22;
 
 // ============================================================================
 // BORDER & SHADOW COLORS

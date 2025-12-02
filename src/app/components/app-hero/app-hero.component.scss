@@ -1,13 +1,9 @@
 @import '../../custom-timeline/design-tokens.scss';
 
 .hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
   overflow: hidden;
-  padding: 40px 20px;
+  width: 100%;
 
   // Animated background gradient
   background: linear-gradient(
@@ -22,11 +18,18 @@
   animation: gradientShift 15s ease infinite;
 
   &__container {
-    max-width: 900px;
+    max-width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     width: 100%;
     text-align: center;
     z-index: 2;
     animation: slideUp 1s ease-out;
+    padding: 40px 20px;
+    position: relative;
   }
 
   &__title {
@@ -58,11 +61,11 @@
 
   &__description {
     font-size: clamp(16px, 2vw, 18px);
-    color: $text-tertiary;
+    color: rgba(217, 217, 227, 0.95);
     line-height: 1.7;
     max-width: 700px;
     margin: 0 auto 48px;
-    font-weight: 300;
+    font-weight: 400;
   }
 
   &__cta-group {
@@ -157,9 +160,11 @@
 // Responsive adjustments
 @media (max-width: 768px) {
   .hero {
-    padding: 30px 20px;
-    min-height: auto;
-    padding-bottom: 80px;
+    padding: 0;
+
+    &__container {
+      padding: 30px 20px 80px;
+    }
 
     &__cta-group {
       flex-direction: column;
@@ -190,4 +195,13 @@
       margin-bottom: 32px;
     }
   }
+}
+
+.hero-dotpattern {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

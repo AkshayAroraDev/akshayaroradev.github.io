@@ -18,21 +18,21 @@
   // Base background with glass morphism
   background: linear-gradient(
     135deg,
-    rgba($primary-purple, $glass-opacity-base),
-    rgba($primary-magenta, $glass-opacity-base / 1.5)
+    rgba($primary-purple, 0.25),
+    rgba($primary-magenta, 0.25)
   );
   backdrop-filter: blur($blur-amount);
-  border: 1px solid $border-base;
+  border: 1px solid rgba($primary-purple, 0.5);
   box-shadow: $shadow-sm, $inset-base;
-  color: $text-primary;
+  color: #ffffff;
 
   &:hover {
     background: linear-gradient(
       135deg,
-      rgba($primary-purple, $glass-opacity-hover),
-      rgba($primary-magenta, $glass-opacity-hover / 1.5)
+      rgba($primary-purple, 0.35),
+      rgba($primary-magenta, 0.35)
     );
-    border-color: $border-hover;
+    border-color: rgba($primary-purple, 0.7);
     box-shadow: $shadow-hover, $inset-hover;
     transform: translateY(-2px);
   }
@@ -60,13 +60,23 @@
 
   // Variant styles
   &--primary {
-    background: linear-gradient(135deg, $primary-purple, $primary-magenta);
-    border: 1px solid rgba($primary-magenta, 0.3);
+    background: linear-gradient(
+      135deg,
+      rgba($primary-purple, $glass-opacity-hover),
+      rgba($primary-magenta, $glass-opacity-hover / 1.5)
+    );
+    border: 1px solid rgba($primary-purple, 0.25);
     color: #ffffff;
-    box-shadow: 0 0 20px rgba($primary-purple, 0.3), $inset-base;
+    box-shadow: 0 0 20px rgba($primary-purple, 0.15), $inset-base;
 
     &:hover {
-      box-shadow: 0 0 30px rgba($primary-magenta, 0.5), $inset-hover;
+      background: linear-gradient(
+        135deg,
+        rgba($primary-purple, 0.14),
+        rgba($primary-magenta, 0.12)
+      );
+      border-color: rgba($primary-purple, 0.35);
+      box-shadow: 0 0 30px rgba($primary-purple, 0.25), $inset-hover;
       transform: translateY(-2px);
     }
   }

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { AppButtonComponent } from '../app-button/app-button.component';
+import { NgxDotpatternComponent } from '@omnedia/ngx-dotpattern';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [AppButtonComponent],
+  imports: [AppButtonComponent, NgxDotpatternComponent],
   templateUrl: './app-hero.component.html',
   styleUrl: './app-hero.component.scss'
 })

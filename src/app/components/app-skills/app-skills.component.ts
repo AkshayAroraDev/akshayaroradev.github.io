@@ -5,7 +5,6 @@ import { NgxTypewriterComponent } from '@omnedia/ngx-typewriter';
 
 interface SkillItem {
   name: string;
-  icon?: string;
 }
 
 interface SkillGroup {

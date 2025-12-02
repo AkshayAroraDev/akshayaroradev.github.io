@@ -8,6 +8,7 @@ import {
   NgZone,
   ChangeDetectorRef,
   ChangeDetectionStrategy,
+  CUSTOM_ELEMENTS_SCHEMA,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Subject } from 'rxjs';
@@ -38,6 +39,7 @@ interface TimelineItem {
   selector: 'app-custom-timeline',
   standalone: true,
   imports: [CommonModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './custom-timeline.component.html',
   styleUrls: ['./custom-timeline.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
