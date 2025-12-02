@@ -1,52 +1,24 @@
 @import '../../custom-timeline/design-tokens.scss';
 
 .skills {
-  padding: 80px 20px;
+  min-height: 100vh;
+  padding: 0 20px;
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .skills__container {
+  width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-}
-
-/* header removed per new design */
-
-.skills__selector {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  margin-bottom: 60px;
-  flex-wrap: wrap;
-}
-
-.skills__selector-btn {
-  padding: 8px 16px;
-  background: rgba($primary-purple, 0.1);
-  border: 1px solid rgba($primary-purple, 0.2);
-  color: $text-secondary;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 12px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-
-  &:hover {
-    border-color: $primary-purple;
-    background: rgba($primary-purple, 0.15);
-    color: $text-primary;
-  }
-
-  &.active {
-    background: linear-gradient(135deg, $primary-purple, $primary-magenta);
-    border-color: $primary-magenta;
-    color: #ffffff;
-  }
+  padding: 0 40px;
 }
 
 .skills__content {
-  margin-bottom: 60px;
+  margin-bottom: 20px;
   position: relative;
 }
 
@@ -54,60 +26,49 @@
 .skills__split {
   display: grid;
   grid-template-columns: 0.55fr 0.45fr;
-  gap: 64px;
+  gap: 80px;
   align-items: center;
-  padding: 40px 0;
+  width: 100%;
 }
 
-.skills__left { align-self: center; }
+.skills__left { align-self: center; justify-self: start; }
 
 .skills__left-title {
   display: flex;
   flex-direction: column;
   line-height: 1.02;
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: max-content;
 }
 
 .skills__left-title { padding-left: clamp(10px, 4vw, 60px); }
 .skills__left-title .line-1 {
-  font-size: clamp(42px, 7vw, 92px);
+  font-size: clamp(42px, 8vw, 110px);
   color: $text-secondary;
   font-weight: 600;
   letter-spacing: -1px;
-}
-.skills__left-title .line-2 {
-  font-size: clamp(56px, 10vw, 132px);
-  color: $text-primary;
-  font-weight: 700;
-  letter-spacing: -1.5px;
+  line-height: 1.02;
 }
 
-/* Typewriter for 'toolbox' line */
-.skills__typewriter-title {
+/* Typewriter for 'toolbox' line - now using om-typewriter component */
+
+/* NGXUI Typewriter component styling */
+.typewriter-toolbox {
   display: block;
-  font-size: clamp(56px, 10vw, 132px);
-  color: $text-primary;
-  font-weight: 700;
-  letter-spacing: -1.5px;
-  padding-right: 0.5rem;
+  line-height: 1;
 }
 
-/* CSS typewriter fallback (7 chars: toolbox) */
-.skills__typewriter {
-  position: relative;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 0ch;
-  border-right: 0.12em solid rgba($primary-purple, 0.8);
-  animation: typing-tt 1.8s steps(7, end) 0.2s forwards, cursor-blink 0.9s step-end infinite;
-}
-
-@keyframes typing-tt {
-  from { width: 0ch; }
-  to { width: 7ch; }
-}
-
-@keyframes cursor-blink {
-  50% { border-color: transparent; }
+om-typewriter[styleClass="typewriter-toolbox"] ::ng-deep {
+  font-size: 9.375rem !important;
+  
+  .om-typewriter-text {
+    font-size: 9.375rem !important;
+    color: $text-primary;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    padding-right: 0.5rem;
+  }
 }
 
 .beam-wrapper {
@@ -269,14 +230,6 @@ om-connection-beam {
   animation: slideUp 1s ease-out 0.2s both;
 }
 
-.skills__center-placeholder {
-  display: none;
-}
-
-/* Old center badge/text styles removed (now icon-only, no shine) */
-
-/* skills__info removed per design feedback */
-
 // Animations
 @keyframes slideUp {
   from {
@@ -286,15 +239,6 @@ om-connection-beam {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes shine {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
   }
 }
 

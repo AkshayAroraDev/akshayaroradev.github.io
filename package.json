@@ -32,6 +32,7 @@
     "@omnedia/ngx-connection-beam": "^3.0.0",
     "@omnedia/ngx-timeline": "^3.1.0",
     "@omnedia/ngx-tracing-beam": "^3.0.0",
+    "@omnedia/ngx-typewriter": "^3.1.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },

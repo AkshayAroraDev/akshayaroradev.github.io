@@ -6,7 +6,14 @@
       <div class="skills__left">
         <div class="skills__left-title">
           <span class="line line-1">My creative</span>
-          <span class="skills__typewriter-title skills__typewriter" aria-label="toolbox">toolbox</span>
+          <om-typewriter
+            [words]="['toolbox']"
+            [writeDelay]="300"
+            [writeSpeed]="100"
+            [deleteDelay]="3000"
+            [deleteSpeed]="0"
+            styleClass="typewriter-toolbox"
+          ></om-typewriter>
         </div>
       </div>
       <div class="skills__right">

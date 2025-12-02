@@ -1,6 +1,7 @@
 import { Component, signal, CUSTOM_ELEMENTS_SCHEMA, ViewChild, ViewChildren, ElementRef, AfterViewInit, QueryList, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgxConnectionBeamComponent } from '@omnedia/ngx-connection-beam';
+import { NgxTypewriterComponent } from '@omnedia/ngx-typewriter';
 
 interface SkillItem {
   name: string;
@@ -12,14 +13,10 @@ interface SkillGroup {
   skills: SkillItem[];
 }
 
-interface SkillConnection {
-  skillElement: ElementRef | null;
-}
-
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [CommonModule, NgxConnectionBeamComponent],
+  imports: [CommonModule, NgxConnectionBeamComponent, NgxTypewriterComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './app-skills.component.html',
   styleUrl: './app-skills.component.scss'
