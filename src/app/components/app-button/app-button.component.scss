@@ -1,4 +1,4 @@
-@import '../../custom-timeline/design-tokens.scss';
+@use '../../custom-timeline/design-tokens.scss' as tokens;
 
 .btn {
   border: none;
@@ -18,28 +18,28 @@
   // Base background with glass morphism
   background: linear-gradient(
     135deg,
-    rgba($primary-purple, 0.25),
-    rgba($primary-magenta, 0.25)
+    rgba(tokens.$primary-purple, 0.25),
+    rgba(tokens.$primary-magenta, 0.25)
   );
-  backdrop-filter: blur($blur-amount);
-  border: 1px solid rgba($primary-purple, 0.5);
-  box-shadow: $shadow-sm, $inset-base;
+  backdrop-filter: blur(tokens.$blur-amount);
+  border: 1px solid rgba(tokens.$primary-purple, 0.5);
+  box-shadow: tokens.$shadow-sm, tokens.$inset-base;
   color: #ffffff;
 
   &:hover {
     background: linear-gradient(
       135deg,
-      rgba($primary-purple, 0.35),
-      rgba($primary-magenta, 0.35)
+      rgba(tokens.$primary-purple, 0.35),
+      rgba(tokens.$primary-magenta, 0.35)
     );
-    border-color: rgba($primary-purple, 0.7);
-    box-shadow: $shadow-hover, $inset-hover;
+    border-color: rgba(tokens.$primary-purple, 0.7);
+    box-shadow: tokens.$shadow-hover, tokens.$inset-hover;
     transform: translateY(-2px);
   }
 
   &:active {
     transform: translateY(0);
-    box-shadow: $shadow-sm, $inset-base;
+    box-shadow: tokens.$shadow-sm, tokens.$inset-base;
   }
 
   // Size variants
@@ -62,21 +62,21 @@
   &--primary {
     background: linear-gradient(
       135deg,
-      rgba($primary-purple, $glass-opacity-hover),
-      rgba($primary-magenta, $glass-opacity-hover / 1.5)
+      rgba(tokens.$primary-purple, tokens.$glass-opacity-hover),
+      rgba(tokens.$primary-magenta, tokens.$glass-opacity-hover / 1.5)
     );
-    border: 1px solid rgba($primary-purple, 0.25);
+    border: 1px solid rgba(tokens.$primary-purple, 0.25);
     color: #ffffff;
-    box-shadow: 0 0 20px rgba($primary-purple, 0.15), $inset-base;
+    box-shadow: 0 0 20px rgba(tokens.$primary-purple, 0.15), tokens.$inset-base;
 
     &:hover {
       background: linear-gradient(
         135deg,
-        rgba($primary-purple, 0.14),
-        rgba($primary-magenta, 0.12)
+        rgba(tokens.$primary-purple, 0.14),
+        rgba(tokens.$primary-magenta, 0.12)
       );
-      border-color: rgba($primary-purple, 0.35);
-      box-shadow: 0 0 30px rgba($primary-purple, 0.25), $inset-hover;
+      border-color: rgba(tokens.$primary-purple, 0.35);
+      box-shadow: 0 0 30px rgba(tokens.$primary-purple, 0.25), tokens.$inset-hover;
       transform: translateY(-2px);
     }
   }
@@ -84,39 +84,39 @@
   &--secondary {
     background: linear-gradient(
       135deg,
-      rgba($primary-purple, 0.1),
-      rgba($primary-magenta, 0.1)
+      rgba(tokens.$primary-purple, 0.1),
+      rgba(tokens.$primary-magenta, 0.1)
     );
-    border: 1px solid rgba($primary-purple, 0.2);
-    color: $text-primary;
+    border: 1px solid rgba(tokens.$primary-purple, 0.2);
+    color: tokens.$text-primary;
 
     &:hover {
       background: linear-gradient(
         135deg,
-        rgba($primary-purple, 0.15),
-        rgba($primary-magenta, 0.15)
+        rgba(tokens.$primary-purple, 0.15),
+        rgba(tokens.$primary-magenta, 0.15)
       );
-      border-color: rgba($primary-purple, 0.3);
+      border-color: rgba(tokens.$primary-purple, 0.3);
     }
   }
 
   &--outline {
     background: transparent;
-    border: 1.5px solid $border-default;
-    color: $text-primary;
+    border: 1.5px solid tokens.$border-default;
+    color: tokens.$text-primary;
     box-shadow: none;
 
     &:hover {
-      border-color: $primary-purple;
-      background: rgba($primary-purple, 0.05);
-      box-shadow: 0 0 15px rgba($primary-purple, 0.2);
+      border-color: tokens.$primary-purple;
+      background: rgba(tokens.$primary-purple, 0.05);
+      box-shadow: 0 0 15px rgba(tokens.$primary-purple, 0.2);
     }
   }
 
   // Focus state for accessibility
   &:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 3px rgba($primary-purple, 0.5);
+    box-shadow: 0 0 0 3px rgba(tokens.$primary-purple, 0.5);
   }
 
   &:disabled {

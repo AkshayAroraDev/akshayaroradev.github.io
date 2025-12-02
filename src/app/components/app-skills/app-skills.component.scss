@@ -1,4 +1,4 @@
-@import '../../custom-timeline/design-tokens.scss';
+@use '../../custom-timeline/design-tokens.scss' as tokens;
 
 .skills {
   min-height: 100vh;
@@ -45,7 +45,7 @@
 .skills__left-title { padding-left: clamp(10px, 4vw, 60px); }
 .skills__left-title .line-1 {
   font-size: clamp(42px, 8vw, 80px);
-  color: $text-secondary;
+  color: tokens.$text-secondary;
   font-weight: 600;
   letter-spacing: -1px;
   line-height: 1.02;
@@ -64,7 +64,7 @@ om-typewriter[styleClass="typewriter-toolbox"] ::ng-deep {
   
   .om-typewriter-text {
     font-size: clamp(72px, 10vw, 100px) !important;
-    color: $text-primary;
+    color: tokens.$text-primary;
     font-weight: 700;
     letter-spacing: -1.5px;
     padding-right: 0.5rem;
@@ -140,7 +140,7 @@ om-connection-beam {
 .skills__group-title {
   font-size: 14px;
   font-weight: 600;
-  color: $primary-purple;
+  color: tokens.$primary-purple;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 16px;
@@ -156,12 +156,12 @@ om-connection-beam {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background: $bg-base; /* opaque base like pills */
+  background: tokens.$bg-base; /* opaque base like pills */
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  box-shadow: 0 4px 24px -10px rgba($primary-purple, 0.22);
+  box-shadow: 0 4px 24px -10px rgba(tokens.$primary-purple, 0.22);
   position: relative;
   z-index: 3;
 }
@@ -173,10 +173,10 @@ om-connection-beam {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba($primary-purple, 0.16), rgba($primary-magenta, 0.14));
-  backdrop-filter: blur($blur-amount);
-  border: 1px solid rgba($primary-purple, 0.35);
-  box-shadow: 0 6px 28px -8px rgba($primary-purple,0.35), $inset-base;
+  background: linear-gradient(135deg, rgba(tokens.$primary-purple, 0.16), rgba(tokens.$primary-magenta, 0.14));
+  backdrop-filter: blur(tokens.$blur-amount);
+  border: 1px solid rgba(tokens.$primary-purple, 0.35);
+  box-shadow: 0 6px 28px -8px rgba(tokens.$primary-purple,0.35), tokens.$inset-base;
 }
 
 .skills__center-icon {
@@ -190,7 +190,7 @@ om-connection-beam {
   display: inline-flex;
   border-radius: 24px;
   /* Opaque base prevents beam show-through; matches page bg */
-  background: $bg-base;
+  background: tokens.$bg-base;
   z-index: 2; /* stays above beams */
 }
 
@@ -201,16 +201,16 @@ om-connection-beam {
   gap: 8px;
   padding: 14px 22px;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba($primary-purple, 0.16), rgba($primary-magenta, 0.14));
-  backdrop-filter: blur($blur-amount);
-  border: 1px solid rgba($primary-purple, 0.35);
-  color: $text-primary;
+  background: linear-gradient(135deg, rgba(tokens.$primary-purple, 0.16), rgba(tokens.$primary-magenta, 0.14));
+  backdrop-filter: blur(tokens.$blur-amount);
+  border: 1px solid rgba(tokens.$primary-purple, 0.35);
+  color: tokens.$text-primary;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 0.3px;
   transition: all 0.3s ease;
   cursor: default;
-  box-shadow: 0 3px 14px -4px rgba($primary-purple,0.32), $inset-base;
+  box-shadow: 0 3px 14px -4px rgba(tokens.$primary-purple,0.32), tokens.$inset-base;
   white-space: nowrap;
   min-width: 130px;
   text-align: center;
@@ -224,9 +224,9 @@ om-connection-beam {
 }
 
 .skills__pill-inner:hover {
-  border-color: rgba($primary-purple, 0.4);
-  background: linear-gradient(135deg, rgba($primary-purple, 0.18), rgba($primary-magenta, 0.16));
-  box-shadow: 0 6px 22px -6px rgba($primary-purple,0.35), $inset-hover;
+  border-color: rgba(tokens.$primary-purple, 0.4);
+  background: linear-gradient(135deg, rgba(tokens.$primary-purple, 0.18), rgba(tokens.$primary-magenta, 0.16));
+  box-shadow: 0 6px 22px -6px rgba(tokens.$primary-purple,0.35), tokens.$inset-hover;
   transform: translateY(-3px);
 }
 

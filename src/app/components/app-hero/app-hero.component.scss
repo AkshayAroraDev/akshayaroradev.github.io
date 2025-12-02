@@ -1,4 +1,4 @@
-@import '../../custom-timeline/design-tokens.scss';
+@use '../../custom-timeline/design-tokens.scss' as tokens;
 
 .hero {
   position: relative;
@@ -9,9 +9,9 @@
   background: linear-gradient(
     -45deg,
     #0a0a0f 0%,
-    rgba($primary-purple, 0.03) 25%,
+    rgba(tokens.$primary-purple, 0.03) 25%,
     #0f0f1a 50%,
-    rgba($primary-magenta, 0.02) 75%,
+    rgba(tokens.$primary-magenta, 0.02) 75%,
     #0d0d1a 100%
   );
   background-size: 400% 400%;
@@ -37,10 +37,10 @@
     font-weight: 900;
     background: linear-gradient(
       135deg,
-      $text-primary,
-      rgba($primary-purple, 0.8),
-      rgba($primary-magenta, 0.8),
-      $text-primary
+      tokens.$text-primary,
+      rgba(tokens.$primary-purple, 0.8),
+      rgba(tokens.$primary-magenta, 0.8),
+      tokens.$text-primary
     );
     background-size: 300% 300%;
     -webkit-background-clip: text;
@@ -54,7 +54,7 @@
   &__subtitle {
     font-size: clamp(20px, 4vw, 32px);
     font-weight: 600;
-    color: $text-secondary;
+    color: tokens.$text-secondary;
     margin-bottom: 32px;
     letter-spacing: 0.5px;
   }
@@ -95,7 +95,7 @@
     animation: bounce 2s ease-in-out infinite, slideUp 1s ease-out 0.6s both;
 
     p {
-      color: $text-secondary;
+      color: tokens.$text-secondary;
       font-size: 14px;
       font-weight: 500;
       margin: 0;
@@ -106,7 +106,7 @@
 
     &:hover p {
       opacity: 1;
-      color: $primary-purple;
+      color: tokens.$primary-purple;
     }
   }
 }
