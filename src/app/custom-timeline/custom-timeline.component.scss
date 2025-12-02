@@ -1,11 +1,42 @@
 /* Timeline Component Styles - Using Design Tokens */
 @use './design-tokens.scss' as tokens;
 
+/* Timeline section wrapper */
+.timeline-section {
+  width: 100%;
+  padding: 80px 40px;
+}
+
+/* Timeline title section */
+.timeline-title {
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 0 20px;
+}
+
+.timeline-title-text {
+  font-size: clamp(32px, 5vw, 72px);
+  color: tokens.$text-primary;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin: 0 0 16px 0;
+  line-height: 1.1;
+}
+
+.timeline-subtitle {
+  font-size: clamp(16px, 2vw, 18px);
+  color: tokens.$text-secondary;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  margin: 0;
+  opacity: 0.85;
+}
+
 /* Timeline wrapper takes 90% of viewport width */
 .timeline-wrapper {
   width: 90vw;
   margin: 0 auto;
-  padding: 100vh 2rem 100vh 2rem;
+  padding: 2rem;
   position: relative;
   display: flex;
   flex-direction: column;
