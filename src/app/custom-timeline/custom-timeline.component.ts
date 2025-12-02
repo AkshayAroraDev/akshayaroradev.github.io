@@ -26,7 +26,7 @@ import {
   SVG_INITIAL_WIDTH,
   SVG_INITIAL_HEIGHT,
 } from '@src/constants/timeline.constants';
-import timelineData from '@src/config/timeline.json';
+import timelineData from '@src/json/timeline.json';
 
 interface TimelineItem {
   year: string;

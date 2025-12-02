@@ -1,0 +1,21 @@
+{
+  "skillGroups": [
+    {
+      "title": "Core Technologies",
+      "skills": [
+        { "name": "Angular" },
+        { "name": "TypeScript" },
+        { "name": "RxJs" }
+      ]
+    },
+    {
+      "title": "UI & Styling",
+      "skills": [
+        { "name": "Material Design" },
+        { "name": "Bootstrap" },
+        { "name": "CSS3" },
+        { "name": "Responsive Design" }
+      ]
+    }
+  ]
+}

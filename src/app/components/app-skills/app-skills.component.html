@@ -19,7 +19,7 @@
       <div class="skills__right">
         <div class="beam-wrapper">
         <!-- Left Group Items -->
-        <div *ngFor="let skill of activeGroups[0].skills; let i = index"
+        <div *ngFor="let skill of skillGroups[0].skills; let i = index"
              #skillElement
              class="skills__skill-item"
              [style.grid-row]="i + 1">
@@ -52,7 +52,7 @@
         </div>
 
         <!-- Right Group Items -->
-        <div *ngFor="let skill of activeGroups[1].skills; let i = index"
+        <div *ngFor="let skill of skillGroups[1].skills; let i = index"
              #skillElement
              class="skills__skill-item skills__skill-item--right"
              [style.grid-row]="i + 1">
@@ -64,7 +64,7 @@
         </div>
 
         <!-- Connection Beams (defaults from NGXUI) -->
-        <ng-container *ngFor="let skill of activeGroups[0].skills; let i = index">
+        <ng-container *ngFor="let skill of skillGroups[0].skills; let i = index">
           <om-connection-beam
             *ngIf="skillRefs[skill.name] && centerElement"
             [fromRef]="skillRefs[skill.name]!"
@@ -72,7 +72,7 @@
           ></om-connection-beam>
         </ng-container>
 
-        <ng-container *ngFor="let skill of activeGroups[1].skills; let i = index">
+        <ng-container *ngFor="let skill of skillGroups[1].skills; let i = index">
           <om-connection-beam
             *ngIf="skillRefs[skill.name] && centerElement"
             [fromRef]="skillRefs[skill.name]!"

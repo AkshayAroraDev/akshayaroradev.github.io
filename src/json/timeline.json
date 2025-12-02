@@ -1,0 +1,104 @@
+{
+  "timelineItems": [
+    {
+      "year": "2022",
+      "title": "Design Phase",
+      "description": "The team works on the design specifications and first mockups.",
+      "details": [
+        "Creation of user interface designs",
+        "User experience workshops and feedback sessions",
+        "Finalizing design prototypes"
+      ]
+    },
+    {
+      "year": "2023",
+      "title": "Development Phase",
+      "description": "Developers start coding, focusing on core functionalities first.",
+      "details": [
+        "Setting up the development environment",
+        "Developing the primary application features",
+        "Integration of backend and frontend components"
+      ]
+    },
+    {
+      "year": "2024",
+      "title": "Launch & Optimization",
+      "description": "The project is ready for production deployment.",
+      "details": [
+        "Production deployment",
+        "User feedback collection",
+        "Performance optimization"
+      ]
+    },
+    {
+      "year": "2025",
+      "title": "Growth & Expansion",
+      "description": "Ongoing improvements and feature expansion.",
+      "details": [
+        "New features implementation",
+        "Enhanced user experience",
+        "Continuous monitoring and support"
+      ]
+    },
+    {
+      "year": "2025 Q2",
+      "title": "Infrastructure Update",
+      "description": "Migrating to cloud-based infrastructure for better scalability.",
+      "details": [
+        "Cloud migration planning",
+        "Database optimization",
+        "Security enhancements"
+      ]
+    },
+    {
+      "year": "2025 Q3",
+      "title": "AI Integration",
+      "description": "Implementing AI-powered features to enhance user experience.",
+      "details": [
+        "Machine learning model development",
+        "AI chatbot implementation",
+        "Predictive analytics integration"
+      ]
+    },
+    {
+      "year": "2025 Q4",
+      "title": "Mobile App Launch",
+      "description": "Releasing native mobile applications for iOS and Android.",
+      "details": [
+        "Cross-platform development",
+        "Mobile UI/UX optimization",
+        "App store deployment"
+      ]
+    },
+    {
+      "year": "2026 Q1",
+      "title": "Global Expansion",
+      "description": "Expanding services to new markets and regions worldwide.",
+      "details": [
+        "Localization efforts",
+        "Regional server deployment",
+        "Multi-language support"
+      ]
+    },
+    {
+      "year": "2026 Q2",
+      "title": "Enterprise Features",
+      "description": "Introducing advanced features for enterprise clients.",
+      "details": [
+        "Advanced reporting tools",
+        "Custom integrations API",
+        "Dedicated support team"
+      ]
+    },
+    {
+      "year": "2026 Q3",
+      "title": "Community Building",
+      "description": "Creating a thriving community around the platform.",
+      "details": [
+        "Developer documentation",
+        "Community forum launch",
+        "Hackathon events"
+      ]
+    }
+  ]
+}
