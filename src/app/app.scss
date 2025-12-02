@@ -50,6 +50,17 @@ ol {
   padding: 0;
 }
 
+/* Tracing Beam Content Container */
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  padding: 0 0 2rem 2rem;
+}
+
 /* Tracing Beam Positioning */
 :host ::ng-deep om-tracing-beam.tracing-beam-right {
   --svg-right: 10px;
