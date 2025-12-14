@@ -6,7 +6,8 @@
         { "name": "Angular", "icon": "angular.svg" },
         { "name": "TypeScript", "icon": "typeScript.svg" },
         { "name": "RxJs", "icon": "rxJS.svg" },
-        { "name": "JavaScript", "icon": "javaScript.svg" }
+        { "name": "JavaScript", "icon": "javaScript.svg" },
+        { "name": "JavaScript1", "icon": "javaScript.svg" }
       ]
     },
     {
@@ -15,7 +16,8 @@
         { "name": "Angular Material", "icon": "angular-material.svg" },
         { "name": "Bootstrap", "icon": "bootstrap.svg" },
         { "name": "CSS3", "icon": "CSS3.svg" },
-        { "name": "HTML", "icon": "HTML5.svg" }
+        { "name": "HTML", "icon": "HTML5.svg" },
+        { "name": "HTML1", "icon": "HTML5.svg" }
       ]
     }
   ]
