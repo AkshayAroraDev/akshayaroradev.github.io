@@ -1,23 +1,23 @@
 {
   "skillGroups": [
     {
-      "title": "Core Technologies",
+      "title": "Left Skills",
       "skills": [
-        { "name": "Angular", "icon": "angular.svg" },
         { "name": "TypeScript", "icon": "typeScript.svg" },
-        { "name": "RxJs", "icon": "rxJS.svg" },
-        { "name": "JavaScript", "icon": "javaScript.svg" },
-        { "name": "JavaScript1", "icon": "javaScript.svg" }
+        { "name": "JavaScript (ES6+)", "icon": "javaScript.svg" },
+        { "name": "Angular (v9+)", "icon": "angular.svg" },
+        { "name": "RxJS", "icon": "rxJS.svg" },
+        { "name": "NgRx", "icon": "NGRX.svg" }
       ]
     },
     {
-      "title": "UI & Styling",
+      "title": "Right Skills",
       "skills": [
-        { "name": "Angular Material", "icon": "angular-material.svg" },
-        { "name": "Bootstrap", "icon": "bootstrap.svg" },
-        { "name": "CSS3", "icon": "CSS3.svg" },
         { "name": "HTML", "icon": "HTML5.svg" },
-        { "name": "HTML1", "icon": "HTML5.svg" }
+        { "name": "CSS", "icon": "CSS3.svg" },
+        { "name": "Git", "icon": "git.svg" },
+        { "name": "Jira", "icon": "jira.svg" },
+        { "name": "Bootstrap", "icon": "bootstrap.svg" }
       ]
     }
   ]
