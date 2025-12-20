@@ -11,8 +11,8 @@ import { NgxDotpatternComponent } from '@omnedia/ngx-dotpattern';
 })
 export class AppHeroComponent {
   name = 'Akshay Arora';
-  subtitle = 'Senior UI/Front-End Developer';
-  description = '8 years of experience building fast, accessible, scalable user interfaces with Angular and modern web technologies.';
+  subtitle = 'Senior Front-End Engineer';
+  description = 'Building enterprise-grade applications with 8+ years of experience in Angular, TypeScript, and JavaScript. Focused on frontend architecture, performance optimization, and team leadership.';
 
   downloadResume() {
     const link = document.createElement('a');

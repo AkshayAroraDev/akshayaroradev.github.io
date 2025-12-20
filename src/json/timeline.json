@@ -1,55 +1,56 @@
 {
   "timelineItems": [
     {
-      "year": "2024",
+      "year": "Aug 2024 - Present",
       "title": "Senior Software Engineer",
       "description": "Wipro Limited, Bangalore | Leading enterprise frontend architecture and team of 5 engineers.",
       "logo": "wipro-white.svg",
       "details": [
         "Owned frontend architecture for large-scale enterprise platform with strategic UI decisions",
         "Led and mentored 5 engineers, improving delivery quality and consistency",
-        "Migrated 6 production-grade applications from Blazor to Angular",
-        "Reduced JavaScript bundle size by ~30% and improved TTI by ~35%"
+        "Migrated 6 production-grade applications from Blazor to Angular with modular, scalable architecture",
+        "Reduced JavaScript bundle size by ~30% using code splitting and lazy loading, improving initial load time by ~40%",
+        "Improved Time to Interactive (TTI) by ~35% by optimizing change detection and rendering paths",
+        "Led production rollout and resolved performance regressions and critical UI defects"
       ]
     },
     {
-      "year": "2023",
+      "year": "Jul 2023 - Jul 2024",
       "title": "Software Engineer I",
       "description": "Harman International Industries, Bangalore | Designed reusable components and dynamic UI framework.",
       "logo": "harman-international-logo.svg",
       "details": [
-        "Designed and shipped 30+ production-ready reusable Angular components",
-        "Architected JSON-driven dynamic UI rendering framework (10× speed improvement)",
-        "Introduced TDD practices achieving 60% unit test coverage",
-        "Reduced post-release defects by ~50%"
+        "Designed and shipped 30+ production-ready reusable Angular components used across 6+ different products",
+        "Architected JSON-driven dynamic UI rendering framework, improving feature delivery speed by ~10×",
+        "Introduced TDD practices achieving 60% unit test coverage and reducing post-release defects by ~50%",
+        "Worked closely with multiple product teams to onboard the rendering framework and standardize UI patterns"
       ]
     },
     {
-      "year": "2020-2023",
+      "year": "Apr 2020 - Jun 2023",
       "title": "Software Engineer",
       "description": "Harman International Industries, Bangalore | Owned critical frontend modules using Angular and RxJS.",
       "logo": "harman-international-logo.svg",
       "details": [
         "Owned and developed critical frontend modules using Angular, TypeScript, and RxJS",
-        "Collaborated with UX, backend, and product teams on feature delivery",
-        "Improved UI reliability by resolving performance bottlenecks",
-        "Enhanced application responsiveness through optimization"
+        "Collaborated closely with UX, backend, and product teams",
+        "Improved UI reliability and responsiveness by resolving performance bottlenecks and production defects"
       ]
     },
     {
-      "year": "2017-2020",
+      "year": "Dec 2017 - Mar 2020",
       "title": "Application Developer",
       "description": "Conduent Business Services, Bangalore | Built secure document processing workflows.",
       "logo": "conduent-white.svg",
       "details": [
         "Designed configurable UI modules supporting 36 customer-specific workflows",
-        "Built secure Patient Health Information processing for 150+ hospitals",
-        "Led migration from Silverlight to Angular (75% size reduction)",
-        "Validated workflows to meet healthcare compliance requirements"
+        "Built secure Patient Health Information document processing workflows used by 150+ hospitals",
+        "Led migration from Silverlight to Angular, reducing installer size by ~75%",
+        "Validated workflows with QA and business stakeholders to meet healthcare compliance requirements"
       ]
     },
     {
-      "year": "2017",
+      "year": "Feb 2017 - May 2017",
       "title": "PG-Diploma in Advanced Computing",
       "description": "Centre for Development of Advanced Computing, Bangalore",
       "logo": "cdac-white.svg",
@@ -60,7 +61,7 @@
       ]
     },
     {
-      "year": "2010-2014",
+      "year": "Aug 2010 - Jul 2014",
       "title": "Bachelors in Computer Science",
       "description": "Jaypee Institute of Information Technology, Noida",
       "logo": "jiit.png",
