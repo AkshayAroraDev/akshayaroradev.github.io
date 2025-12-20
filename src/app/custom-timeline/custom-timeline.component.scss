@@ -69,13 +69,16 @@
   height: 100%;
   pointer-events: none;
   z-index: 1;
+  will-change: clip-path;
+  transform: translateZ(0);
 }
 
 .connector-path {
   fill: none;
-  stroke-width: 3;
+  stroke-width: 6;
   stroke-linecap: round;
   stroke-linejoin: round;
+  will-change: stroke;
 }
 
 .connector-path.connector-bg {
@@ -257,6 +260,7 @@
   background: tokens.$gradient-highlighted;
   border-color: tokens.$border-highlighted;
   box-shadow: tokens.$shadow-highlighted, tokens.$inset-highlighted;
+  transform: scale(1.15);
 }
 
 /* Hover state for highlighted cards */

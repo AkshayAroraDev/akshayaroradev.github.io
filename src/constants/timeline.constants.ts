@@ -6,7 +6,7 @@
 // ============================================================================
 // SCROLL & RESIZE THROTTLING
 // ============================================================================
-export const SCROLL_THROTTLE_MS = 32;    // ~30fps for smooth scroll animation
+export const SCROLL_THROTTLE_MS = 16;    // ~60fps for smooth scroll animation
 export const RESIZE_THROTTLE_MS = 250;   // Less frequent resize handling
 
 // ============================================================================
