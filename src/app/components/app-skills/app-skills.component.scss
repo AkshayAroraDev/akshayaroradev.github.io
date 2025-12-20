@@ -63,12 +63,24 @@
 
   .line {
     display: inline;
-    font-size: 68px;
+    font-size: clamp(36px, 10vw, 68px);
     font-weight: 600;
     line-height: 1.1;
     color: tokens.$text-primary;
     margin: 0;
-    white-space: nowrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills__left-title {
+    margin-bottom: 30px;
+    padding-left: 0;
+    flex-direction: column;
+
+    .line {
+      white-space: nowrap;
+      width: 100%;
+    }
   }
 }
 
@@ -180,14 +192,24 @@
 }
 
 om-typewriter[styleClass="typewriter-toolbox"] ::ng-deep {
-  font-size: 72px !important;
+  font-size: clamp(36px, 10vw, 72px) !important;
   
   .om-typewriter-text {
-    font-size: 72px !important;
+    font-size: clamp(36px, 10vw, 72px) !important;
     color: tokens.$text-primary;
     font-weight: 700;
     letter-spacing: -1.5px;
     padding-right: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  om-typewriter[styleClass="typewriter-toolbox"] ::ng-deep {
+    font-size: clamp(32px, 9vw, 48px) !important;
+    
+    .om-typewriter-text {
+      font-size: clamp(32px, 9vw, 48px) !important;
+    }
   }
 }
 
@@ -220,15 +242,62 @@ om-typewriter[styleClass="typewriter-toolbox"] ::ng-deep {
 }
 
 .beam-wrapper {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  grid-template-rows: repeat(4, minmax(60px, auto));
-  width: calc(100% - 80px);
-  margin: 0 auto;
-  gap: clamp(40px, 5vw, 60px) clamp(180px, 15vw, 300px);
-  position: relative;
-  padding: clamp(40px, 5vh, 60px) 0;
-  min-height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+@media (min-width: 769px) {
+  .beam-wrapper {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    grid-template-rows: repeat(4, minmax(60px, auto));
+    width: calc(100% - 80px);
+    margin: 0 auto;
+    gap: clamp(40px, 5vw, 60px) clamp(180px, 15vw, 300px);
+    position: relative;
+    padding: clamp(40px, 5vh, 60px) 0;
+    min-height: 400px;
+  }
+}
+
+/* Mobile skills layout - inline wrapping */
+@media (max-width: 768px) {
+  .skills__right {
+    width: 100%;
+  }
+  
+  .skills__skill-item {
+    display: flex !important;
+    width: auto;
+    padding: 0;
+    justify-content: center;
+  }
+  
+  .skills__skill-item:nth-child(odd) {
+    justify-content: center;
+    padding: 0;
+  }
+  
+  .skills__skill-item:nth-child(even) {
+    justify-content: center;
+    padding: 0;
+  }
+  
+  .skills__center-wrapper {
+    display: none;
+  }
+  
+  .skills__skill-item--right {
+    grid-column: unset;
+  }
+  
+  om-connection-beam {
+    display: none;
+  }
 }
 
 
@@ -472,11 +541,40 @@ om-connection-beam {
 }
 
 @media (max-width: 768px) {
+  .beam-wrapper {
+    padding: 0 8px;
+    gap: 6px;
+  }
+  
   .skills { padding: 70px 16px; }
   .skills__split { gap: 40px; }
   .skills__left-title { padding-left: 0; }
-  .skills__center-badge { width: 120px; height: 120px; }
-  .skills__pill-inner { padding: 12px 18px; min-width: 110px; font-size: 13px; }
+  
+  .skills__center-badge {
+    display: none !important;
+  }
+  
+  .skills__center-wrapper {
+    display: none !important;
+  }
+  
+  .skills__pill-inner { 
+    padding: 6px 10px; 
+    min-width: auto;
+    font-size: 11px;
+    gap: 4px;
+  }
+  
+  .skills__skill-icon {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .skills__skill-icon-wrapper {
+    width: 20px;
+    height: 20px;
+  }
+  
   .skills__group-items {
     justify-content: center;
     flex-direction: row;
