@@ -1,103 +1,73 @@
 {
   "timelineItems": [
     {
-      "year": "2022",
-      "title": "Design Phase",
-      "description": "The team works on the design specifications and first mockups.",
+      "year": "2024",
+      "title": "Senior Software Engineer",
+      "description": "Wipro Limited, Bangalore | Leading enterprise frontend architecture and team of 5 engineers.",
+      "logo": "wipro-white.svg",
       "details": [
-        "Creation of user interface designs",
-        "User experience workshops and feedback sessions",
-        "Finalizing design prototypes"
+        "Owned frontend architecture for large-scale enterprise platform with strategic UI decisions",
+        "Led and mentored 5 engineers, improving delivery quality and consistency",
+        "Migrated 6 production-grade applications from Blazor to Angular",
+        "Reduced JavaScript bundle size by ~30% and improved TTI by ~35%"
       ]
     },
     {
       "year": "2023",
-      "title": "Development Phase",
-      "description": "Developers start coding, focusing on core functionalities first.",
+      "title": "Software Engineer I",
+      "description": "Harman International Industries, Bangalore | Designed reusable components and dynamic UI framework.",
+      "logo": "harman-international-logo.svg",
       "details": [
-        "Setting up the development environment",
-        "Developing the primary application features",
-        "Integration of backend and frontend components"
+        "Designed and shipped 30+ production-ready reusable Angular components",
+        "Architected JSON-driven dynamic UI rendering framework (10× speed improvement)",
+        "Introduced TDD practices achieving 60% unit test coverage",
+        "Reduced post-release defects by ~50%"
       ]
     },
     {
-      "year": "2024",
-      "title": "Launch & Optimization",
-      "description": "The project is ready for production deployment.",
+      "year": "2020-2023",
+      "title": "Software Engineer",
+      "description": "Harman International Industries, Bangalore | Owned critical frontend modules using Angular and RxJS.",
+      "logo": "harman-international-logo.svg",
       "details": [
-        "Production deployment",
-        "User feedback collection",
-        "Performance optimization"
+        "Owned and developed critical frontend modules using Angular, TypeScript, and RxJS",
+        "Collaborated with UX, backend, and product teams on feature delivery",
+        "Improved UI reliability by resolving performance bottlenecks",
+        "Enhanced application responsiveness through optimization"
       ]
     },
     {
-      "year": "2025",
-      "title": "Growth & Expansion",
-      "description": "Ongoing improvements and feature expansion.",
+      "year": "2017-2020",
+      "title": "Application Developer",
+      "description": "Conduent Business Services, Bangalore | Built secure document processing workflows.",
+      "logo": "conduent-white.svg",
       "details": [
-        "New features implementation",
-        "Enhanced user experience",
-        "Continuous monitoring and support"
+        "Designed configurable UI modules supporting 36 customer-specific workflows",
+        "Built secure Patient Health Information processing for 150+ hospitals",
+        "Led migration from Silverlight to Angular (75% size reduction)",
+        "Validated workflows to meet healthcare compliance requirements"
       ]
     },
     {
-      "year": "2025 Q2",
-      "title": "Infrastructure Update",
-      "description": "Migrating to cloud-based infrastructure for better scalability.",
+      "year": "2017",
+      "title": "PG-Diploma in Advanced Computing",
+      "description": "Centre for Development of Advanced Computing, Bangalore",
+      "logo": "cdac-white.svg",
       "details": [
-        "Cloud migration planning",
-        "Database optimization",
-        "Security enhancements"
+        "Completed intensive advanced computing program",
+        "Specialized in modern software development practices",
+        "Foundation for enterprise-scale application development"
       ]
     },
     {
-      "year": "2025 Q3",
-      "title": "AI Integration",
-      "description": "Implementing AI-powered features to enhance user experience.",
+      "year": "2010-2014",
+      "title": "Bachelors in Computer Science",
+      "description": "Jaypee Institute of Information Technology, Noida",
+      "logo": "jiit.png",
       "details": [
-        "Machine learning model development",
-        "AI chatbot implementation",
-        "Predictive analytics integration"
-      ]
-    },
-    {
-      "year": "2025 Q4",
-      "title": "Mobile App Launch",
-      "description": "Releasing native mobile applications for iOS and Android.",
-      "details": [
-        "Cross-platform development",
-        "Mobile UI/UX optimization",
-        "App store deployment"
-      ]
-    },
-    {
-      "year": "2026 Q1",
-      "title": "Global Expansion",
-      "description": "Expanding services to new markets and regions worldwide.",
-      "details": [
-        "Localization efforts",
-        "Regional server deployment",
-        "Multi-language support"
-      ]
-    },
-    {
-      "year": "2026 Q2",
-      "title": "Enterprise Features",
-      "description": "Introducing advanced features for enterprise clients.",
-      "details": [
-        "Advanced reporting tools",
-        "Custom integrations API",
-        "Dedicated support team"
-      ]
-    },
-    {
-      "year": "2026 Q3",
-      "title": "Community Building",
-      "description": "Creating a thriving community around the platform.",
-      "details": [
-        "Developer documentation",
-        "Community forum launch",
-        "Hackathon events"
+        "Four-year engineering degree program",
+        "Core coursework in algorithms, data structures, and system design",
+        "Foundation in programming languages and software engineering"
       ]
     }
   ]

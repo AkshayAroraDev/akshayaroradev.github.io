@@ -282,7 +282,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.2rem;
   position: relative;
   width: 100%;
 }
@@ -306,6 +306,35 @@
   color: tokens.$text-primary;
   margin: 0;
   padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: nowrap;
+  min-height: 50px;
+}
+
+.company-logo {
+  height: 48px;
+  min-width: 48px;
+  width: 48px;
+  object-fit: contain;
+  object-position: center;
+  opacity: 1;
+  transition: all 0.3s ease;
+  filter: brightness(1.15) contrast(1.15);
+  flex-shrink: 0;
+}
+
+.item-content:hover .company-logo {
+  filter: brightness(1.3) contrast(1.25);
+  transform: scale(1.1);
+}
+
+.item-company-divider {
+  color: tokens.$primary-purple;
+  margin: 0 0.5rem;
+  opacity: 0.6;
+  display: inline-block;
 }
 
 /* Item dot indicator (centered on year) */
@@ -361,10 +390,13 @@
 
 .item-details li {
   font-size: 0.9rem;
-  color: tokens.$text-tertiary;
+  color: tokens.$text-secondary;
   line-height: 1.5;
   padding-left: 1.5rem;
   position: relative;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
 }
 
 .item-details li:before {
@@ -374,6 +406,9 @@
   color: tokens.$primary-purple;
   font-weight: bold;
   font-size: 1.2rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
 }
 
 /* Responsive design */

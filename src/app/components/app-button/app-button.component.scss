@@ -63,7 +63,7 @@
     background: linear-gradient(
       135deg,
       rgba(tokens.$primary-purple, tokens.$glass-opacity-hover),
-      rgba(tokens.$primary-magenta, tokens.$glass-opacity-hover / 1.5)
+      rgba(tokens.$primary-magenta, calc(tokens.$glass-opacity-hover * 1.5))
     );
     border: 1px solid rgba(tokens.$primary-purple, 0.25);
     color: #ffffff;

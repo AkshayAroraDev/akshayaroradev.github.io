@@ -44,11 +44,14 @@
             <!-- Dot centered on year -->
             <div class="item-dot"></div>
           </div>
-          <h3 class="item-title">{{ item.title }}</h3>
+          <h3 class="item-title">
+            {{ item.title }} <span class="item-company-divider">|</span> 
+            <img *ngIf="item.logo" [src]="'assets/icons/companies/' + item.logo" [alt]="item.title" class="company-logo" />
+            {{ item.description.split(' | ')[0] }}
+          </h3>
         </div>
 
         <div class="item-body">
-          <p class="item-description">{{ item.description }}</p>
           <ul class="item-details">
             <li *ngFor="let detail of item.details">{{ detail }}</li>
           </ul>

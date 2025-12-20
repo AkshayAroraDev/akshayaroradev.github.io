@@ -2,7 +2,7 @@
 
 .skills {
   min-height: 100vh;
-  padding: 0 20px;
+  padding: 80px 20px;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -22,33 +22,129 @@
   position: relative;
 }
 
-/* Split layout: left title | right beams */
 .skills__split {
   display: grid;
-  grid-template-columns: 0.55fr 0.45fr;
-  gap: 80px;
-  align-items: center;
-  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
 }
 
-.skills__left { align-self: center; justify-self: start; }
-
-.skills__left-title {
+.skills__left {
   display: flex;
   flex-direction: column;
-  line-height: 1.02;
   justify-content: center;
-  flex-shrink: 0;
-  min-width: max-content;
 }
 
-.skills__left-title { padding-left: clamp(10px, 4vw, 60px); }
-.skills__left-title .line-1 {
-  font-size: clamp(42px, 8vw, 80px);
-  color: tokens.$text-secondary;
-  font-weight: 600;
-  letter-spacing: -1px;
-  line-height: 1.02;
+.skills__left-title {
+  padding-left: 40px;
+
+  .line {
+    display: block;
+    font-size: clamp(48px, 8vw, 72px);
+    font-weight: 600;
+    line-height: 1.1;
+    color: tokens.$text-primary;
+    margin: 0;
+  }
+}
+
+  .experience__timeline {
+    gap: 30px;
+    padding: 20px 0;
+  }
+
+  .experience__timeline::before {
+    left: 15px;
+  }
+
+  .experience__card {
+    margin-top: 20px;
+  }
+
+  .experience__dot {
+    left: 15px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .experience__content {
+    margin-left: 50px;
+    padding: 20px 24px;
+    border-radius: 12px;
+  }
+
+  .experience__company {
+    font-size: 18px;
+  }
+
+  .experience__title {
+    font-size: 16px;
+  }
+
+  .experience__highlight {
+    font-size: 12px;
+  }
+
+
+@media (max-width: 480px) {
+  .skills {
+    padding: 30px 15px;
+    min-height: auto;
+  }
+
+  .skills__container {
+    padding: 0 15px;
+  }
+
+  .skills__header {
+    margin-bottom: 40px;
+  }
+
+  .skills__title {
+    font-size: 24px;
+  }
+
+  .skills__subtitle {
+    font-size: 12px;
+  }
+
+  .experience__timeline {
+    gap: 20px;
+  }
+
+  .experience__timeline::before {
+    left: 12px;
+  }
+
+  .experience__dot {
+    left: 12px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .experience__content {
+    margin-left: 40px;
+    padding: 16px 20px;
+    font-size: 12px;
+  }
+
+  .experience__company {
+    font-size: 14px;
+  }
+
+  .experience__title {
+    font-size: 13px;
+  }
+
+  .experience__description {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .experience__highlight {
+    font-size: 11px;
+    padding-left: 12px;
+  }
 }
 
 /* Typewriter for 'toolbox' line - now using om-typewriter component */

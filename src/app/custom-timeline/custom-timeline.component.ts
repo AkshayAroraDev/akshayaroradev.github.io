@@ -32,6 +32,7 @@ interface TimelineItem {
   year: string;
   title: string;
   description: string;
+  logo?: string;
   details: string[];
 }
 
