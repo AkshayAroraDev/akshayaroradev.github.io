@@ -12,7 +12,7 @@
 
 .skills__container {
   width: 100%;
-  max-width: 1400px;
+  max-width: 80vw;
   margin: 0 auto;
   padding: 0 40px;
 }
@@ -24,9 +24,23 @@
 
 .skills__split {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.9fr 1.1fr;
   gap: 60px;
   align-items: start;
+}
+
+@media (max-width: 1399px) {
+  .skills__split {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (min-width: 1700px) {
+  .skills__split {
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 80px;
+  }
 }
 
 .skills__left {
@@ -36,15 +50,25 @@
 }
 
 .skills__left-title {
-  padding-left: 40px;
+  padding-left: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  order: -1;
+  width: 100%;
+  margin-bottom: 40px;
+  text-align: center;
 
   .line {
-    display: block;
-    font-size: clamp(48px, 8vw, 72px);
+    display: inline;
+    font-size: 68px;
     font-weight: 600;
     line-height: 1.1;
     color: tokens.$text-primary;
     margin: 0;
+    white-space: nowrap;
   }
 }
 
@@ -151,15 +175,15 @@
 
 /* NGXUI Typewriter component styling */
 .typewriter-toolbox {
-  display: block;
+  display: inline-block;
   line-height: 1;
 }
 
 om-typewriter[styleClass="typewriter-toolbox"] ::ng-deep {
-  font-size: clamp(72px, 10vw, 100px) !important;
+  font-size: 72px !important;
   
   .om-typewriter-text {
-    font-size: clamp(72px, 10vw, 100px) !important;
+    font-size: 72px !important;
     color: tokens.$text-primary;
     font-weight: 700;
     letter-spacing: -1.5px;
@@ -167,16 +191,43 @@ om-typewriter[styleClass="typewriter-toolbox"] ::ng-deep {
   }
 }
 
+@media (min-width: 1400px) {
+  .skills__left-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    order: 0;
+    margin-bottom: 0;
+
+    .line {
+      display: block;
+      font-size: clamp(48px, 8vw, 72px);
+    }
+  }
+
+  .typewriter-toolbox {
+    display: block;
+  }
+
+  om-typewriter[styleClass="typewriter-toolbox"] ::ng-deep {
+    font-size: clamp(72px, 10vw, 100px) !important;
+    
+    .om-typewriter-text {
+      font-size: clamp(72px, 10vw, 100px) !important;
+      font-weight: 700;
+    }
+  }
+}
+
 .beam-wrapper {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   grid-template-rows: repeat(4, minmax(60px, auto));
-  width: 100%;
-  max-width: 1000px;
+  width: calc(100% - 80px);
   margin: 0 auto;
-  gap: 40px 180px;
+  gap: clamp(40px, 5vw, 60px) clamp(180px, 15vw, 300px);
   position: relative;
-  padding: 40px 0;
+  padding: clamp(40px, 5vh, 60px) 0;
   min-height: 400px;
 }
 
@@ -199,6 +250,7 @@ om-connection-beam {
   position: relative;
   z-index: 2;
   overflow: visible;
+  min-width: 0;
 }
 
 .skills__skill-item--right {
@@ -249,10 +301,10 @@ om-connection-beam {
 }
 
 .skills__center-badge {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: tokens.$bg-base; /* opaque base like pills */
+  width: 120px;
+  height: 120px;
+  border-radius: 16px;
+  background: tokens.$bg-base;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -260,6 +312,19 @@ om-connection-beam {
   box-shadow: 0 4px 24px -10px rgba(tokens.$primary-purple, 0.22);
   position: relative;
   z-index: 3;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.skills__center-badge:hover .skills__center-icon {
+  transform: scale(1.15) rotate(5deg);
+}
+
+@media (min-width: 1440px) {
+  .skills__center-badge {
+    width: 140px;
+    height: 140px;
+  }
 }
 
 .skills__center-inner {
@@ -276,9 +341,17 @@ om-connection-beam {
 }
 
 .skills__center-icon {
-  width: 36px;
-  height: 36px;
+  width: 48px;
+  height: 48px;
   color: #fff;
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 1440px) {
+  .skills__center-icon {
+    width: 56px;
+    height: 56px;
+  }
 }
 
 .skills__skill-badge {
@@ -288,6 +361,7 @@ om-connection-beam {
   /* Opaque base prevents beam show-through; matches page bg */
   background: tokens.$bg-base;
   z-index: 2; /* stays above beams */
+  white-space: nowrap;
 }
 
 .skills__skill-icon-wrapper {
@@ -307,6 +381,13 @@ om-connection-beam {
   
   .skills__skill-badge:hover & {
     transform: scale(1.2);
+  }
+}
+
+@media (min-width: 1440px) {
+  .skills__skill-icon {
+    width: 26px;
+    height: 26px;
   }
 }
 
@@ -331,6 +412,14 @@ om-connection-beam {
   min-width: auto;
   text-align: center;
   position: relative;
+}
+
+@media (min-width: 1440px) {
+  .skills__pill-inner {
+    gap: 12px;
+    padding: 16px 26px;
+    font-size: 18px;
+  }
 }
 
 .skills__icon {
