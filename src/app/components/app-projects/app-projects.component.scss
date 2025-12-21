@@ -2,36 +2,39 @@
 
 .projects {
   width: 100vw;
+  height: 100vh;
   position: relative;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  min-height: 100vh;
-  padding: 80px 20px;
-  background: linear-gradient(
-    135deg,
-    rgba(10, 10, 15, 0.9) 0%,
-    rgba(15, 15, 26, 0.9) 100%
-  );
   overflow: hidden;
-
-  &__container {
-    max-width: 1200px;
-    margin: 0 auto;
+  background: #0a0a0f;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 140px;
+    background-image: 
+      linear-gradient(rgba(66, 66, 66, 0.2) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(66, 66, 66, 0.2) 1px, transparent 1px);
+    background-size: 30px 30px;
+    pointer-events: none;
+    z-index: 1;
   }
 
-  &__header {
+  &__center-heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
     text-align: center;
-    margin-bottom: 80px;
-    animation: slideUp 0.8s ease-out;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+    pointer-events: none;
   }
 
   &__title {
-    font-size: clamp(32px, 5vw, 56px);
+    font-size: clamp(48px, 8vw, 72px);
     font-weight: 700;
     background: linear-gradient(
       135deg,
@@ -43,66 +46,68 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 16px;
-    animation: gradientFlow 8s ease infinite;
-  }
-
-  &__subtitle {
-    font-size: clamp(16px, 2vw, 18px);
-    color: rgba(217, 217, 227, 0.7);
     margin: 0;
+    animation: gradientFlow 8s ease infinite;
+    letter-spacing: -1px;
   }
 
-  &__carousel {
-    display: flex;
-    gap: 24px;
-    overflow-x: auto;
-    padding: 40px 20px;
-    scroll-behavior: smooth;
+  &__cards-container {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    
-    &::-webkit-scrollbar {
-      height: 8px;
-    }
-
-    &::-webkit-scrollbar-track {
-      background: rgba(139, 92, 246, 0.1);
-      border-radius: 4px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background: rgba(139, 92, 246, 0.4);
-      border-radius: 4px;
-
-      &:hover {
-        background: rgba(139, 92, 246, 0.6);
-      }
-    }
+    height: 100%;
+    z-index: 5;
   }
 }
 
 .project-card {
-  position: relative;
-  width: 550px;
-  height: 650px;
-  flex-shrink: 0;
+  position: absolute;
   background: linear-gradient(
     135deg,
     rgba(139, 92, 246, 0.08) 0%,
     rgba(217, 70, 239, 0.08) 100%
   );
   border: 1px solid rgba(139, 92, 246, 0.25);
-  border-radius: 20px;
+  border-radius: 16px;
   overflow: hidden;
-  cursor: pointer;
-  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: grab;
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
   display: flex;
   flex-direction: column;
+  perspective: 1000px;
+  z-index: 5;
+  user-select: none;
+
+  &.dragging {
+    cursor: grabbing;
+    opacity: 0.9;
+    box-shadow: 0 50px 100px rgba(139, 92, 246, 0.8);
+    transition: none;
+    z-index: 100;
+  }
+
+  // Different sizes for each card
+  &:nth-child(1) {
+    width: 420px;
+    height: 480px;
+    transform: rotateZ(-3deg);
+  }
+
+  &:nth-child(2) {
+    width: 360px;
+    height: 280px;
+    transform: translateX(-50%) rotateZ(2.5deg);
+  }
+
+  &:nth-child(3) {
+    width: 390px;
+    height: 450px;
+    transform: rotateZ(-2deg);
+  }
 
   &:hover {
     border-color: rgba(139, 92, 246, 0.5);
-    transform: translateY(-20px) scale(1.05);
-    box-shadow: 0 40px 80px rgba(139, 92, 246, 0.5);
+    box-shadow: 0 30px 60px rgba(139, 92, 246, 0.5);
     filter: brightness(1.1);
 
     .project-card__title {
@@ -115,19 +120,43 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+  }
 
-    .project-card__company {
-      color: rgba(217, 70, 239, 1);
-    }
+  // Rotation on hover - different direction for each card
+  &:nth-child(1):hover {
+    transform: translateY(-15px) rotateZ(8deg) scale(1.1);
+  }
 
-    .project-card__gallery::before {
-      opacity: 1;
-    }
+  &:nth-child(2):hover {
+    transform: translateX(-50%) translateY(-15px) rotateZ(-7deg) scale(1.1);
+  }
+
+  &:nth-child(3):hover {
+    transform: translateY(-15px) rotateZ(7deg) scale(1.1);
+  }
+
+  // Position 1: Top Left (Venue Synthesis)
+  &--position-1 {
+    top: clamp(220px, 8vh, 280px);
+    left: clamp(220px, 5vw, 280px);
+  }
+
+  // Position 2: Top Center (AI Mode Toggle)
+  &--position-2 {
+    top: clamp(40px, 6vh, 100px);
+    left: 50%;
+    transform: translateX(-50%) rotateZ(2.5deg);
+  }
+
+  // Position 3: Bottom Right (Emergency Time)
+  &--position-3 {
+    bottom: clamp(60px, 8vh, 120px);
+    right: clamp(40px, 5vw, 100px);
   }
 
   &__gallery {
     width: 100%;
-    height: 200px;
+    height: 180px;
     background: rgba(0, 0, 0, 0.4);
     overflow: hidden;
     position: relative;
@@ -149,38 +178,10 @@
     }
   }
 
-  .gallery-wrapper {
-    display: flex;
-    gap: 12px;
-    height: 100%;
-    padding: 12px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-
-    &::-webkit-scrollbar {
-      height: 4px;
-    }
-
-    &::-webkit-scrollbar-track {
-      background: rgba(139, 92, 246, 0.1);
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background: rgba(139, 92, 246, 0.4);
-      border-radius: 2px;
-
-      &:hover {
-        background: rgba(139, 92, 246, 0.6);
-      }
-    }
-  }
-
   .gallery-image {
+    width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 6px;
-    flex-shrink: 0;
-    min-width: 220px;
     transition: transform 0.3s ease;
 
     &:hover {
@@ -189,150 +190,20 @@
   }
 
   &__content {
-    padding: 24px;
-    overflow-y: auto;
-    flex: 1;
+    padding: 16px;
     display: flex;
-    flex-direction: column;
-    gap: 12px;
-
-    &::-webkit-scrollbar {
-      width: 4px;
-    }
-
-    &::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background: rgba(139, 92, 246, 0.3);
-      border-radius: 2px;
-
-      &:hover {
-        background: rgba(139, 92, 246, 0.5);
-      }
-    }
-  }
-
-  &__header {
-    margin-bottom: 8px;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
   }
 
   &__title {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     color: tokens.$text-primary;
-    margin: 0 0 4px 0;
-    transition: all 0.5s ease;
-  }
-
-  &__company {
-    font-size: 12px;
-    color: rgba(217, 70, 239, 0.7);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: color 0.5s ease;
-  }
-
-  &__description {
-    font-size: 13px;
-    color: rgba(217, 217, 227, 0.8);
-    line-height: 1.5;
     margin: 0;
-  }
-
-  &__meta {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    padding: 8px 0;
-    border-top: 1px solid rgba(139, 92, 246, 0.15);
-    border-bottom: 1px solid rgba(139, 92, 246, 0.15);
-    font-size: 12px;
-
-    .meta-item {
-      color: rgba(217, 217, 227, 0.65);
-
-      strong {
-        color: rgba(139, 92, 246, 0.85);
-        margin-right: 4px;
-      }
-    }
-  }
-
-  &__technologies {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-
-  &__highlights {
-    h4 {
-      font-size: 12px;
-      font-weight: 600;
-      color: rgba(139, 92, 246, 0.85);
-      text-transform: uppercase;
-      letter-spacing: 0.4px;
-      margin: 0 0 6px 0;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-
-      li {
-        font-size: 12px;
-        color: rgba(217, 217, 227, 0.7);
-        padding-left: 12px;
-        margin-bottom: 3px;
-        position: relative;
-
-        &::before {
-          content: '•';
-          position: absolute;
-          left: 0;
-          color: rgba(217, 70, 239, 0.6);
-        }
-      }
-    }
-  }
-
-  &__metrics {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-
-    .metric {
-      background: rgba(139, 92, 246, 0.06);
-      border: 1px solid rgba(139, 92, 246, 0.12);
-      border-radius: 6px;
-      padding: 8px;
-      text-align: center;
-
-      &__label {
-        font-size: 11px;
-        color: rgba(217, 217, 227, 0.5);
-        text-transform: capitalize;
-        display: block;
-        margin-bottom: 2px;
-      }
-
-      &__value {
-        font-size: 12px;
-        color: rgba(139, 92, 246, 0.85);
-        font-weight: 600;
-        display: block;
-      }
-    }
-  }
-
-  &__actions {
-    display: flex;
-    gap: 8px;
-    margin-top: auto;
-    flex-wrap: wrap;
+    transition: all 0.5s ease;
+    text-align: center;
   }
 }
 
@@ -350,25 +221,6 @@
   &:hover {
     background: rgba(139, 92, 246, 0.2);
     border-color: rgba(139, 92, 246, 0.4);
-  }
-}
-
-.project-btn {
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(217, 70, 239, 0.15));
-  border: 1px solid rgba(139, 92, 246, 0.25);
-  color: rgba(217, 217, 227, 0.9);
-  padding: 8px 14px;
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-
-  &:hover {
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(217, 70, 239, 0.3));
-    border-color: rgba(139, 92, 246, 0.5);
-    transform: translateY(-2px);
   }
 }
 
@@ -392,55 +244,218 @@
   }
 }
 
-@media (max-width: 1024px) {
+// Large Tablet/Smaller Desktop: 1024px - 1200px
+@media (max-width: 1200px) {
   .project-card {
-    width: 480px;
-    height: 600px;
-
-    &__gallery {
-      height: 160px;
+    &:nth-child(1) {
+      width: 380px;
+      height: 440px;
     }
 
-    &__content {
-      padding: 20px;
-      gap: 10px;
+    &:nth-child(2) {
+      width: 330px;
+      height: 260px;
     }
 
-    &__title {
-      font-size: 18px;
+    &:nth-child(3) {
+      width: 360px;
+      height: 410px;
     }
   }
 }
 
+// Tablet: Aggressive reduction - 1024px
+@media (max-width: 1024px) {
+  .project-card {
+    &:nth-child(1) {
+      width: 320px;
+      height: 380px;
+    }
+
+    &:nth-child(2) {
+      width: 280px;
+      height: 220px;
+    }
+
+    &:nth-child(3) {
+      width: 300px;
+      height: 360px;
+    }
+
+    // Adjust positions for smaller screens
+    &--position-1 {
+      top: clamp(50px, 7vh, 100px);
+      left: clamp(30px, 4vw, 80px);
+    }
+
+    &--position-2 {
+      top: clamp(30px, 5vh, 80px);
+    }
+
+    &--position-3 {
+      bottom: clamp(50px, 7vh, 100px);
+      right: clamp(30px, 4vw, 80px);
+    }
+  }
+}
+
+// Small Tablet: Very aggressive reduction - 900px
+@media (max-width: 900px) {
+  .project-card {
+    &:nth-child(1) {
+      width: 280px;
+      height: 340px;
+    }
+
+    &:nth-child(2) {
+      width: 240px;
+      height: 190px;
+    }
+
+    &:nth-child(3) {
+      width: 260px;
+      height: 320px;
+    }
+
+    // Further adjust positions
+    &--position-1 {
+      top: clamp(40px, 6vh, 80px);
+      left: clamp(25px, 3vw, 60px);
+    }
+
+    &--position-2 {
+      top: clamp(25px, 4vh, 60px);
+    }
+
+    &--position-3 {
+      bottom: clamp(40px, 6vh, 80px);
+      right: clamp(25px, 3vw, 60px);
+    }
+  }
+}
+
+// Extra small tablet: Maximum reduction before mobile - 800px
+@media (max-width: 800px) {
+  .project-card {
+    &:nth-child(1) {
+      width: 240px;
+      height: 290px;
+    }
+
+    &:nth-child(2) {
+      width: 210px;
+      height: 165px;
+    }
+
+    &:nth-child(3) {
+      width: 225px;
+      height: 275px;
+    }
+
+    // Final adjustments before mobile
+    &--position-1 {
+      top: clamp(35px, 5vh, 70px);
+      left: clamp(20px, 2.5vw, 50px);
+    }
+
+    &--position-2 {
+      top: clamp(20px, 3.5vh, 50px);
+    }
+
+    &--position-3 {
+      bottom: clamp(35px, 5vh, 70px);
+      right: clamp(20px, 2.5vw, 50px);
+    }
+  }
+}
+
+// Mobile: Vertical stack layout
 @media (max-width: 768px) {
   .projects {
-    padding: 60px 16px;
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px;
 
-    &__carousel {
+    &::before {
+      inset: 20px;
+    }
+
+    &__center-heading {
+      position: relative;
+      top: auto;
+      left: auto;
+      transform: none;
+      z-index: 10;
+      text-align: center;
+      margin-bottom: 40px;
+      pointer-events: auto;
+    }
+
+    &__title {
+      font-size: 32px;
+    }
+
+    &__cards-container {
+      position: relative;
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
       padding: 20px 0;
     }
   }
 
   .project-card {
-    width: 100%;
-    min-width: 300px;
-    height: 450px;
+    position: relative !important;
+    width: 70vw !important;
+    height: 60vh !important;
+    cursor: default;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    margin: 0 auto;
 
-    &__gallery {
-      height: 150px;
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3) {
+      width: 70vw !important;
+      height: 60vh !important;
+      transform: none !important;
     }
 
-    &__content {
-      padding: 16px;
-      gap: 8px;
+    &--position-1,
+    &--position-2,
+    &--position-3 {
+      top: auto !important;
+      left: auto !important;
+      right: auto !important;
+      bottom: auto !important;
+      transform: none !important;
+    }
+
+    &:hover {
+      transform: scale(1.02) !important;
+      box-shadow: 0 30px 60px rgba(139, 92, 246, 0.5);
+    }
+
+    &:nth-child(1):hover,
+    &:nth-child(2):hover,
+    &:nth-child(3):hover {
+      transform: scale(1.02) !important;
+    }
+
+    &__gallery {
+      height: 140px;
     }
 
     &__title {
-      font-size: 16px;
-    }
-
-    &__description {
-      font-size: 12px;
+      font-size: 14px;
     }
   }
 }

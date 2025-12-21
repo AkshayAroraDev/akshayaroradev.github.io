@@ -31,7 +31,7 @@ export class AppFooterComponent {
 
   socialLinks = [
     { label: 'LinkedIn', url: 'https://www.linkedin.com/in/akshay-arora-3b25855b/', icon: 'in' },
-    { label: 'GitHub', url: 'https://github.com/F4C3L3SS', icon: 'github' },
+    { label: 'GitHub', url: 'https://github.com/AkshayAroraDev', icon: 'github' },
     { label: 'Email', url: 'mailto:akshayarora.work@gmail.com', icon: 'envelope' }
   ];
 

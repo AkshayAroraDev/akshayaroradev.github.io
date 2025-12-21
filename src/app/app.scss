@@ -10,12 +10,7 @@
 }
 
 body {
-  background: linear-gradient(
-    135deg,
-    #0a0a0f 0%,
-    #0f0f1a 50%,
-    #0d0d1a 100%
-  );
+  background: #0a0a0f;
   color: var(--text-primary);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
@@ -58,13 +53,34 @@ ol {
   align-items: center;
   overflow: hidden;
   width: 100%;
-  padding: 0 0 2rem 2rem;
+  margin: 0;
+  padding: 0;
 }
 
 /* Tracing Beam Positioning */
+:host ::ng-deep om-tracing-beam {
+  z-index: 999 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
+:host ::ng-deep .om-tracing-beam-beam {
+  z-index: 999 !important;
+}
+
+:host ::ng-deep om-tracing-beam > * {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 :host ::ng-deep om-tracing-beam.tracing-beam-right {
   --svg-right: 10px;
   --svg-left: auto;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 :host ::ng-deep om-tracing-beam.tracing-beam-right svg {
@@ -72,5 +88,5 @@ ol {
   right: 10px !important;
   left: auto !important;
   top: 0;
-  z-index: 999;
+  z-index: 10000 !important;
 }

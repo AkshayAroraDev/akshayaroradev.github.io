@@ -69,6 +69,36 @@
         "performance": "60fps",
         "browsers": "All modern"
       }
+    },
+    {
+      "id": 3,
+      "title": "EmergencyTime",
+      "company": "Personal Project",
+      "description": "A responsive web application designed to help people be better prepared to deal with natural disasters. Shipped boat time improvements and increased accessibility with slow internet connectivity.",
+      "role": "Full Stack Developer",
+      "period": "Jan 2015 - Sep 2015",
+      "technologies": ["Bootstrap", "HTML", "CSS", "JavaScript", "jQuery"],
+      "highlights": [
+        "Launched to help people prepare for natural disasters",
+        "Shipped boat time improvements",
+        "Designed responsive user-friendly interface",
+        "Improved accessibility with slow internet connectivity"
+      ],
+      "images": [
+        {
+          "src": "assets/projects/emergency-time/preview.jpg",
+          "alt": "EmergencyTime Project",
+          "caption": "Disaster preparedness web application"
+        }
+      ],
+      "links": {
+        "demo": "https://emergencytime.com"
+      },
+      "metrics": {
+        "accessibility": "WCAG 2.0",
+        "responsiveness": "Mobile-first",
+        "performance": "Optimized for slow networks"
+      }
     }
   ]
 }
