@@ -1,0 +1,72 @@
+<section class="projects">
+  <div class="projects__container">
+    <div class="projects__header">
+      <h2 class="projects__title">Featured Projects</h2>
+      <p class="projects__subtitle">Highlight of professional work and technical achievements</p>
+    </div>
+
+    <div class="projects__carousel" #carouselContainer>
+      <article 
+        *ngFor="let project of projects; let i = index" 
+        class="project-card">
+
+        <div class="project-card__gallery">
+          <div class="gallery-wrapper">
+            <img 
+              *ngFor="let image of project.images"
+              [src]="image.src" 
+              [alt]="image.alt"
+              class="gallery-image">
+          </div>
+        </div>
+
+        <div class="project-card__content">
+          <div class="project-card__header">
+            <h3 class="project-card__title">{{ project.title }}</h3>
+            <span class="project-card__company">{{ project.company }}</span>
+          </div>
+
+          <p class="project-card__description">{{ project.description }}</p>
+
+          <div class="project-card__meta">
+            <span class="meta-item">
+              <strong>Role:</strong> {{ project.role }}
+            </span>
+            <span class="meta-item">
+              <strong>Period:</strong> {{ project.period }}
+            </span>
+          </div>
+
+          <div class="project-card__technologies">
+            <span *ngFor="let tech of project.technologies" class="tech-badge">
+              {{ tech }}
+            </span>
+          </div>
+
+          <div class="project-card__highlights">
+            <h4>Key Achievements</h4>
+            <ul>
+              <li *ngFor="let highlight of project.highlights">{{ highlight }}</li>
+            </ul>
+          </div>
+
+          <div class="project-card__metrics">
+            <div *ngFor="let metric of project.metrics | keyvalue" class="metric">
+              <span class="metric__label">{{ metric.key }}</span>
+              <span class="metric__value">{{ metric.value }}</span>
+            </div>
+          </div>
+
+          <div class="project-card__actions">
+            <button 
+              *ngFor="let link of project.links | keyvalue"
+              class="project-btn"
+              (click)="openLink(link.value)">
+              View {{ link.key | titlecase }} →
+            </button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

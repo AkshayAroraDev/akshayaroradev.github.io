@@ -1,0 +1,74 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Venue Synthesis",
+      "company": "Harman International Industries",
+      "description": "Advanced audio synthesis platform for professional venue systems. Led frontend architecture and UI/UX implementation for real-time audio control and visualization.",
+      "role": "Software Engineer I",
+      "period": "2023-2024",
+      "technologies": ["Angular", "TypeScript", "RxJS", "D3.js", "WebGL"],
+      "highlights": [
+        "Architected real-time audio visualization dashboard",
+        "Implemented complex state management for multi-channel audio controls",
+        "Optimized rendering performance for 60fps animations",
+        "Built reusable component library for audio UI patterns"
+      ],
+      "images": [
+        {
+          "src": "assets/projects/venue-synthesis/3d-venue-models.gif",
+          "alt": "3D Venue Models Visualization",
+          "caption": "Real-time 3D venue acoustics modeling"
+        },
+        {
+          "src": "assets/projects/venue-synthesis/direct-spl-mapping.gif",
+          "alt": "Direct SPL Mapping",
+          "caption": "Sound pressure level mapping visualization"
+        },
+        {
+          "src": "assets/projects/venue-synthesis/delay-spread.jpg",
+          "alt": "Delay Spread Analysis",
+          "caption": "Audio delay and spread analysis"
+        }
+      ],
+      "links": {
+        "live": "https://jblpro.com/en/products/venue-synthesis"
+      },
+      "metrics": {
+        "performance": "60fps rendering",
+        "accessibility": "WCAG 2.1 AA",
+        "bundle": "150KB gzipped"
+      }
+    },
+    {
+      "id": 2,
+      "title": "AI Mode Toggle",
+      "company": "Personal Project",
+      "description": "Smooth, modern AI mode toggle animation inspired by Google's design. Pure HTML, CSS, and vanilla JavaScript implementation with responsive design.",
+      "role": "UI Developer",
+      "period": "2024",
+      "technologies": ["HTML", "CSS", "JavaScript", "Animation"],
+      "highlights": [
+        "Smooth cubic-bezier animation transitions",
+        "Responsive design across all devices",
+        "Accessibility-first approach with ARIA labels",
+        "No dependencies - pure vanilla implementation"
+      ],
+      "images": [
+        {
+          "src": "assets/projects/ai-mode-toggle/demo.gif",
+          "alt": "AI Mode Toggle Animation",
+          "caption": "Smooth toggle animation demo"
+        }
+      ],
+      "links": {
+        "live": "https://jsfiddle.net/u9ecy0vj/"
+      },
+      "metrics": {
+        "filesize": "< 5KB",
+        "performance": "60fps",
+        "browsers": "All modern"
+      }
+    }
+  ]
+}

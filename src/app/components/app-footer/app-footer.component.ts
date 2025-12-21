@@ -34,4 +34,15 @@ export class AppFooterComponent {
     { label: 'GitHub', url: 'https://github.com/F4C3L3SS', icon: 'github' },
     { label: 'Email', url: 'mailto:akshayarora.work@gmail.com', icon: 'envelope' }
   ];
+
+  navigationLinks = [
+    { label: 'Home', url: '#hero' },
+    { label: 'Skills', url: '#skills' },
+    { label: 'Experience', url: '#timeline' }
+  ];
+
+  bottomLinks = [
+    { label: 'Privacy Policy', url: '/privacy' },
+    { label: 'Terms of Service', url: '/terms' }
+  ];
 }

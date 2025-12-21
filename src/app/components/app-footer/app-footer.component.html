@@ -31,10 +31,7 @@
       <div class="footer__section footer__links">
         <h3 class="footer__section-title">Navigation</h3>
         <ul class="footer__link-list">
-          <li><a href="#hero" class="footer__link">Home</a></li>
-          <li><a href="#skills" class="footer__link">Skills</a></li>
-          <li><a href="#timeline" class="footer__link">Experience</a></li>
-          <li><a href="#contact" class="footer__link">Contact</a></li>
+          <li *ngFor="let link of navigationLinks"><a [href]="link.url" class="footer__link">{{ link.label }}</a></li>
         </ul>
       </div>
     </div>
@@ -67,9 +64,12 @@
     <div class="footer__bottom">
       <p class="footer__copyright">&copy; {{ currentYear }} Akshay Arora. All rights reserved.</p>
       <div class="footer__bottom-links">
-        <a href="#" class="footer__bottom-link">Privacy Policy</a>
-        <span class="footer__divider-dot">•</span>
-        <a href="#" class="footer__bottom-link">Terms of Service</a>
+        <a *ngFor="let link of bottomLinks; let last = last" 
+           [href]="link.url" 
+           class="footer__bottom-link">
+          {{ link.label }}
+        </a>
+        <span class="footer__divider-dot" *ngIf="bottomLinks.length > 1">•</span>
       </div>
     </div>
   </div>
