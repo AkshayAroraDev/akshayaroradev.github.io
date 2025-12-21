@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-interface IconAttribution {
-  name: string;
-  artist: string;
-  source: string;
-  link: string;
-}
+import { IconAttribution } from '@src/app/models';
 
 @Component({
   selector: 'app-footer',

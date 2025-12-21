@@ -2,17 +2,8 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, ViewChild, ViewChildren, ElementRef,
 import { CommonModule } from '@angular/common';
 import { NgxConnectionBeamComponent } from '@omnedia/ngx-connection-beam';
 import { NgxTypewriterComponent } from '@omnedia/ngx-typewriter';
+import { SkillItem, SkillGroup } from '@src/app/models';
 import skillsData from '@src/json/skills.json';
-
-interface SkillItem {
-  name: string;
-  icon?: string;
-}
-
-interface SkillGroup {
-  title: string;
-  skills: SkillItem[];
-}
 
 @Component({
   selector: 'app-skills',
