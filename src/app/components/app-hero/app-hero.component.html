@@ -5,7 +5,20 @@
   >
     <div class="hero__container">
       <h1 class="hero__title">{{ name }}</h1>
-      <h2 class="hero__subtitle">{{ subtitle }}</h2>
+      <div class="content">
+        <om-split-text 
+          #splitText
+          [text]="subtitle"
+          splitType="words"
+          [delay]="150"
+          [duration]="3.5"
+          ease="elastic.out(1, 0.3)"
+          [from]="{ opacity: 0, y: 20 }"
+          [to]="{ opacity: 1, y: 0 }"
+          [animateOnlyOnce]="false"
+          styleClass="split-text-subtitle">
+        </om-split-text>
+      </div>
       
       <p class="hero__description">
         {{ description }}
