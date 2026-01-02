@@ -36,9 +36,24 @@ export class AppProjectsComponent implements AfterViewInit {
 
   onMouseDown(e: MouseEvent, card: HTMLElement) {
     this.draggedElement = card;
+    const container = card.parentElement;
+    
+    if (!container) return;
+    
     const rect = card.getBoundingClientRect();
-    this.offsetX = e.clientX - rect.left;
-    this.offsetY = e.clientY - rect.top;
+    const containerRect = container.getBoundingClientRect();
+    
+    // Get current position relative to container
+    const currentLeft = card.offsetLeft || 0;
+    const currentTop = card.offsetTop || 0;
+    
+    // Calculate offset relative to container, not viewport
+    this.offsetX = e.clientX - containerRect.left - currentLeft;
+    this.offsetY = e.clientY - containerRect.top - currentTop;
+    
+    card.style.position = 'absolute';
+    card.style.left = currentLeft + 'px';
+    card.style.top = currentTop + 'px';
     card.classList.add('dragging');
   }
 
@@ -56,7 +71,6 @@ export class AppProjectsComponent implements AfterViewInit {
     x = Math.max(0, Math.min(x, containerRect.width - this.draggedElement.offsetWidth));
     y = Math.max(0, Math.min(y, containerRect.height - this.draggedElement.offsetHeight));
 
-    this.draggedElement.style.position = 'absolute';
     this.draggedElement.style.left = x + 'px';
     this.draggedElement.style.top = y + 'px';
   }
@@ -64,6 +78,14 @@ export class AppProjectsComponent implements AfterViewInit {
   onMouseUp() {
     if (this.draggedElement) {
       this.draggedElement.classList.remove('dragging');
+      // Add smooth settle animation
+      this.draggedElement.style.transition = 'box-shadow 0.2s ease-out';
+      setTimeout(() => {
+        if (this.draggedElement) {
+          this.draggedElement.style.transition = '';
+        }
+      }, 200);
+      
       this.draggedElement = null;
     }
   }
