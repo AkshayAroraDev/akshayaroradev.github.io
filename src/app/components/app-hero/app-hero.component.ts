@@ -40,4 +40,11 @@ export class AppHeroComponent implements AfterViewInit, OnDestroy {
     link.download = 'Resume_AkshayArora_2025.pdf';
     link.click();
   }
+
+  scrollToFooter() {
+    const footer = document.getElementById('footer');
+    if (footer) {
+      footer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 }

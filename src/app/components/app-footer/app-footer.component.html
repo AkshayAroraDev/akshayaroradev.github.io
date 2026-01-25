@@ -1,63 +1,18 @@
-<footer class="footer">
+<footer class="footer" id="footer">
   <div class="footer__container">
     
-    <!-- Main Footer Content -->
-    <div class="footer__content">
-      
-      <!-- Brand Section -->
-      <div class="footer__section footer__brand">
-        <h2 class="footer__title">Akshay Arora</h2>
-        <p class="footer__subtitle">Frontend Engineer</p>
-        <div class="footer__divider"></div>
-        <p class="footer__text">Building beautiful, accessible, and scalable user interfaces.</p>
-      </div>
-
-      <!-- Social Links -->
-      <div class="footer__section footer__social">
-        <h3 class="footer__section-title">Connect</h3>
-        <nav class="footer__social-links" aria-label="Social media links">
-          <a *ngFor="let link of socialLinks" 
-             [href]="link.url" 
-             target="_blank" 
-             rel="noopener noreferrer"
-             class="footer__social-item"
-             [attr.aria-label]="link.label">
-            <img [src]="link.iconPath" [alt]="link.label" class="footer__social-icon" loading="lazy" />
-            <span class="footer__social-label">{{ link.label }}</span>
-          </a>
-        </nav>
-      </div>
-
-      <!-- Quick Links -->
-      <div class="footer__section footer__links">
-        <h3 class="footer__section-title">Navigation</h3>
-        <ul class="footer__link-list">
-          <li *ngFor="let link of navigationLinks"><a [href]="link.url" class="footer__link">{{ link.label }}</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Attribution Section -->
-    <div class="footer__attribution-section" *ngIf="iconAttributions.length > 0">
-      <div class="footer__attribution-header">
-        <h4 class="footer__attribution-title">Icon Credits</h4>
-        <p class="footer__attribution-note">Icons from Flaticon</p>
-      </div>
-      
-      <div class="footer__attribution-grid">
-        <div *ngFor="let attribution of iconAttributions" class="footer__attribution-item">
-          <p class="footer__attribution-icon-name">{{ attribution.name }}</p>
-          <p class="footer__attribution-artist">by 
-            <a [href]="attribution.link" target="_blank" rel="noopener noreferrer" class="footer__attribution-link">
-              {{ attribution.artist }}
-            </a>
-          </p>
-          <p class="footer__attribution-source">via Flaticon</p>
-        </div>
-      </div>
-
-      <div class="footer__flaticon-credit">
-        <p>Icons sourced from <a href="https://www.flaticon.com" target="_blank" rel="noopener noreferrer" class="footer__flaticon-link">Flaticon</a></p>
+    <!-- Connect Section -->
+    <div class="footer__connect">
+      <h3 class="footer__connect-title">Let's Connect</h3>
+      <div class="footer__connect-icons">
+        <a *ngFor="let link of connectLinks"
+           [href]="link.url"
+           target="_blank"
+           rel="noopener noreferrer"
+           [attr.aria-label]="link.label"
+           class="footer__connect-icon">
+          <img [src]="link.iconPath" [alt]="link.label" class="footer__connect-icon-img" loading="lazy" />
+        </a>
       </div>
     </div>
 

@@ -34,4 +34,22 @@ export class AppFooterComponent {
     { label: 'Skills', url: '#skills' },
     { label: 'Experience', url: '#timeline' }
   ];
+
+  connectLinks = [
+    {
+      label: 'LinkedIn',
+      url: 'https://www.linkedin.com/in/akshay-arora-3b25855b/',
+      iconPath: 'assets/icons/skills/linkedin.svg'
+    },
+    {
+      label: 'GitHub',
+      url: 'https://github.com/AkshayAroraDev',
+      iconPath: 'assets/icons/skills/github.svg'
+    },
+    {
+      label: 'Email',
+      url: 'mailto:akshayarora.work@gmail.com',
+      iconPath: 'assets/icons/skills/email.svg'
+    }
+  ];
 }

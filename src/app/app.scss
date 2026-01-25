@@ -19,6 +19,18 @@ body {
   min-height: 100vh;
 }
 
+app-root {
+  display: block;
+}
+
+app-hero {
+  margin-top: 70px;
+
+  @media (max-width: 768px) {
+    margin-top: 70px;
+  }
+}
+
 * {
   box-sizing: border-box;
 }

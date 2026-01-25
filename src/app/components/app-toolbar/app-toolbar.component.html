@@ -1,0 +1,21 @@
+<nav class="toolbar">
+  <div class="toolbar__container">
+    <div class="toolbar__branding">
+      <span class="toolbar__name">Akshay Arora</span>
+    </div>
+    <div class="toolbar__divider"></div>
+    <a *ngFor="let link of toolbarLinks"
+       (click)="scrollToSection(link)"
+       class="toolbar__icon"
+       [attr.aria-label]="link.label">
+      <span class="toolbar__icon-symbol">
+        <img *ngIf="link.icon === '⌂'" src="assets/icons/branding/home.svg" [alt]="link.label" class="toolbar__icon-img" />
+        <img *ngIf="link.icon === 'in'" src="assets/icons/skills/linkedin-nav.svg" [alt]="link.label" class="toolbar__icon-img" />
+        <img *ngIf="link.icon === '◆'" src="assets/icons/skills/github.svg" [alt]="link.label" class="toolbar__icon-img" />
+        <img *ngIf="link.icon === '✉'" src="assets/icons/skills/email.svg" [alt]="link.label" class="toolbar__icon-img" />
+        <span *ngIf="link.icon !== '⌂' && link.icon !== 'in' && link.icon !== '◆' && link.icon !== '✉'">{{ link.icon }}</span>
+      </span>
+      <span class="toolbar__tooltip">{{ link.label }}</span>
+    </a>
+  </div>
+</nav>
