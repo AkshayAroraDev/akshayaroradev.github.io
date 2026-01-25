@@ -1,7 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Project, ProjectsData } from '@src/app/models';
-import projectsData from '@src/json/projects.json';
+import { Project, ProjectsData } from '../../models';
+import projectsData from '../../../json/projects.json';
 
 @Component({
   selector: 'app-projects',

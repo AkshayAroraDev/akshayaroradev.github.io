@@ -25,8 +25,8 @@ import {
   PROGRESS_HIGHLIGHT_THRESHOLD,
   SVG_INITIAL_WIDTH,
   SVG_INITIAL_HEIGHT,
-} from '@src/constants/timeline.constants';
-import timelineData from '@src/json/timeline.json';
+} from '../../constants/timeline.constants';
+import timelineData from '../../json/timeline.json';
 
 interface TimelineItem {
   year: string;
