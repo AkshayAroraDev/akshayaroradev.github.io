@@ -4,7 +4,11 @@
     styleClass="hero-dotpattern"
   >
     <div class="hero__container">
-      <h1 class="hero__title">{{ name }}</h1>
+      <h1 class="hero__title">
+        <span class="hero__title--light me-lg" charMagnify [maxScale]="1.5" [radius]="30" [enableColor]="true" [enableWeight]="true">Hi, I'm</span>
+        <span class="hero__title--bold me-sm" charMagnify [maxScale]="1.5" [radius]="30" [enableColor]="true" [enableWeight]="true">Akshay</span>
+        <span class="hero__title--bold" charMagnify [maxScale]="1.5" [radius]="30" [enableColor]="true" [enableWeight]="true">Arora</span>
+      </h1>
       <div class="content">
         <om-split-text 
           #splitText

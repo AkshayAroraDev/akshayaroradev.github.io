@@ -13,6 +13,7 @@ import {
 import { CommonModule } from '@angular/common';
 import { Subject } from 'rxjs';
 import { takeUntil, throttleTime } from 'rxjs/operators';
+import { CharMagnifyDirective } from '../directives/proximity-magnify.directive';
 import { fromEvent } from 'rxjs';
 import {
   SCROLL_THROTTLE_MS,
@@ -39,7 +40,7 @@ interface TimelineItem {
 @Component({
   selector: 'app-custom-timeline',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CharMagnifyDirective],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './custom-timeline.component.html',
   styleUrls: ['./custom-timeline.component.scss'],

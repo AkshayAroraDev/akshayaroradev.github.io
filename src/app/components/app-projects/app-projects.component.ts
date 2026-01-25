@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { Project, ProjectsData } from '../../models';
 import projectsData from '../../../json/projects.json';
 import { ProjectModalComponent } from '../project-modal/project-modal.component';
+import { CharMagnifyDirective } from '../../directives/proximity-magnify.directive';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, ProjectModalComponent],
+  imports: [CommonModule, ProjectModalComponent, CharMagnifyDirective],
   templateUrl: './app-projects.component.html',
   styleUrl: './app-projects.component.scss'
 })

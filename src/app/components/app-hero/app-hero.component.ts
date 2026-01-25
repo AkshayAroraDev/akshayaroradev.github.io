@@ -2,21 +2,21 @@ import { Component, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
 import { AppButtonComponent } from '../app-button/app-button.component';
 import { NgxDotpatternComponent } from '@omnedia/ngx-dotpattern';
 import { NgxSplitTextComponent } from '@omnedia/ngx-split-text';
+import { CharMagnifyDirective } from '../../directives/proximity-magnify.directive';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [AppButtonComponent, NgxDotpatternComponent, NgxSplitTextComponent],
+  imports: [AppButtonComponent, NgxDotpatternComponent, NgxSplitTextComponent, CharMagnifyDirective],
   templateUrl: './app-hero.component.html',
   styleUrl: './app-hero.component.scss'
 })
 export class AppHeroComponent implements AfterViewInit, OnDestroy {
   @ViewChild('splitText') splitTextComponent!: NgxSplitTextComponent;
   
-  name = 'Hi, I\'m Akshay Arora';
   subtitle = 'Frontend Engineer';
   description = 'I code with purpose and design with empathy. As a Frontend Engineer, I transform complex requirements into intuitive, performant web experiences.\n\nPhilosophy: Great frontends are invisible. They remove friction, not add it.\n\nFun fact: This portfolio was built with Angular, SCSS, and countless cups of chai.';
-  
+
   private animationInterval: ReturnType<typeof setInterval> | undefined;
 
   ngAfterViewInit() {

@@ -34,21 +34,54 @@
 
   &__title {
     font-size: clamp(48px, 8vw, 80px);
-    font-weight: 900;
-    background: linear-gradient(
-      135deg,
-      tokens.$text-primary,
-      rgba(tokens.$primary-purple, 0.8),
-      rgba(tokens.$primary-magenta, 0.8),
-      tokens.$text-primary
-    );
-    background-size: 300% 300%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
     animation: gradientFlow 8s ease infinite, slideUp 1s ease-out;
     margin-bottom: 16px;
     letter-spacing: -1px;
+    display: inline-block;
+
+    .char {
+      display: inline-block;
+      transform-origin: center;
+      will-change: transform;
+      background: linear-gradient(
+        135deg,
+        tokens.$text-primary,
+        rgba(tokens.$primary-purple, 0.8),
+        rgba(tokens.$primary-magenta, 0.8),
+        tokens.$text-primary
+      );
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradientFlow 8s ease infinite;
+    }
+
+    .char--spacer {
+      display: inline-block;
+      width: 0.8em;
+    }
+
+    .char--spacer-word {
+      display: inline-block;
+      width: 0.3em;
+    }
+
+    &--light {
+      font-weight: 500;
+    }
+
+    &--bold {
+      font-weight: 700;
+    }
+  }
+
+  .me-lg {
+    margin-right: 0.8em;
+  }
+
+  .me-sm {
+    margin-right: 0.3em;
   }
 
   .content {
@@ -63,7 +96,7 @@
     ::ng-deep {
       .split-text-subtitle {
         font-size: clamp(20px, 4vw, 32px);
-        font-weight: 600;
+        font-weight: 500;
         letter-spacing: 0.5px;
         background: linear-gradient(
           90deg,
@@ -82,7 +115,7 @@
     line-height: 1.7;
     max-width: 700px;
     margin: 0 auto 48px;
-    font-weight: 400;
+    font-weight: 500;
   }
 
   &__cta-group {
