@@ -2,11 +2,12 @@ import { Component, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Project, ProjectsData } from '../../models';
 import projectsData from '../../../json/projects.json';
+import { ProjectModalComponent } from '../project-modal/project-modal.component';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ProjectModalComponent],
   templateUrl: './app-projects.component.html',
   styleUrl: './app-projects.component.scss'
 })
@@ -15,6 +16,9 @@ export class AppProjectsComponent implements AfterViewInit {
   draggedElement: HTMLElement | null = null;
   offsetX: number = 0;
   offsetY: number = 0;
+  selectedProject: Project | null = null;
+  isModalOpen: boolean = false;
+  isDragging: boolean = false;
 
   ngAfterViewInit() {
     // Only enable drag-and-drop on desktop (window width >= 768px)
@@ -35,6 +39,7 @@ export class AppProjectsComponent implements AfterViewInit {
   }
 
   onMouseDown(e: MouseEvent, card: HTMLElement) {
+    this.isDragging = false;
     this.draggedElement = card;
     const container = card.parentElement;
     
@@ -59,6 +64,9 @@ export class AppProjectsComponent implements AfterViewInit {
 
   onMouseMove(e: MouseEvent) {
     if (!this.draggedElement) return;
+
+    // Mark as dragging if mouse moved more than a few pixels
+    this.isDragging = true;
 
     const container = this.draggedElement.parentElement;
     if (!container) return;
@@ -92,5 +100,22 @@ export class AppProjectsComponent implements AfterViewInit {
 
   openLink(url: string) {
     window.open(url, '_blank');
+  }
+
+  openProjectModal(project: Project) {
+    // Only open modal if not dragging
+    if (!this.isDragging) {
+      this.selectedProject = project;
+      this.isModalOpen = true;
+      // Prevent body scroll when modal is open
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  closeModal() {
+    this.isModalOpen = false;
+    this.selectedProject = null;
+    // Restore body scroll
+    document.body.style.overflow = '';
   }
 }

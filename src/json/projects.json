@@ -6,13 +6,14 @@
       "company": "Harman International Industries",
       "description": "Advanced audio synthesis platform for professional venue systems. Led frontend architecture and UI/UX implementation for real-time audio control and visualization.",
       "role": "Software Engineer I",
-      "period": "2023-2024",
-      "technologies": ["Angular", "TypeScript", "RxJS", "D3.js", "WebGL"],
+      "period": "2020-2024",
+      "technologies": ["Angular", "TypeScript", "RxJS", "Angular Material", "Chart.js"],
       "highlights": [
-        "Architected real-time audio visualization dashboard",
-        "Implemented complex state management for multi-channel audio controls",
-        "Optimized rendering performance for 60fps animations",
-        "Built reusable component library for audio UI patterns"
+        "Designed and shipped 30+ production-ready reusable Angular components used across 6+ different products",
+        "Architected JSON-driven dynamic UI rendering framework, improving feature delivery speed by ~10×",
+        "Owned and developed critical frontend modules using Angular, TypeScript, and RxJS",
+        "Introduced TDD practices achieving 60% unit test coverage and reducing post-release defects by ~50%",
+        "Collaborated closely with UX, backend, and product teams to deliver scalable solutions"
       ],
       "images": [
         {
@@ -29,15 +30,15 @@
           "src": "assets/projects/venue-synthesis/delay-spread.jpg",
           "alt": "Delay Spread Analysis",
           "caption": "Audio delay and spread analysis"
+        },
+        {
+          "src": "assets/projects/venue-synthesis/mechanical-validation.gif",
+          "alt": "Mechanical Validation",
+          "caption": "Mechanical validation workflow"
         }
       ],
       "links": {
         "live": "https://jblpro.com/en/products/venue-synthesis"
-      },
-      "metrics": {
-        "performance": "60fps rendering",
-        "accessibility": "WCAG 2.1 AA",
-        "bundle": "150KB gzipped"
       }
     },
     {
@@ -46,7 +47,7 @@
       "company": "Personal Project",
       "description": "Smooth, modern AI mode toggle animation inspired by Google's design. Pure HTML, CSS, and vanilla JavaScript implementation with responsive design.",
       "role": "UI Developer",
-      "period": "2024",
+      "period": "2025",
       "technologies": ["HTML", "CSS", "JavaScript", "Animation"],
       "highlights": [
         "Smooth cubic-bezier animation transitions",
@@ -56,49 +57,36 @@
       ],
       "images": [
         {
-          "src": "assets/projects/ai-mode-toggle/demo.gif",
+          "src": "assets/projects/ai-mode-toggle/Animation.gif",
           "alt": "AI Mode Toggle Animation",
           "caption": "Smooth toggle animation demo"
         }
       ],
       "links": {
         "live": "https://jsfiddle.net/u9ecy0vj/"
-      },
-      "metrics": {
-        "filesize": "< 5KB",
-        "performance": "60fps",
-        "browsers": "All modern"
       }
     },
     {
       "id": 3,
       "title": "EmergencyTime",
       "company": "Personal Project",
-      "description": "A responsive web application designed to help people be better prepared to deal with natural disasters. Shipped boat time improvements and increased accessibility with slow internet connectivity.",
+      "description": "A responsive web application designed to help people be better prepared to deal with natural disasters. Shipped boot time improvements and increased accessibility with slow internet connectivity.",
       "role": "Full Stack Developer",
       "period": "Jan 2015 - Sep 2015",
       "technologies": ["Bootstrap", "HTML", "CSS", "JavaScript", "jQuery"],
       "highlights": [
         "Launched to help people prepare for natural disasters",
-        "Shipped boat time improvements",
+        "Shipped boot time improvements",
         "Designed responsive user-friendly interface",
         "Improved accessibility with slow internet connectivity"
       ],
       "images": [
         {
-          "src": "assets/projects/emergency-time/preview.jpg",
+          "src": "assets/projects/emergency-time/emergency.jpg",
           "alt": "EmergencyTime Project",
           "caption": "Disaster preparedness web application"
         }
-      ],
-      "links": {
-        "demo": "https://emergencytime.com"
-      },
-      "metrics": {
-        "accessibility": "WCAG 2.0",
-        "responsiveness": "Mobile-first",
-        "performance": "Optimized for slow networks"
-      }
+      ]
     }
   ]
 }

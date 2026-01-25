@@ -8,7 +8,8 @@
       <article 
         *ngFor="let project of projects; let i = index" 
         class="project-card"
-        [ngClass]="'project-card--position-' + (i + 1)">
+        [ngClass]="'project-card--position-' + (i + 1)"
+        (click)="openProjectModal(project)">
 
         <div class="project-card__gallery">
           <img 
@@ -24,3 +25,10 @@
     </div>
 
 </section>
+
+<!-- Project Modal -->
+<app-project-modal
+  [project]="selectedProject"
+  [isOpen]="isModalOpen"
+  (close)="closeModal()">
+</app-project-modal>
