@@ -24,19 +24,14 @@ export class AppFooterComponent {
   ];
 
   socialLinks = [
-    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/akshay-arora-3b25855b/', icon: 'in' },
-    { label: 'GitHub', url: 'https://github.com/AkshayAroraDev', icon: 'github' },
-    { label: 'Email', url: 'mailto:akshayarora.work@gmail.com', icon: 'envelope' }
+    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/akshay-arora-3b25855b/', iconPath: 'assets/icons/skills/linkedin.svg' },
+    { label: 'GitHub', url: 'https://github.com/AkshayAroraDev', iconPath: 'assets/icons/skills/github.svg' },
+    { label: 'Email', url: 'mailto:akshayarora.work@gmail.com', iconPath: 'assets/icons/skills/email.svg' }
   ];
 
   navigationLinks = [
     { label: 'Home', url: '#hero' },
     { label: 'Skills', url: '#skills' },
     { label: 'Experience', url: '#timeline' }
-  ];
-
-  bottomLinks = [
-    { label: 'Privacy Policy', url: '/privacy' },
-    { label: 'Terms of Service', url: '/terms' }
   ];
 }

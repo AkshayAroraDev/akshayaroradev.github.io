@@ -7,7 +7,7 @@
       <!-- Brand Section -->
       <div class="footer__section footer__brand">
         <h2 class="footer__title">Akshay Arora</h2>
-        <p class="footer__subtitle">Senior UI/Front-End Developer</p>
+        <p class="footer__subtitle">Frontend Engineer</p>
         <div class="footer__divider"></div>
         <p class="footer__text">Building beautiful, accessible, and scalable user interfaces.</p>
       </div>
@@ -20,9 +20,10 @@
              [href]="link.url" 
              target="_blank" 
              rel="noopener noreferrer"
-             class="footer__social-link"
+             class="footer__social-item"
              [attr.aria-label]="link.label">
-            {{ link.label }}
+            <img [src]="link.iconPath" [alt]="link.label" class="footer__social-icon" loading="lazy" />
+            <span class="footer__social-label">{{ link.label }}</span>
           </a>
         </nav>
       </div>
@@ -63,14 +64,6 @@
     <!-- Bottom Footer -->
     <div class="footer__bottom">
       <p class="footer__copyright">&copy; {{ currentYear }} Akshay Arora. All rights reserved.</p>
-      <div class="footer__bottom-links">
-        <a *ngFor="let link of bottomLinks; let last = last" 
-           [href]="link.url" 
-           class="footer__bottom-link">
-          {{ link.label }}
-        </a>
-        <span class="footer__divider-dot" *ngIf="bottomLinks.length > 1">•</span>
-      </div>
     </div>
   </div>
 </footer>

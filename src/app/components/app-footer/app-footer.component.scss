@@ -108,30 +108,61 @@
   gap: 12px;
 }
 
-.footer__social-link {
-  font-size: 15px;
-  color: tokens.$text-secondary;
+.footer__social-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   text-decoration: none;
+  color: tokens.$text-secondary;
   transition: all 0.3s ease;
-  padding: 8px 0;
-  position: relative;
   width: fit-content;
-
-  &::before {
-    content: '→';
-    margin-right: 8px;
-    opacity: 0;
-    transition: all 0.3s ease;
-  }
+  position: relative;
 
   &:hover {
-    color: tokens.$primary-purple;
+    color: tokens.$text-primary;
 
-    &::before {
-      opacity: 1;
-      margin-right: 12px;
+    .footer__social-icon {
+      border-color: tokens.$primary-purple;
+      background: rgba(tokens.$primary-purple, 0.15);
+      transform: translateY(-4px) scale(1.1) rotate(5deg);
+
+      &::before {
+        opacity: 1;
+      }
     }
   }
+}
+
+.footer__social-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: rgba(tokens.$primary-purple, 0.1);
+  border: 1px solid rgba(tokens.$primary-purple, 0.2);
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  object-fit: contain;
+  filter: drop-shadow(0 0 4px rgba(tokens.$primary-purple, 0.1));
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(tokens.$primary-purple, 0.2), rgba(tokens.$primary-magenta, 0.2));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+  }
+}
+
+.footer__social-label {
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .footer__link-list {

@@ -1,0 +1,18 @@
+<section class="connect">
+  <div class="connect__container">
+    <div class="connect__header">
+      <h2 class="connect__title">Let's Connect</h2>
+    </div>
+
+    <div class="connect__icons">
+      <a *ngFor="let link of connectLinks"
+         [href]="link.url"
+         target="_blank"
+         rel="noopener noreferrer"
+         [attr.aria-label]="link.label"
+         class="connect__icon">
+        <img [src]="link.iconPath" [alt]="link.label" class="connect__icon-img" loading="lazy" />
+      </a>
+    </div>
+  </div>
+</section>
