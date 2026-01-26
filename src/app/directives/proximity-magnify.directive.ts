@@ -83,7 +83,7 @@ export class CharMagnifyDirective implements AfterViewInit, OnDestroy {
 
       // Optional: Add color effect
       if (this.enableColor) {
-        animationConfig.color = `rgba(200, 100, 255, ${0.6 + strength * 0.4})`;
+        animationConfig.color = `rgba(59, 130, 246, ${0.6 + strength * 0.4})`;
       }
 
       // Optional: Add font weight effect

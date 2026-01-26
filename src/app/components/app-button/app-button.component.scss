@@ -6,7 +6,7 @@
   cursor: pointer;
   font-weight: 600;
   font-family: inherit;
-  transition: all 0.3s ease;
+  transition: tokens.$transition-default;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -14,28 +14,10 @@
   text-decoration: none;
   position: relative;
   overflow: hidden;
-
-  // Base background with glass morphism
-  background: linear-gradient(
-    135deg,
-    rgba(tokens.$primary-purple, 0.25),
-    rgba(tokens.$primary-magenta, 0.25)
-  );
-  backdrop-filter: blur(tokens.$blur-amount);
-  border: 1px solid rgba(tokens.$primary-purple, 0.5);
-  box-shadow: tokens.$shadow-sm, tokens.$inset-base;
   color: #ffffff;
 
-  &:hover {
-    background: linear-gradient(
-      135deg,
-      rgba(tokens.$primary-purple, 0.35),
-      rgba(tokens.$primary-magenta, 0.35)
-    );
-    border-color: rgba(tokens.$primary-purple, 0.7);
-    box-shadow: tokens.$shadow-hover, tokens.$inset-hover;
-    transform: translateY(-2px);
-  }
+  // Base button style using mixin
+  @include tokens.button-base();
 
   &:active {
     transform: translateY(0);
@@ -62,21 +44,21 @@
   &--primary {
     background: linear-gradient(
       135deg,
-      rgba(tokens.$primary-purple, tokens.$glass-opacity-hover),
-      rgba(tokens.$primary-magenta, calc(tokens.$glass-opacity-hover * 1.5))
+      rgba(var(--theme-primary-rgb), tokens.$glass-opacity-hover),
+      rgba(var(--theme-secondary-rgb), calc(tokens.$glass-opacity-hover * 1.5))
     );
-    border: 1px solid rgba(tokens.$primary-purple, 0.25);
+    border: 1px solid rgba(var(--theme-primary-rgb), 0.25);
     color: #ffffff;
-    box-shadow: 0 0 20px rgba(tokens.$primary-purple, 0.15), tokens.$inset-base;
+    box-shadow: 0 0 20px rgba(var(--theme-primary-rgb), 0.15), tokens.$inset-base;
 
     &:hover {
       background: linear-gradient(
         135deg,
-        rgba(tokens.$primary-purple, 0.14),
-        rgba(tokens.$primary-magenta, 0.12)
+        rgba(var(--theme-primary-rgb), 0.14),
+        rgba(var(--theme-secondary-rgb), 0.12)
       );
-      border-color: rgba(tokens.$primary-purple, 0.35);
-      box-shadow: 0 0 30px rgba(tokens.$primary-purple, 0.25), tokens.$inset-hover;
+      border-color: rgba(var(--theme-primary-rgb), 0.35);
+      box-shadow: 0 0 30px rgba(var(--theme-primary-rgb), 0.25), tokens.$inset-hover;
       transform: translateY(-2px);
     }
   }
@@ -84,19 +66,20 @@
   &--secondary {
     background: linear-gradient(
       135deg,
-      rgba(tokens.$primary-purple, 0.1),
-      rgba(tokens.$primary-magenta, 0.1)
+      rgba(var(--theme-primary-rgb), 0.12),
+      rgba(var(--theme-secondary-rgb), 0.1)
     );
-    border: 1px solid rgba(tokens.$primary-purple, 0.2);
+    border: 1px solid tokens.$button-secondary-border;
     color: tokens.$text-primary;
+    box-shadow: 0 0 15px rgba(var(--theme-primary-rgb), 0.1);
 
     &:hover {
       background: linear-gradient(
         135deg,
-        rgba(tokens.$primary-purple, 0.15),
-        rgba(tokens.$primary-magenta, 0.15)
+        rgba(var(--theme-primary-rgb), 0.15),
+        rgba(var(--theme-secondary-rgb), 0.15)
       );
-      border-color: rgba(tokens.$primary-purple, 0.3);
+      border-color: rgba(var(--theme-primary-rgb), 0.3);
     }
   }
 
@@ -107,16 +90,16 @@
     box-shadow: none;
 
     &:hover {
-      border-color: tokens.$primary-purple;
-      background: rgba(tokens.$primary-purple, 0.05);
-      box-shadow: 0 0 15px rgba(tokens.$primary-purple, 0.2);
+      border-color: var(--accent-primary);
+      background: rgba(var(--theme-primary-rgb), 0.05);
+      box-shadow: 0 0 15px rgba(var(--theme-primary-rgb), 0.2);
     }
   }
 
   // Focus state for accessibility
   &:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(tokens.$primary-purple, 0.5);
+    box-shadow: 0 0 0 3px rgba(var(--theme-primary-rgb), 0.5);
   }
 
   &:disabled {

@@ -15,6 +15,7 @@ import { Subject } from 'rxjs';
 import { takeUntil, throttleTime } from 'rxjs/operators';
 import { CharMagnifyDirective } from '../directives/proximity-magnify.directive';
 import { fromEvent } from 'rxjs';
+import { hexToRgbString, getThemeColorsFromCSS } from '../utils/color.utils';
 import {
   SCROLL_THROTTLE_MS,
   RESIZE_THROTTLE_MS,
@@ -70,6 +71,13 @@ export class CustomTimelineComponent implements OnInit, AfterViewInit, OnDestroy
   ngOnInit(): void {
     this.updateScrollProgress();
     this.setupEventListeners();
+    // Ensure SVG gradient updates with initial theme and on changes
+    this.updateSVGGradient();
+    this.watchThemeChanges();
+    // Additional safety update after a short delay to ensure DOM is ready
+    setTimeout(() => {
+      this.updateSVGGradient();
+    }, 100);
   }
 
   /**
@@ -286,6 +294,52 @@ export class CustomTimelineComponent implements OnInit, AfterViewInit, OnDestroy
     }
 
     return maxHighlightedIndex;
+  }
+
+  /**
+   * Update SVG gradient colors when theme changes
+   */
+  private updateSVGGradient(): void {
+    try {
+      const { primary, secondary } = getThemeColorsFromCSS();
+      
+      // Convert hex colors to RGB format
+      const primaryColor = `rgb(${hexToRgbString(primary)})`;
+      const secondaryColor = `rgb(${hexToRgbString(secondary)})`;
+      const primaryRgb = hexToRgbString(primary);
+      const secondaryRgb = hexToRgbString(secondary);
+      
+      // Update gradient stops
+      const stops = document.querySelectorAll('#gradientStroke stop');
+      if (stops.length >= 4) {
+        stops[0].setAttribute('style', `stop-color: rgba(${primaryRgb}, 0.25); stop-opacity: 1;`);
+        stops[1].setAttribute('style', `stop-color: ${primaryColor}; stop-opacity: 1;`);
+        stops[2].setAttribute('style', `stop-color: ${secondaryColor}; stop-opacity: 1;`);
+        stops[3].setAttribute('style', `stop-color: ${secondaryColor}; stop-opacity: 1;`);
+      }
+    } catch (error) {
+      console.error('Error updating SVG gradient:', error);
+    }
+  }
+
+  /**
+   * Watch for theme changes and update SVG gradient accordingly
+   */
+  private watchThemeChanges(): void {
+    this.ngZone.runOutsideAngular(() => {
+      // Create a MutationObserver to watch for style attribute changes on root
+      const observer = new MutationObserver(() => {
+        this.updateSVGGradient();
+      });
+      
+      observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['style'],
+        attributeOldValue: false
+      });
+      
+      this.destroy$.subscribe(() => observer.disconnect());
+    });
   }
 
   ngOnDestroy(): void {

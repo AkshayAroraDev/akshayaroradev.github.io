@@ -357,7 +357,7 @@ om-connection-beam {
 .skills__group-title {
   font-size: 14px;
   font-weight: 600;
-  color: tokens.$primary-purple;
+  color: var(--accent-primary);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 16px;
@@ -378,7 +378,7 @@ om-connection-beam {
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  box-shadow: 0 4px 24px -10px rgba(tokens.$primary-purple, 0.22);
+  box-shadow: 0 4px 24px -10px rgba(var(--theme-primary-rgb), 0.22);
   position: relative;
   z-index: 3;
   cursor: pointer;
@@ -403,10 +403,10 @@ om-connection-beam {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba(tokens.$primary-purple, 0.16), rgba(tokens.$primary-magenta, 0.14));
+  background: linear-gradient(135deg, rgba(var(--theme-primary-rgb), 0.16), rgba(var(--theme-secondary-rgb), 0.14));
   backdrop-filter: blur(tokens.$blur-amount);
-  border: 1px solid rgba(tokens.$primary-purple, 0.35);
-  box-shadow: 0 6px 28px -8px rgba(tokens.$primary-purple,0.35), tokens.$inset-base;
+  border: 1px solid rgba(var(--theme-primary-rgb), 0.35);
+  box-shadow: 0 6px 28px -8px rgba(var(--theme-primary-rgb),0.35), tokens.$inset-base;
 }
 
 .skills__center-icon {
@@ -467,16 +467,16 @@ om-connection-beam {
   gap: 10px;
   padding: 14px 22px;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba(tokens.$primary-purple, 0.16), rgba(tokens.$primary-magenta, 0.14));
+  background: linear-gradient(135deg, rgba(var(--theme-primary-rgb), 0.16), rgba(var(--theme-secondary-rgb), 0.14));
   backdrop-filter: blur(tokens.$blur-amount);
-  border: 1px solid rgba(tokens.$primary-purple, 0.35);
+  border: 1px solid rgba(var(--theme-primary-rgb), 0.35);
   color: tokens.$text-primary;
   font-weight: 500;
   font-size: 16px;
   letter-spacing: 0.3px;
   transition: all 0.3s ease;
   cursor: default;
-  box-shadow: 0 3px 14px -4px rgba(tokens.$primary-purple,0.32), tokens.$inset-base;
+  box-shadow: 0 3px 14px -4px rgba(var(--theme-primary-rgb),0.32), tokens.$inset-base;
   white-space: nowrap;
   min-width: auto;
   text-align: center;
@@ -498,9 +498,9 @@ om-connection-beam {
 }
 
 .skills__pill-inner:hover {
-  border-color: rgba(tokens.$primary-purple, 0.4);
-  background: linear-gradient(135deg, rgba(tokens.$primary-purple, 0.18), rgba(tokens.$primary-magenta, 0.16));
-  box-shadow: 0 6px 22px -6px rgba(tokens.$primary-purple,0.35), tokens.$inset-hover;
+  border-color: rgba(var(--theme-primary-rgb), 0.4);
+  background: linear-gradient(135deg, rgba(var(--theme-primary-rgb), 0.18), rgba(var(--theme-secondary-rgb), 0.16));
+  box-shadow: 0 6px 22px -6px rgba(var(--theme-primary-rgb),0.35), tokens.$inset-hover;
   transform: translateY(-3px);
 }
 

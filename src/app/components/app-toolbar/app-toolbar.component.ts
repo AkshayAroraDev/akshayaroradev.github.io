@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { ThemeService } from '../../services/theme.service';
+import { Theme } from '../../constants/themes';
 
 interface ToolbarLink {
   icon: string;
@@ -11,11 +14,11 @@ interface ToolbarLink {
 @Component({
   selector: 'app-toolbar',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './app-toolbar.component.html',
   styleUrl: './app-toolbar.component.scss'
 })
-export class AppToolbarComponent {
+export class AppToolbarComponent implements OnInit {
   toolbarLinks: ToolbarLink[] = [
     { icon: '⌂', label: 'Home', sectionId: 'hero', type: 'navigation' },
     { icon: '⊕', label: 'Skills', sectionId: 'skills', type: 'navigation' },
@@ -25,6 +28,51 @@ export class AppToolbarComponent {
     { icon: '✉', label: 'Email', sectionId: 'mailto:akshayarora.work@gmail.com', type: 'external' },
     { icon: '📄', label: 'Resume', sectionId: 'resume', type: 'navigation' }
   ];
+
+  themes: Theme[];
+  currentTheme: Theme;
+  showThemeMenu = false;
+  showColorPicker = false;
+  customPrimaryColor = '#2563eb';
+  customSecondaryColor = '#0ea5e9';
+
+  constructor(private themeService: ThemeService) {
+    this.themes = this.themeService.themes;
+    this.currentTheme = this.themeService.getCurrentTheme();
+  }
+
+  ngOnInit() {
+    // Subscribe to theme changes
+    this.themeService.currentTheme$.subscribe(theme => {
+      this.currentTheme = theme;
+    });
+  }
+
+  switchTheme(theme: Theme) {
+    this.themeService.switchTheme(theme);
+    this.showThemeMenu = false;
+  }
+
+  toggleThemeMenu() {
+    this.showThemeMenu = !this.showThemeMenu;
+    if (this.showThemeMenu) {
+      this.showColorPicker = false;
+    }
+  }
+
+  toggleColorPicker() {
+    this.showColorPicker = !this.showColorPicker;
+  }
+
+  applyCustomColor() {
+    const customTheme: Theme = {
+      id: 'custom',
+      name: 'Custom',
+      primary: this.customPrimaryColor,
+      secondary: this.customSecondaryColor
+    };
+    this.themeService.switchTheme(customTheme);
+  }
 
   scrollToSection(link: ToolbarLink) {
     if (link.type === 'external') {

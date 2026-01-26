@@ -9,9 +9,9 @@
   background: linear-gradient(
     -45deg,
     #0a0a0f 0%,
-    rgba(tokens.$primary-purple, 0.03) 25%,
+    rgba(var(--theme-primary-rgb), 0.03) 25%,
     #0f0f1a 50%,
-    rgba(tokens.$primary-magenta, 0.02) 75%,
+    rgba(var(--theme-secondary-rgb), 0.02) 75%,
     #0d0d1a 100%
   );
   background-size: 400% 400%;
@@ -46,8 +46,8 @@
       background: linear-gradient(
         135deg,
         tokens.$text-primary,
-        rgba(tokens.$primary-purple, 0.8),
-        rgba(tokens.$primary-magenta, 0.8),
+        rgba(var(--theme-primary-rgb), 0.8),
+        rgba(var(--theme-secondary-rgb), 0.8),
         tokens.$text-primary
       );
       background-size: 300% 300%;
@@ -100,8 +100,8 @@
         letter-spacing: 0.5px;
         background: linear-gradient(
           90deg,
-          tokens.$primary-purple,
-          tokens.$primary-magenta
+          var(--accent-primary),
+          var(--accent-secondary)
         );
         -webkit-background-clip: text;
         background-clip: text;
@@ -156,7 +156,7 @@
 
     &:hover p {
       opacity: 1;
-      color: tokens.$primary-purple;
+      color: var(--accent-primary);
     }
   }
 }
@@ -219,44 +219,44 @@
   50% {
     opacity: 0;
     text-shadow: 
-      -1px -1px 0 rgba(139, 92, 246, 0.8),
-      -2px 0px 0 rgba(217, 70, 239, 0.75),
-      -1px 1px 0 rgba(139, 92, 246, 0.7),
-      -3px -1px 0 rgba(217, 70, 239, 0.8),
-      -2px -2px 0 rgba(139, 92, 246, 0.75),
-      -1px -3px 0 rgba(217, 70, 239, 0.7),
-      -3px 1px 0 rgba(139, 92, 246, 0.65),
-      -2px 2px 0 rgba(217, 70, 239, 0.7),
-      -4px 0px 0 rgba(139, 92, 246, 0.6),
-      -1px 2px 0 rgba(217, 70, 239, 0.65);
+      -1px -1px 0 rgba(var(--theme-primary-rgb), 0.8),
+      -2px 0px 0 rgba(var(--theme-secondary-rgb), 0.75),
+      -1px 1px 0 rgba(var(--theme-primary-rgb), 0.7),
+      -3px -1px 0 rgba(var(--theme-secondary-rgb), 0.8),
+      -2px -2px 0 rgba(var(--theme-primary-rgb), 0.75),
+      -1px -3px 0 rgba(var(--theme-secondary-rgb), 0.7),
+      -3px 1px 0 rgba(var(--theme-primary-rgb), 0.65),
+      -2px 2px 0 rgba(var(--theme-secondary-rgb), 0.7),
+      -4px 0px 0 rgba(var(--theme-primary-rgb), 0.6),
+      -1px 2px 0 rgba(var(--theme-secondary-rgb), 0.65);
   }
   60% {
     opacity: 0;
     text-shadow: 
-      -3px -2px 0 rgba(139, 92, 246, 0.6),
-      -5px -1px 0 rgba(217, 70, 239, 0.55),
-      -4px 2px 0 rgba(139, 92, 246, 0.5),
-      -6px 1px 0 rgba(217, 70, 239, 0.5),
-      -3px -4px 0 rgba(139, 92, 246, 0.55),
-      -2px -5px 0 rgba(217, 70, 239, 0.5),
-      -5px 3px 0 rgba(139, 92, 246, 0.45),
-      -4px -3px 0 rgba(217, 70, 239, 0.5),
-      -6px -2px 0 rgba(139, 92, 246, 0.4),
-      -3px 4px 0 rgba(217, 70, 239, 0.45);
+      -3px -2px 0 rgba(var(--theme-primary-rgb), 0.6),
+      -5px -1px 0 rgba(var(--theme-secondary-rgb), 0.55),
+      -4px 2px 0 rgba(var(--theme-primary-rgb), 0.5),
+      -6px 1px 0 rgba(var(--theme-secondary-rgb), 0.5),
+      -3px -4px 0 rgba(var(--theme-primary-rgb), 0.55),
+      -2px -5px 0 rgba(var(--theme-secondary-rgb), 0.5),
+      -5px 3px 0 rgba(var(--theme-primary-rgb), 0.45),
+      -4px -3px 0 rgba(var(--theme-secondary-rgb), 0.5),
+      -6px -2px 0 rgba(var(--theme-primary-rgb), 0.4),
+      -3px 4px 0 rgba(var(--theme-secondary-rgb), 0.45);
   }
   70% {
     opacity: 0;
     text-shadow: 
-      -6px -4px 0 rgba(139, 92, 246, 0.3),
-      -8px -2px 0 rgba(217, 70, 239, 0.25),
-      -7px 4px 0 rgba(139, 92, 246, 0.2),
-      -10px 2px 0 rgba(217, 70, 239, 0.2),
-      -5px -7px 0 rgba(139, 92, 246, 0.25),
-      -4px -8px 0 rgba(217, 70, 239, 0.2),
-      -8px 5px 0 rgba(139, 92, 246, 0.15),
-      -7px -5px 0 rgba(217, 70, 239, 0.2),
-      -10px -3px 0 rgba(139, 92, 246, 0.15),
-      -6px 6px 0 rgba(217, 70, 239, 0.15);
+      -6px -4px 0 rgba(var(--theme-primary-rgb), 0.3),
+      -8px -2px 0 rgba(var(--theme-secondary-rgb), 0.25),
+      -7px 4px 0 rgba(var(--theme-primary-rgb), 0.2),
+      -10px 2px 0 rgba(var(--theme-secondary-rgb), 0.2),
+      -5px -7px 0 rgba(var(--theme-primary-rgb), 0.25),
+      -4px -8px 0 rgba(var(--theme-secondary-rgb), 0.2),
+      -8px 5px 0 rgba(var(--theme-primary-rgb), 0.15),
+      -7px -5px 0 rgba(var(--theme-secondary-rgb), 0.2),
+      -10px -3px 0 rgba(var(--theme-primary-rgb), 0.15),
+      -6px 6px 0 rgba(var(--theme-secondary-rgb), 0.15);
   }
   80% {
     opacity: 0;

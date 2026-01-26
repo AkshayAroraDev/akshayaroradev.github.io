@@ -17,5 +17,81 @@
       </span>
       <span class="toolbar__tooltip">{{ link.label }}</span>
     </a>
+    <div class="toolbar__divider"></div>
+    <div class="toolbar__theme-selector">
+      <!-- Theme Dropdown Button -->
+      <button 
+        (click)="toggleThemeMenu()"
+        class="theme-menu-btn"
+        [class.theme-menu-btn--active]="showThemeMenu"
+        [style.--theme-color]="currentTheme.primary"
+        [attr.title]="'Themes: ' + currentTheme.name">
+        🎨
+      </button>
+
+      <!-- Theme Dropdown Menu -->
+      <div *ngIf="showThemeMenu" class="theme-dropdown">
+        <div class="theme-dropdown-header">
+          <h4>Choose Theme</h4>
+        </div>
+
+        <div class="theme-grid">
+          <button 
+            *ngFor="let theme of themes"
+            (click)="switchTheme(theme)"
+            class="theme-item"
+            [class.theme-item--active]="currentTheme.id === theme.id"
+            [attr.title]="theme.name">
+            <span class="theme-item-color" [style.background]="theme.primary"></span>
+            <span class="theme-item-label">{{ theme.name }}</span>
+            <span *ngIf="currentTheme.id === theme.id" class="theme-item-check">✓</span>
+          </button>
+        </div>
+
+        <div class="theme-divider"></div>
+
+        <!-- Custom Color Picker Section -->
+        <button 
+          (click)="toggleColorPicker()"
+          class="custom-color-btn"
+          [class.custom-color-btn--active]="showColorPicker">
+          + Custom Color
+        </button>
+
+        <div *ngIf="showColorPicker" class="color-picker-panel">
+          <div class="color-input-group">
+            <label>Primary:</label>
+            <div class="color-input-wrapper">
+              <input 
+                type="color" 
+                [(ngModel)]="customPrimaryColor"
+                class="color-input"
+                (change)="applyCustomColor()"
+                aria-label="Primary color">
+              <span class="color-value">{{ customPrimaryColor }}</span>
+            </div>
+          </div>
+
+          <div class="color-input-group">
+            <label>Secondary:</label>
+            <div class="color-input-wrapper">
+              <input 
+                type="color" 
+                [(ngModel)]="customSecondaryColor"
+                class="color-input"
+                (change)="applyCustomColor()"
+                aria-label="Secondary color">
+              <span class="color-value">{{ customSecondaryColor }}</span>
+            </div>
+          </div>
+
+          <button 
+            (click)="applyCustomColor()"
+            class="color-picker-apply">
+            Apply Custom
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </nav>

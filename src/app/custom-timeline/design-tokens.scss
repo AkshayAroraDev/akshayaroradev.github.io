@@ -4,12 +4,41 @@
  */
 
 // ============================================================================
-// PRIMARY COLORS - Main Brand Colors
+// THEME CONFIGURATION - Scalable Theme System
 // ============================================================================
-$primary-purple: #8b5cf6;
-$primary-magenta: #d946ef;
-$primary-pink: #d946ef;
-$accent-blue: #6496f6;
+// Blue Theme (Current)
+$theme-blue-primary: #3b82f6;
+$theme-blue-secondary: #06b6d4;
+
+// Purple Theme (Legacy)
+$theme-purple-primary: #a855f7;
+$theme-purple-secondary: #ec4899;
+
+// ============================================================================
+// EXTENDED COLOR PALETTE - Blue Theme
+// ============================================================================
+// Primary Colors
+$color-blue-400: #60a5fa;
+$color-blue-500: #3b82f6;    // primary
+$color-blue-600: #2563eb;
+$color-cyan-400: #22d3ee;
+$color-cyan-500: #06b6d4;    // secondary
+
+// Gray Scale
+$color-gray-600: #4b5563;
+$color-gray-700: #374151;
+$color-gray-800: #1f2937;
+$color-gray-900: #0a0a0f;
+
+// ============================================================================
+// PRIMARY COLORS - Main Brand Colors (Semantic Names)
+// IMPORTANT: Use CSS variables directly via interpolation for runtime switching
+// ============================================================================
+// These are used for direct CSS variable references
+$primary-blue: #3b82f6;       // Fallback for static contexts
+$primary-cyan: #06b6d4;       // Fallback for static contexts
+$primary-pink: #06b6d4;       // Deprecated - use primary-cyan
+$accent-blue: #60a5fa;        // Fallback for static contexts
 
 // ============================================================================
 // BACKGROUND COLORS - Ultra-dark Theme
@@ -29,41 +58,69 @@ $border-light: #ffffff;        // Light border (for inset)
 $border-default: #6b7280;     // Default border color
 
 // ============================================================================
+// COMPONENT COLORS - Semantic Color Variables
+// Using CSS Custom Properties for Runtime Theme Switching
+// ============================================================================
+// Card Colors
+$card-bg: rgba(var(--theme-primary-rgb), 0.08);
+$card-border: rgba(var(--theme-primary-rgb), 0.25);
+$card-border-hover: rgba(var(--theme-primary-rgb), 0.5);
+$card-glow: rgba(var(--theme-primary-rgb), 0.5);
+$card-glow-hover: rgba(var(--theme-primary-rgb), 0.8);
+
+// Button Colors
+$button-primary-bg: rgba(var(--theme-primary-rgb), 0.18);
+$button-primary-border: rgba(var(--theme-primary-rgb), 0.25);
+$button-primary-glow: rgba(var(--theme-primary-rgb), 0.15);
+
+$button-secondary-bg: rgba(var(--theme-primary-rgb), 0.1);
+$button-secondary-border: rgba(var(--theme-primary-rgb), 0.2);
+
+// Badge Colors
+$badge-bg: rgba(var(--theme-primary-rgb), 0.12);
+$badge-border: rgba(var(--theme-primary-rgb), 0.25);
+$badge-text: rgba(var(--theme-primary-rgb), 0.85);
+$badge-bg-hover: rgba(var(--theme-primary-rgb), 0.2);
+$badge-border-hover: rgba(var(--theme-primary-rgb), 0.4);
+
+// ============================================================================
 // DOT COLORS
 // ============================================================================
 $dot-default: #6b7280;        // Default dot color (gray)
-$dot-highlighted: linear-gradient(135deg, $primary-purple, $primary-magenta);
+$dot-highlighted: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
 $dot-border: $bg-base;        // Dot border color
+$dot-size: 12px;              // Size of timeline dot
+$dot-border-width: 2px;       // Width of dot border
 
 // ============================================================================
-// GRADIENT DEFINITIONS
+// GRADIENT DEFINITIONS - Using CSS Variables for Runtime Theme Switching
 // ============================================================================
 // Main gradient for animated fill
 $gradient-primary: linear-gradient(
   135deg,
-  rgba($primary-purple, 0.12) 0%,
-  rgba($primary-magenta, 0.10) 100%
+  rgba(var(--theme-primary-rgb), 0.12) 0%,
+  rgba(var(--theme-secondary-rgb), 0.10) 100%
 );
 
 // Hover gradient
 $gradient-hover: linear-gradient(
   135deg,
-  rgba($primary-purple, 0.18) 0%,
-  rgba($primary-magenta, 0.16) 100%
+  rgba(var(--theme-primary-rgb), 0.18) 0%,
+  rgba(var(--theme-secondary-rgb), 0.16) 100%
 );
 
 // Highlighted gradient
 $gradient-highlighted: linear-gradient(
   135deg,
-  rgba($primary-purple, 0.18) 0%,
-  rgba($primary-magenta, 0.16) 100%
+  rgba(var(--theme-primary-rgb), 0.18) 0%,
+  rgba(var(--theme-secondary-rgb), 0.16) 100%
 );
 
 // Highlighted hover gradient
 $gradient-highlighted-hover: linear-gradient(
   135deg,
-  rgba($primary-purple, 0.22) 0%,
-  rgba($primary-magenta, 0.20) 100%
+  rgba(var(--theme-primary-rgb), 0.22) 0%,
+  rgba(var(--theme-secondary-rgb), 0.20) 100%
 );
 
 // ============================================================================
@@ -76,21 +133,21 @@ $glass-opacity-highlighted: 0.18;
 $glass-opacity-highlighted-hover: 0.22;
 
 // ============================================================================
-// BORDER & SHADOW COLORS
+// BORDER & SHADOW COLORS - Using CSS Variables
 // ============================================================================
-$border-base: rgba($primary-purple, 0.15);
-$border-hover: rgba($primary-purple, 0.3);
-$border-highlighted: rgba($primary-purple, 0.3);
-$border-highlighted-hover: rgba($primary-purple, 0.35);
+$border-base: rgba(var(--theme-primary-rgb), 0.15);
+$border-hover: rgba(var(--theme-primary-rgb), 0.3);
+$border-highlighted: rgba(var(--theme-primary-rgb), 0.3);
+$border-highlighted-hover: rgba(var(--theme-primary-rgb), 0.35);
 
-$shadow-sm: 0 4px 16px 0 rgba($primary-purple, 0.04);
-$shadow-hover: 0 6px 20px 0 rgba($primary-purple, 0.10);
-$shadow-highlighted: 0 6px 22px 0 rgba($primary-purple, 0.12);
-$shadow-highlighted-hover: 0 8px 28px 0 rgba($primary-purple, 0.16);
+$shadow-sm: 0 4px 16px 0 rgba(var(--theme-primary-rgb), 0.04);
+$shadow-hover: 0 6px 20px 0 rgba(var(--theme-primary-rgb), 0.10);
+$shadow-highlighted: 0 6px 22px 0 rgba(var(--theme-primary-rgb), 0.12);
+$shadow-highlighted-hover: 0 8px 28px 0 rgba(var(--theme-primary-rgb), 0.16);
 
-$glow-base: 0 0 16px rgba($primary-purple, 0.5);
+$glow-base: 0 0 16px rgba(var(--theme-primary-rgb), 0.5);
 $glow-hover: 0 0 20px rgba($border-default, 0.7);
-$glow-glowing: 0 0 25px rgba($primary-purple, 0.8), 0 0 40px rgba($accent-blue, 0.4);
+$glow-glowing: 0 0 25px rgba(var(--theme-primary-rgb), 0.8), 0 0 40px rgba(var(--theme-primary-rgb), 0.4);
 
 // Inset shadows
 $inset-base: inset 0 0 0 1px rgba($border-light, 0.03);
@@ -99,17 +156,17 @@ $inset-highlighted: inset 0 0 0 1px rgba($border-light, 0.05);
 $inset-highlighted-hover: inset 0 0 0 1px rgba($border-light, 0.08);
 
 // Additional glow for hover
-$glow-hover-extended: 0 0 40px rgba($primary-purple, 0.3), 0 0 60px rgba($primary-magenta, 0.15);
-$glow-highlighted-hover-extended: 0 0 40px rgba($primary-purple, 0.35), 0 0 60px rgba($primary-magenta, 0.2);
+$glow-hover-extended: 0 0 40px rgba(var(--theme-primary-rgb), 0.3), 0 0 60px rgba(var(--theme-secondary-rgb), 0.15);
+$glow-highlighted-hover-extended: 0 0 40px rgba(var(--theme-primary-rgb), 0.35), 0 0 60px rgba(var(--theme-secondary-rgb), 0.2);
 
 // ============================================================================
 // COMPOSITE COLOR TOKENS
 // ============================================================================
 // For easy reference and potential future use
 $theme-colors: (
-  'purple': $primary-purple,
-  'magenta': $primary-magenta,
-  'blue': $accent-blue,
+  'blue': $primary-blue,
+  'cyan': $primary-cyan,
+  'accent-blue': $accent-blue,
   'gray-text-primary': $text-primary,
   'gray-text-secondary': $text-secondary,
   'gray-text-tertiary': $text-tertiary,
@@ -120,6 +177,7 @@ $theme-colors: (
 // ============================================================================
 $transition-default: all 0.3s ease;
 $transition-fill: height 0.15s ease-out;
+$transition-smooth: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 
 // ============================================================================
 // SPACING & SIZING
@@ -129,7 +187,109 @@ $card-padding: 2rem;
 $card-border-radius: 20px;
 $card-border-width: 1.5px;
 
-$dot-size: 16px;
-$dot-border-width: 3px;
+// ============================================================================
+// REUSABLE SCSS MIXINS FOR COMMON PATTERNS
+// ============================================================================
 
-$connector-width: 3px;
+// Card styling mixin
+@mixin card-base($bg: $card-bg, $border: $card-border) {
+  background: $bg;
+  border: $card-border-width solid $border;
+  border-radius: $card-border-radius;
+  backdrop-filter: blur($blur-amount);
+}
+
+@mixin card-hover($border-color: $card-border-hover, $shadow-color: $card-glow-hover) {
+  border-color: $border-color;
+  box-shadow: 0 30px 60px rgba($primary-blue, 0.5);
+  
+  &::before {
+    opacity: 1;
+  }
+}
+
+// Gradient text mixin
+@mixin gradient-text($color1: $primary-blue, $color2: $primary-cyan) {
+  background: linear-gradient(135deg, $color1, $color2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// Glow effect mixin
+@mixin glow-effect($color: $primary-blue, $size: 16px, $opacity: 0.5) {
+  box-shadow: 0 0 $size rgba($color, $opacity);
+}
+
+// Button styling mixin - Using CSS variables for runtime theme switching
+@mixin button-base($bg: $button-primary-bg, $border: $button-primary-border) {
+  background: linear-gradient(135deg, rgba(var(--theme-primary-rgb), 0.25), rgba(var(--theme-secondary-rgb), 0.25));
+  border: 1px solid $border;
+  backdrop-filter: blur($blur-amount);
+  transition: $transition-default;
+  
+  &:hover {
+    background: linear-gradient(135deg, rgba(var(--theme-primary-rgb), 0.35), rgba(var(--theme-secondary-rgb), 0.35));
+    border-color: rgba(var(--theme-primary-rgb), 0.7);
+    box-shadow: 0 0 20px rgba(var(--theme-primary-rgb), 0.15);
+  }
+}
+
+// Badge styling mixin
+@mixin badge-base($bg: $badge-bg, $border: $badge-border, $text: $badge-text) {
+  background: $bg;
+  border: 1px solid $border;
+  color: $text;
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 11px;
+  font-weight: 500;
+  transition: $transition-default;
+  
+  &:hover {
+    background: $badge-bg-hover;
+    border-color: $badge-border-hover;
+  }
+}
+
+// Icon button styling mixin
+@mixin icon-button($bg: rgba(var(--theme-primary-rgb), 0.08), $border: rgba(var(--theme-primary-rgb), 0.15)) {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: $bg;
+  border: 1px solid $border;
+  cursor: pointer;
+  transition: $transition-smooth;
+  text-decoration: none;
+  color: $text-primary;
+  font-size: 20px;
+  font-weight: 600;
+
+  &:hover {
+    background: rgba(var(--theme-primary-rgb), 0.15);
+    border-color: rgba(var(--theme-primary-rgb), 0.3);
+    transform: translateY(-8px);
+  }
+}
+
+// Glass morphism overlay mixin
+@mixin glass-overlay($opacity: $glass-opacity-base) {
+  background: rgba($primary-blue, $opacity);
+  backdrop-filter: blur($blur-amount);
+  border: 1px solid rgba($primary-blue, $opacity * 2);
+}
+
+// Connector line gradient mixin
+@mixin connector-gradient($color1: $primary-blue, $color2: $primary-cyan) {
+  background: linear-gradient(
+    180deg,
+    rgba($color1, 0.25) 0%,
+    $color1 20%,
+    #60a5fa 50%,
+    $color2 100%
+  );
+}

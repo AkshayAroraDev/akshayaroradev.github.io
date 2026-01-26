@@ -45,8 +45,8 @@
     background: linear-gradient(
       135deg,
       tokens.$text-primary,
-      rgba(tokens.$primary-purple, 0.8),
-      rgba(tokens.$primary-magenta, 0.8)
+      rgba(var(--theme-primary-rgb), 0.8),
+      rgba(var(--theme-secondary-rgb), 0.8)
     );
     background-size: 300% 300%;
     -webkit-background-clip: text;
@@ -109,10 +109,10 @@
   position: absolute;
   background: linear-gradient(
     135deg,
-    rgba(139, 92, 246, 0.08) 0%,
-    rgba(217, 70, 239, 0.08) 100%
+    rgba(var(--theme-primary-rgb), 0.08) 0%,
+    rgba(var(--theme-secondary-rgb), 0.08) 100%
   );
-  border: 1px solid rgba(139, 92, 246, 0.25);
+  border: 1px solid rgba(var(--theme-primary-rgb), 0.25);
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
@@ -126,7 +126,7 @@
   &.dragging {
     cursor: grabbing;
     opacity: 0.9;
-    box-shadow: 0 50px 100px rgba(139, 92, 246, 0.8);
+    box-shadow: 0 50px 100px rgba(var(--theme-primary-rgb), 0.8);
     transition: none;
     z-index: 100;
   }
@@ -155,15 +155,15 @@
   }
 
   &:hover {
-    border-color: rgba(139, 92, 246, 0.5);
-    box-shadow: 0 30px 60px rgba(139, 92, 246, 0.5);
+    border-color: rgba(var(--theme-primary-rgb), 0.5);
+    box-shadow: 0 30px 60px rgba(var(--theme-primary-rgb), 0.5);
     filter: brightness(1.1);
 
     .project-card__title {
       background: linear-gradient(
         135deg,
-        rgba(139, 92, 246, 1),
-        rgba(217, 70, 239, 1)
+        var(--accent-primary),
+        var(--accent-secondary)
       );
       background-clip: text;
       -webkit-background-clip: text;
@@ -209,7 +209,7 @@
     background: rgba(0, 0, 0, 0.4);
     overflow: hidden;
     position: relative;
-    border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+    border-bottom: 1px solid rgba(var(--theme-primary-rgb), 0.2);
     flex-shrink: 0;
 
     &::before {
@@ -218,8 +218,8 @@
       inset: 0;
       background: linear-gradient(
         135deg,
-        rgba(139, 92, 246, 0.15) 0%,
-        rgba(217, 70, 239, 0.15) 100%
+        rgba(var(--theme-primary-rgb), 0.15) 0%,
+        rgba(var(--theme-secondary-rgb), 0.15) 100%
       );
       opacity: 0;
       transition: opacity 0.5s ease;
@@ -257,9 +257,9 @@
 }
 
 .tech-badge {
-  background: rgba(139, 92, 246, 0.12);
-  border: 1px solid rgba(139, 92, 246, 0.25);
-  color: rgba(139, 92, 246, 0.85);
+  background: rgba(var(--theme-primary-rgb), 0.12);
+  border: 1px solid rgba(var(--theme-primary-rgb), 0.25);
+  color: rgba(var(--theme-primary-rgb), 0.85);
   padding: 4px 10px;
   border-radius: 16px;
   font-size: 11px;
@@ -268,8 +268,8 @@
   white-space: nowrap;
 
   &:hover {
-    background: rgba(139, 92, 246, 0.2);
-    border-color: rgba(139, 92, 246, 0.4);
+    background: rgba(var(--theme-primary-rgb), 0.2);
+    border-color: rgba(var(--theme-primary-rgb), 0.4);
   }
 }
 
@@ -490,7 +490,7 @@
 
     &:hover {
       transform: scale(1.02) !important;
-      box-shadow: 0 30px 60px rgba(139, 92, 246, 0.5);
+      box-shadow: 0 30px 60px rgba(var(--theme-primary-rgb), 0.5);
     }
 
     &:nth-child(1):hover,

@@ -1,12 +1,15 @@
 /* Dark theme base styles */
-:host {
+:root {
   --bg-primary: #0a0a0f;
   --bg-secondary: #0f0f1a;
   --bg-tertiary: #0d0d1a;
   --text-primary: #d1d5db;
   --text-secondary: #9ca3af;
-  --accent-primary: #8b5cf6;
-  --accent-secondary: #d946ef;
+  --accent-primary: #3b82f6;
+  --accent-secondary: #06b6d4;
+  /* RGB versions for rgba() usage */
+  --theme-primary-rgb: 59,130,246;
+  --theme-secondary-rgb: 6,182,212;
 }
 
 body {

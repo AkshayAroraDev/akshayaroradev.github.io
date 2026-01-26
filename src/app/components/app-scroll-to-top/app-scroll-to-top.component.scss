@@ -7,8 +7,8 @@
   width: 56px;
   height: 56px;
   border-radius: 12px;
-  background: rgba(tokens.$primary-purple, 0.15);
-  border: 1px solid rgba(tokens.$primary-purple, 0.3);
+  background: rgba(var(--theme-primary-rgb), 0.15);
+  border: 1px solid rgba(var(--theme-primary-rgb), 0.3);
   color: tokens.$text-primary;
   cursor: pointer;
   display: flex;
@@ -19,10 +19,10 @@
   z-index: 999;
 
   &:hover {
-    background: rgba(tokens.$primary-purple, 0.25);
-    border-color: rgba(tokens.$primary-purple, 0.5);
+    background: rgba(var(--theme-primary-rgb), 0.25);
+    border-color: rgba(var(--theme-primary-rgb), 0.5);
     transform: translateY(-8px) scale(1.1);
-    box-shadow: 0 8px 24px rgba(tokens.$primary-purple, 0.2);
+    box-shadow: 0 8px 24px rgba(var(--theme-primary-rgb), 0.2);
   }
 
   &:active {
