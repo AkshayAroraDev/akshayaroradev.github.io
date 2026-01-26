@@ -30,16 +30,24 @@ export class AppHeroComponent implements AfterViewInit, OnDestroy {
   ) {}
 
   ngAfterViewInit() {
-    // Start animation loop every 4 seconds
-    this.animationInterval = setInterval(() => {
-      if (this.splitTextComponent) {
-        this.splitTextComponent.animateIn();
-      }
-    }, 4000);
-
     // Initial gradient update and watch for theme changes
     this.updateGradients();
     this.watchThemeChanges();
+    
+    // Start animation loop inside Angular zone for proper lifecycle
+    this.startAnimationLoop();
+  }
+
+  private startAnimationLoop(): void {
+    this.ngZone.runOutsideAngular(() => {
+      this.animationInterval = setInterval(() => {
+        this.ngZone.run(() => {
+          if (this.splitTextComponent) {
+            this.splitTextComponent.animateIn();
+          }
+        });
+      }, 4000);
+    });
   }
 
   private updateGradients(): void {
@@ -59,15 +67,7 @@ export class AppHeroComponent implements AfterViewInit, OnDestroy {
       char.style.backgroundClip = 'text';
     });
 
-    // Update subtitle gradient
-    const subtitle = this.elementRef.nativeElement.querySelector('.split-text-subtitle');
-    if (subtitle) {
-      const gradient = `linear-gradient(90deg, ${primary}, ${secondary})`;
-      subtitle.style.backgroundImage = gradient;
-      subtitle.style.webkitBackgroundClip = 'text';
-      subtitle.style.webkitTextFillColor = 'transparent';
-      subtitle.style.backgroundClip = 'text';
-    }
+    // Subtitle styling is handled by CSS
 
     // Update hero background gradient
     const heroElement = this.elementRef.nativeElement.querySelector('.hero');
@@ -86,6 +86,10 @@ export class AppHeroComponent implements AfterViewInit, OnDestroy {
         // Update gradients when theme CSS variables change
         this.ngZone.run(() => {
           this.updateGradients();
+          // Trigger animation when theme changes
+          if (this.splitTextComponent) {
+            this.splitTextComponent.animateIn();
+          }
         });
       });
 

@@ -13,7 +13,8 @@
         <img *ngIf="link.icon === 'in'" src="assets/icons/skills/linkedin-nav.svg" [alt]="link.label" class="toolbar__icon-img" />
         <img *ngIf="link.icon === '◆'" src="assets/icons/skills/github.svg" [alt]="link.label" class="toolbar__icon-img" />
         <img *ngIf="link.icon === '✉'" src="assets/icons/skills/email.svg" [alt]="link.label" class="toolbar__icon-img" />
-        <span *ngIf="link.icon !== '⌂' && link.icon !== 'in' && link.icon !== '◆' && link.icon !== '✉'">{{ link.icon }}</span>
+        <mat-icon *ngIf="link.icon === 'folder_open'" class="toolbar__mat-icon">{{ link.icon }}</mat-icon>
+        <span *ngIf="link.icon !== '⌂' && link.icon !== 'in' && link.icon !== '◆' && link.icon !== '✉' && link.icon !== 'folder_open'">{{ link.icon }}</span>
       </span>
       <span class="toolbar__tooltip">{{ link.label }}</span>
     </a>

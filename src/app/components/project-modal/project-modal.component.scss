@@ -6,10 +6,10 @@
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.85);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   z-index: 9999;
-  padding: 1rem;
+  padding: 120px 1rem 1rem;
   overflow-y: auto;
   animation: fadeIn 0.2s ease-out;
 }
@@ -28,7 +28,7 @@
   border-radius: 16px;
   max-width: 1000px;
   width: 100%;
-  max-height: 90vh;
+  max-height: 80vh;
   overflow-y: auto;
   position: relative;
   animation: slideUp 0.2s ease-out;

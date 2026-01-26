@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
 import { ThemeService } from '../../services/theme.service';
 import { Theme } from '../../constants/themes';
 
@@ -14,7 +15,7 @@ interface ToolbarLink {
 @Component({
   selector: 'app-toolbar',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, MatIconModule],
   templateUrl: './app-toolbar.component.html',
   styleUrl: './app-toolbar.component.scss'
 })
@@ -23,6 +24,7 @@ export class AppToolbarComponent implements OnInit {
     { icon: '⌂', label: 'Home', sectionId: 'hero', type: 'navigation' },
     { icon: '⊕', label: 'Skills', sectionId: 'skills', type: 'navigation' },
     { icon: '▦', label: 'Experience', sectionId: 'timeline', type: 'navigation' },
+    { icon: 'folder_open', label: 'Projects', sectionId: 'projects', type: 'navigation' },
     { icon: 'in', label: 'LinkedIn', sectionId: 'https://www.linkedin.com/in/akshay-arora-3b25855b/', type: 'external' },
     { icon: '◆', label: 'GitHub', sectionId: 'https://github.com/AkshayAroraDev', type: 'external' },
     { icon: '✉', label: 'Email', sectionId: 'mailto:akshayarora.work@gmail.com', type: 'external' },

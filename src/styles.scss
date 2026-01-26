@@ -1,6 +1,13 @@
 /* Global Styles - Importing Design Tokens */
 @use './app/custom-timeline/design-tokens.scss' as tokens;
 
+/* Import Google Fonts */
+/* @import url('...'); */
+
+/* Import Material Icons */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
 /* You can add global styles to this file, and also import other style files */
 
 * {
