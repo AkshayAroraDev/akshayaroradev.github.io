@@ -1,0 +1,52 @@
+{
+  "toolbarLinks": [
+    {
+      "icon": "⌂",
+      "label": "Home",
+      "sectionId": "hero",
+      "type": "navigation"
+    },
+    {
+      "icon": "⊕",
+      "label": "Skills",
+      "sectionId": "skills",
+      "type": "navigation"
+    },
+    {
+      "icon": "▦",
+      "label": "Experience",
+      "sectionId": "timeline",
+      "type": "navigation"
+    },
+    {
+      "icon": "folder_open",
+      "label": "Projects",
+      "sectionId": "projects",
+      "type": "navigation"
+    },
+    {
+      "icon": "in",
+      "label": "LinkedIn",
+      "sectionId": "https://www.linkedin.com/in/akshay-arora-3b25855b/",
+      "type": "external"
+    },
+    {
+      "icon": "◆",
+      "label": "GitHub",
+      "sectionId": "https://github.com/AkshayAroraDev",
+      "type": "external"
+    },
+    {
+      "icon": "✉",
+      "label": "Email",
+      "sectionId": "mailto:akshayarora.work@gmail.com",
+      "type": "external"
+    },
+    {
+      "icon": "📄",
+      "label": "Resume",
+      "sectionId": "resume",
+      "type": "navigation"
+    }
+  ]
+}

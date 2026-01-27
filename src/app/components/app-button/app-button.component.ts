@@ -1,21 +1,21 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-button',
   standalone: true,
   template: `
     <button 
-      [class]="'btn btn--' + variant + ' btn--' + size"
-      [attr.aria-label]="label"
+      [class]="'btn btn--' + variant() + ' btn--' + size()"
+      [attr.aria-label]="label()"
       (click)="onClick.emit()">
-      {{ label }}
+      {{ label() }}
     </button>
   `,
   styleUrl: './app-button.component.scss'
 })
 export class AppButtonComponent {
-  @Input() label: string = '';
-  @Input() variant: 'primary' | 'secondary' | 'outline' = 'primary';
-  @Input() size: 'small' | 'medium' | 'large' = 'medium';
-  @Output() onClick = new EventEmitter<void>();
+  label = input('');
+  variant = input<'primary' | 'secondary' | 'outline'>('primary');
+  size = input<'small' | 'medium' | 'large'>('medium');
+  onClick = output<void>();
 }

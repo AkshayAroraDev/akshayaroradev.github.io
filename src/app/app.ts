@@ -1,6 +1,4 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { NgxTracingBeamComponent } from '@omnedia/ngx-tracing-beam';
 import { CustomTimelineComponent } from './custom-timeline/custom-timeline.component';
 import { AppHeroComponent } from './components/app-hero/app-hero.component';
@@ -14,7 +12,7 @@ import { ThemeService } from './services/theme.service';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgxTracingBeamComponent, CustomTimelineComponent, AppHeroComponent, AppSkillsComponent, AppProjectsComponent, AppFooterComponent, AppToolbarComponent, AppScrollToTopComponent],
+  imports: [NgxTracingBeamComponent, CustomTimelineComponent, AppHeroComponent, AppSkillsComponent, AppProjectsComponent, AppFooterComponent, AppToolbarComponent, AppScrollToTopComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

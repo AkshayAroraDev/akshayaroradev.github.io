@@ -2,7 +2,7 @@ import {
   AfterViewInit,
   Directive,
   ElementRef,
-  Input,
+  input,
   NgZone,
   OnDestroy
 } from '@angular/core';
@@ -13,10 +13,10 @@ import gsap from 'gsap';
   standalone: true
 })
 export class CharMagnifyDirective implements AfterViewInit, OnDestroy {
-  @Input() maxScale = 2;
-  @Input() radius = 30;
-  @Input() enableColor = true;
-  @Input() enableWeight = true;
+  maxScale = input(2);
+  radius = input(30);
+  enableColor = input(true);
+  enableWeight = input(true);
 
   private chars: HTMLElement[] = [];
   private rafId?: number;
@@ -71,8 +71,8 @@ export class CharMagnifyDirective implements AfterViewInit, OnDestroy {
       const distance = Math.hypot(clientX - cx, clientY - cy);
       
       // Gaussian falloff for more natural effect
-      const strength = Math.exp(-distance * distance / (2 * this.radius * this.radius));
-      const scale = 1 + strength * (this.maxScale - 1);
+      const strength = Math.exp(-distance * distance / (2 * this.radius() * this.radius()));
+      const scale = 1 + strength * (this.maxScale() - 1);
 
       const animationConfig: any = {
         scale,
@@ -82,12 +82,12 @@ export class CharMagnifyDirective implements AfterViewInit, OnDestroy {
       };
 
       // Optional: Add color effect
-      if (this.enableColor) {
+      if (this.enableColor()) {
         animationConfig.color = `rgba(59, 130, 246, ${0.6 + strength * 0.4})`;
       }
 
       // Optional: Add font weight effect
-      if (this.enableWeight) {
+      if (this.enableWeight()) {
         animationConfig.fontWeight = 400 + strength * 400;
       }
 

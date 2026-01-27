@@ -5,6 +5,7 @@ import { NgxSplitTextComponent } from '@omnedia/ngx-split-text';
 import { CharMagnifyDirective } from '../../directives/proximity-magnify.directive';
 import { ThemeService } from '../../services/theme.service';
 import { hexToRgbString, getThemeColorsFromCSS } from '../../utils/color.utils';
+import heroData from '../../../json/hero.json';
 
 @Component({
   selector: 'app-hero',
@@ -16,9 +17,9 @@ import { hexToRgbString, getThemeColorsFromCSS } from '../../utils/color.utils';
 export class AppHeroComponent implements AfterViewInit, OnDestroy {
   @ViewChild('splitText') splitTextComponent!: NgxSplitTextComponent;
   
-  subtitle = 'Frontend Engineer';
-  descriptionParagraph1 = 'I\'m a Senior Frontend Engineer with 8+ years of experience building scalable, high-performance web applications. I specialize in Angular and TypeScript, and I enjoy translating complex business requirements into clean, intuitive user experiences.';
-  descriptionParagraph2 = 'I believe great frontend work is invisible — it removes friction, scales gracefully, and just works.';
+  subtitle = heroData.subtitle;
+  descriptionParagraph1 = heroData.descriptionParagraph1;
+  descriptionParagraph2 = heroData.descriptionParagraph2;
 
   private animationInterval: ReturnType<typeof setInterval> | undefined;
   private themeObserver: MutationObserver | undefined;

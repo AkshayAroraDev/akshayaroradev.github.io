@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { ThemeService } from '../../services/theme.service';
 import { Theme } from '../../constants/themes';
+import toolbarData from '../../../json/toolbar.json';
 
 interface ToolbarLink {
   icon: string;
@@ -20,16 +21,7 @@ interface ToolbarLink {
   styleUrl: './app-toolbar.component.scss'
 })
 export class AppToolbarComponent implements OnInit {
-  toolbarLinks: ToolbarLink[] = [
-    { icon: '⌂', label: 'Home', sectionId: 'hero', type: 'navigation' },
-    { icon: '⊕', label: 'Skills', sectionId: 'skills', type: 'navigation' },
-    { icon: '▦', label: 'Experience', sectionId: 'timeline', type: 'navigation' },
-    { icon: 'folder_open', label: 'Projects', sectionId: 'projects', type: 'navigation' },
-    { icon: 'in', label: 'LinkedIn', sectionId: 'https://www.linkedin.com/in/akshay-arora-3b25855b/', type: 'external' },
-    { icon: '◆', label: 'GitHub', sectionId: 'https://github.com/AkshayAroraDev', type: 'external' },
-    { icon: '✉', label: 'Email', sectionId: 'mailto:akshayarora.work@gmail.com', type: 'external' },
-    { icon: '📄', label: 'Resume', sectionId: 'resume', type: 'navigation' }
-  ];
+  toolbarLinks: ToolbarLink[] = toolbarData.toolbarLinks as ToolbarLink[];
 
   themes: Theme[];
   currentTheme: Theme;

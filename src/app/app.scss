@@ -27,10 +27,10 @@ app-root {
 }
 
 app-hero {
-  margin-top: 70px;
+  margin-top: 0;
 
   @media (max-width: 768px) {
-    margin-top: 70px;
+    margin-top: 0;
   }
 }
 

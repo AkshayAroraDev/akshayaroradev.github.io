@@ -1,5 +1,5 @@
 <div class="modal-overlay" 
-     *ngIf="isOpen && project" 
+     *ngIf="isOpen() && project()" 
      (click)="closeModal()">
   
   <div class="modal-content" (click)="stopPropagation($event)">
@@ -14,9 +14,9 @@
     <!-- Header -->
     <div class="modal-header">
       <div class="modal-title-row">
-        <h2 class="modal-title">{{ project.title }}</h2>
-        <a *ngIf="project.links && project.links['live']" 
-           [href]="project.links['live']" 
+        <h2 class="modal-title">{{ project()!.title }}</h2>
+        <a *ngIf="project()!.links && project()!.links['live']" 
+           [href]="project()!.links['live']" 
            target="_blank" 
            rel="noopener noreferrer"
            class="title-link">
@@ -25,8 +25,8 @@
           </svg>
           View Live
         </a>
-        <a *ngIf="project.links && project.links['demo'] && !project.links['live']" 
-           [href]="project.links['demo']" 
+        <a *ngIf="project()!.links && project()!.links['demo'] && !project()!.links['live']" 
+           [href]="project()!.links['demo']" 
            target="_blank" 
            rel="noopener noreferrer"
            class="title-link">
@@ -37,22 +37,22 @@
         </a>
       </div>
       <div class="modal-meta">
-        <span class="modal-company">{{ project.company }}</span>
-        <span class="modal-period">{{ project.period }}</span>
+        <span class="modal-company">{{ project()!.company }}</span>
+        <span class="modal-period">{{ project()!.period }}</span>
       </div>
     </div>
 
     <!-- Image Gallery -->
-    <div class="modal-gallery" *ngIf="project.images && project.images.length > 0">
+    <div class="modal-gallery" *ngIf="project()!.images && project()!.images.length > 0">
       <div class="gallery-main">
         <img 
-          [src]="project.images[currentImageIndex].src" 
-          [alt]="project.images[currentImageIndex].alt"
+          [src]="project()!.images[currentImageIndex].src" 
+          [alt]="project()!.images[currentImageIndex].alt"
           class="gallery-main-image">
         
         <!-- Navigation Arrows -->
         <button 
-          *ngIf="project.images.length > 1"
+          *ngIf="project()!.images && project()!.images.length > 1"
           class="gallery-nav gallery-nav--prev" 
           (click)="previousImage()"
           aria-label="Previous image">
@@ -61,7 +61,7 @@
           </svg>
         </button>
         <button 
-          *ngIf="project.images.length > 1"
+          *ngIf="project()!.images && project()!.images.length > 1"
           class="gallery-nav gallery-nav--next" 
           (click)="nextImage()"
           aria-label="Next image">
@@ -72,14 +72,14 @@
 
         <!-- Image Caption -->
         <div class="gallery-caption">
-          {{ project.images[currentImageIndex].caption }}
+          {{ project()!.images[currentImageIndex].caption }}
         </div>
       </div>
 
       <!-- Thumbnail Navigation -->
-      <div class="gallery-thumbnails" *ngIf="project.images.length > 1">
+      <div class="gallery-thumbnails" *ngIf="project()!.images && project()!.images.length > 1">
         <button 
-          *ngFor="let image of project.images; let i = index"
+          *ngFor="let image of project()!.images; let i = index"
           class="thumbnail"
           [class.thumbnail--active]="i === currentImageIndex"
           (click)="goToImage(i)">
@@ -94,27 +94,27 @@
       <!-- Description -->
       <div class="modal-section">
         <h3 class="section-title">About</h3>
-        <p class="section-description">{{ project.description }}</p>
+        <p class="section-description">{{ project()!.description }}</p>
       </div>
 
       <!-- Technologies -->
-      <div class="modal-section" *ngIf="project.technologies && project.technologies.length > 0">
+      <div class="modal-section" *ngIf="project()!.technologies && project()!.technologies.length > 0">
         <h3 class="section-title">Technologies</h3>
         <div class="tech-tags">
-          <span *ngFor="let tech of project.technologies" class="tech-tag">{{ tech }}</span>
+          <span *ngFor="let tech of project()!.technologies" class="tech-tag">{{ tech }}</span>
         </div>
       </div>
 
       <!-- Highlights -->
-      <div class="modal-section" *ngIf="project.highlights && project.highlights.length > 0">
+      <div class="modal-section" *ngIf="project()!.highlights && project()!.highlights.length > 0">
         <h3 class="section-title">Key Highlights</h3>
         <ul class="highlights-list">
-          <li *ngFor="let highlight of project.highlights">{{ highlight }}</li>
+          <li *ngFor="let highlight of project()!.highlights">{{ highlight }}</li>
         </ul>
       </div>
 
       <!-- Metrics -->
-      <div class="modal-section" *ngIf="project.metrics">
+      <div class="modal-section" *ngIf="project()!.metrics">
         <h3 class="section-title">Metrics</h3>
         <div class="metrics-grid">
           <div *ngFor="let metric of getMetricsArray()" class="metric-item">

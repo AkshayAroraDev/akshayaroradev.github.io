@@ -28,16 +28,34 @@
     text-align: center;
     z-index: 2;
     animation: slideUp 1s ease-out;
-    padding: 40px 20px;
+    padding: 80px 20px 40px;
     position: relative;
+
+    @media (max-width: 768px) {
+      padding: 120px 20px 40px;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding-top: 140px;
+    }
+
+    @media (max-width: 480px) {
+      padding-top: 180px;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
   }
 
   &__title {
-    font-size: clamp(48px, 8vw, 80px);
+    font-size: clamp(36px, 8vw, 80px);
     animation: gradientFlow 8s ease infinite, slideUp 1s ease-out;
     margin-bottom: 16px;
     letter-spacing: -1px;
     display: inline-block;
+
+    @media (max-width: 480px) {
+      font-size: clamp(28px, 7vw, 60px);
+      margin-bottom: 12px;
+    }
 
     .char {
       display: inline-block;

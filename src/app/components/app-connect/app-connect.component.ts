@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import footerData from '../../../json/footer.json';
 
 @Component({
   selector: 'app-connect',
@@ -9,21 +10,5 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app-connect.component.scss'
 })
 export class AppConnectComponent {
-  connectLinks = [
-    {
-      label: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/akshay-arora-3b25855b/',
-      iconPath: 'assets/icons/skills/linkedin.svg'
-    },
-    {
-      label: 'GitHub',
-      url: 'https://github.com/AkshayAroraDev',
-      iconPath: 'assets/icons/skills/github.svg'
-    },
-    {
-      label: 'Email',
-      url: 'mailto:akshayarora.work@gmail.com',
-      iconPath: 'assets/icons/skills/email.svg'
-    }
-  ];
+  connectLinks = footerData.socialLinks;
 }

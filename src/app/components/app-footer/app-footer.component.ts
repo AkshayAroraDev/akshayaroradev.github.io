@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IconAttribution } from '../../models';
+import footerData from '../../../json/footer.json';
 
 @Component({
   selector: 'app-footer',
@@ -11,45 +11,8 @@ import { IconAttribution } from '../../models';
 })
 export class AppFooterComponent {
   currentYear = new Date().getFullYear();
-  
-  iconAttributions: IconAttribution[] = [
-    // Add your icon attributions here
-    // Example:
-    // {
-    //   name: 'Angular Icon',
-    //   artist: 'Artist Name',
-    //   source: 'Flaticon',
-    //   link: 'https://www.flaticon.com/free-icon/angular_...'
-    // }
-  ];
 
-  socialLinks = [
-    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/akshay-arora-3b25855b/', iconPath: 'assets/icons/skills/linkedin.svg' },
-    { label: 'GitHub', url: 'https://github.com/AkshayAroraDev', iconPath: 'assets/icons/skills/github.svg' },
-    { label: 'Email', url: 'mailto:akshayarora.work@gmail.com', iconPath: 'assets/icons/skills/email.svg' }
-  ];
-
-  navigationLinks = [
-    { label: 'Home', url: '#hero' },
-    { label: 'Skills', url: '#skills' },
-    { label: 'Experience', url: '#timeline' }
-  ];
-
-  connectLinks = [
-    {
-      label: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/akshay-arora-3b25855b/',
-      iconPath: 'assets/icons/skills/linkedin.svg'
-    },
-    {
-      label: 'GitHub',
-      url: 'https://github.com/AkshayAroraDev',
-      iconPath: 'assets/icons/skills/github.svg'
-    },
-    {
-      label: 'Email',
-      url: 'mailto:akshayarora.work@gmail.com',
-      iconPath: 'assets/icons/skills/email.svg'
-    }
-  ];
+  socialLinks = footerData.socialLinks;
+  navigationLinks = footerData.navigationLinks;
+  connectLinks = footerData.socialLinks;
 }

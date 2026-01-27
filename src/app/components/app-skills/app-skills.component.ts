@@ -2,7 +2,7 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, ViewChild, ViewChildren, ElementRef,
 import { CommonModule } from '@angular/common';
 import { NgxConnectionBeamComponent } from '@omnedia/ngx-connection-beam';
 import { NgxTypewriterComponent } from '@omnedia/ngx-typewriter';
-import { SkillItem, SkillGroup } from '../../models';
+import { SkillGroup } from '../../models';
 import skillsData from '../../../json/skills.json';
 
 @Component({
