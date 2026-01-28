@@ -6,10 +6,6 @@ A modern, responsive portfolio website built with Angular 21, featuring dynamic 
 
 [View Live Portfolio](https://akshayaroradev.github.io/)
 
-## 📸 Screenshots
-
-<!-- Add screenshots of your portfolio here -->
-
 ## ✨ Features
 
 ### Core Functionality
