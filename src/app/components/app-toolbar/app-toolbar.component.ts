@@ -89,8 +89,8 @@ export class AppToolbarComponent implements OnInit {
 
   downloadResume() {
     const link = document.createElement('a');
-    link.href = 'assets/docs/Resume_AkshayArora_2025.pdf';
-    link.download = 'Resume_AkshayArora_2025.pdf';
+    link.href = 'assets/docs/Akshay_Arora.pdf';
+    link.download = 'Akshay_Arora.pdf';
     link.click();
   }
 }
