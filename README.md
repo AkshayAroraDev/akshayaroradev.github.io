@@ -159,9 +159,9 @@ The portfolio features a sophisticated theme system with real-time switching cap
 3. Theme automatically appears in the toolbar switcher
 
 For detailed documentation, see:
-- [SCALABLE_THEME_SYSTEM.md](SCALABLE_THEME_SYSTEM.md)
-- [DEVELOPER_ONBOARDING.md](DEVELOPER_ONBOARDING.md)
-- [THEMING_GUIDE.md](THEMING_GUIDE.md)
+- [SCALABLE_THEME_SYSTEM.md](docs/SCALABLE_THEME_SYSTEM.md)
+- [DEVELOPER_ONBOARDING.md](docs/DEVELOPER_ONBOARDING.md)
+- [THEMING_GUIDE.md](docs/THEMING_GUIDE.md)
 
 ## 🎯 Content Management
 
@@ -217,17 +217,17 @@ This command:
 2. Deploys to GitHub Pages using `angular-cli-ghpages`
 3. Pushes to the `master` branch
 
-For more details, see [DEPLOYMENT.md](DEPLOYMENT.md).
+For more details, see [DEPLOYMENT.md](docs/DEPLOYMENT.md).
 
 ## 📚 Documentation
 
 Comprehensive documentation is available in the repository:
 
 ### Development Guides
-- **[DEVELOPER_ONBOARDING.md](DEVELOPER_ONBOARDING.md)** - Onboarding checklist for new contributors
-- **[SCALABLE_THEME_SYSTEM.md](SCALABLE_THEME_SYSTEM.md)** - Complete theme architecture overview
-- **[THEMING_GUIDE.md](THEMING_GUIDE.md)** - Detailed theming instructions
-- **[THEME_QUICK_REFERENCE.md](THEME_QUICK_REFERENCE.md)** - Quick lookup for theme usage
+- **[DEVELOPER_ONBOARDING.md](docs/DEVELOPER_ONBOARDING.md)** - Onboarding checklist for new contributors
+- **[SCALABLE_THEME_SYSTEM.md](docs/SCALABLE_THEME_SYSTEM.md)** - Complete theme architecture overview
+- **[THEMING_GUIDE.md](docs/THEMING_GUIDE.md)** - Detailed theming instructions
+- **[THEME_QUICK_REFERENCE.md](docs/THEME_QUICK_REFERENCE.md)** - Quick lookup for theme usage
 
 ---
 
