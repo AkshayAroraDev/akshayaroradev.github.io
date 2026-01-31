@@ -6,10 +6,6 @@ A modern, responsive portfolio website built with Angular 21, featuring dynamic 
 
 [View Live Portfolio](https://akshayaroradev.github.io/)
 
-## 📸 Screenshots
-
-<!-- Add screenshots of your portfolio here -->
-
 ## ✨ Features
 
 ### Core Functionality
@@ -232,62 +228,6 @@ Comprehensive documentation is available in the repository:
 - **[SCALABLE_THEME_SYSTEM.md](SCALABLE_THEME_SYSTEM.md)** - Complete theme architecture overview
 - **[THEMING_GUIDE.md](THEMING_GUIDE.md)** - Detailed theming instructions
 - **[THEME_QUICK_REFERENCE.md](THEME_QUICK_REFERENCE.md)** - Quick lookup for theme usage
-
-### Additional Resources
-- Theme refactoring summaries and implementation notes
-- Background variations documentation
-- Visual system summaries
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these guidelines:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-### Development Guidelines
-- Follow the existing code style and conventions
-- Use CSS variables for colors (never hardcode hex values)
-- Test theme switching with all changes
-- Update relevant documentation
-- Write meaningful commit messages
-
-## 📝 Code Style
-
-The project uses Prettier for code formatting:
-
-- **Print Width**: 100 characters
-- **Single Quotes**: Enabled
-- **Angular HTML Parser**: For .html files
-
-Format code automatically on save or run manually:
-```bash
-npx prettier --write .
-```
-
-## 🐛 Known Issues
-
-- None at this time
-
-## 📄 License
-
-This project is private and proprietary.
-
-## 👤 Author
-
-**Senior Frontend Engineer**
-- 8+ years of experience with Angular and TypeScript
-- Specializes in scalable, high-performance web applications
-
-## 🙏 Acknowledgments
-
-- **Angular Team** - For the amazing framework
-- **@omnedia** - For specialized animation components
-- **GreenSock (GSAP)** - For powerful animation capabilities
-- **Material Design** - For UI component library
 
 ---
 
