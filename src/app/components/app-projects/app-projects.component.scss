@@ -473,8 +473,8 @@
     &:nth-child(1),
     &:nth-child(2),
     &:nth-child(3) {
-      width: 70vw !important;
-      height: 60vh !important;
+      width: 80vw !important;
+      height: 30vh !important;
       transform: none !important;
     }
 
@@ -535,7 +535,7 @@
     width: 100% !important;
     max-width: 100%;
     height: auto;
-    margin: 2rem 0;
+    margin: 1.5rem 0;
 
     &:nth-child(1),
     &:nth-child(2),
@@ -544,7 +544,7 @@
     }
 
     &__gallery {
-      height: 200px;
+      height: 160px;
     }
 
     &__content {

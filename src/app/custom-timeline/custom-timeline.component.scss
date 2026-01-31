@@ -5,6 +5,10 @@
 .timeline-section {
   width: 100%;
   padding: 80px 40px;
+
+  @media (max-width: 480px) {
+    padding: 60px 20px;
+  }
 }
 
 /* Timeline title section */
@@ -219,14 +223,18 @@
 }
 
 @media (max-width: 480px) {
+  .timeline-item {
+    justify-content: center !important;
+  }
+
   .timeline-item.left .item-content {
-    margin-left: 2% !important;
-    margin-right: 2% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   .timeline-item.right .item-content {
-    margin-left: 2% !important;
-    margin-right: 2% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
 
@@ -285,6 +293,12 @@
   margin-bottom: 1.2rem;
   position: relative;
   width: 100%;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    margin-bottom: 1rem;
+    gap: 0;
+  }
 }
 
 .item-year {
@@ -298,6 +312,15 @@
   padding: 0;
   position: absolute;
   left: 0;
+
+  @media (max-width: 480px) {
+    position: relative;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    text-align: center;
+    width: 100%;
+    left: auto;
+  }
 }
 
 .item-title {
@@ -311,6 +334,14 @@
   gap: 0.8rem;
   flex-wrap: nowrap;
   min-height: 50px;
+
+  @media (max-width: 480px) {
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    gap: 0.3rem;
+    min-height: auto;
+    line-height: 1.4;
+  }
 }
 
 .company-logo {
@@ -323,6 +354,12 @@
   transition: all 0.3s ease;
   filter: brightness(1.15) contrast(1.15);
   flex-shrink: 0;
+
+  @media (max-width: 480px) {
+    height: 36px;
+    min-width: 36px;
+    width: 36px;
+  }
 }
 
 .item-content:hover .company-logo {
@@ -488,16 +525,13 @@
   }
 
   .item-content {
-    width: 85%;
-    padding: 1rem;
+    width: 95%;
+    padding: 1.2rem;
   }
 
-  .item-year {
-    font-size: 1.2rem;
-  }
-
-  .item-title {
-    font-size: 0.95rem;
+  .item-header {
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.8rem;
   }
 
   .item-description {

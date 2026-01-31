@@ -33,15 +33,15 @@
 
     @media (max-width: 768px) {
       padding: 120px 20px 40px;
-      align-items: flex-start;
-      justify-content: flex-start;
+      align-items: center;
+      justify-content: center;
       padding-top: 140px;
     }
 
     @media (max-width: 480px) {
       padding-top: 180px;
-      align-items: flex-start;
-      justify-content: flex-start;
+      align-items: center;
+      justify-content: center;
     }
   }
 
@@ -141,6 +141,13 @@
     flex-wrap: wrap;
     margin-bottom: 60px;
     animation: slideUp 1s ease-out 0.2s both;
+    width: 100%;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 12px;
+    }
 
     app-button {
       &:first-child {
@@ -149,6 +156,11 @@
 
       &:last-child {
         animation: slideUp 1s ease-out 0.4s both;
+      }
+
+      @media (max-width: 768px) {
+        width: 100%;
+        max-width: 300px;
       }
     }
   }
