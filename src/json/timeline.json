@@ -32,9 +32,12 @@
       "description": "Harman International Industries, Bangalore | Owned critical frontend modules using Angular and RxJS.",
       "logo": "harman-international-logo.svg",
       "details": [
-        "Owned and developed critical frontend modules using Angular, TypeScript, and RxJS",
-        "Collaborated closely with UX, backend, and product teams",
-        "Improved UI reliability and responsiveness by resolving performance bottlenecks and production defects"
+        "Owned and developed critical frontend modules using Angular, TypeScript, and RxJS for automotive infotainment systems",
+        "Collaborated closely with UX, backend, and product teams to deliver features on aggressive timelines",
+        "Improved UI reliability and responsiveness by resolving performance bottlenecks and production defects",
+        "Implemented advanced state management using RxJS, reducing component complexity by 40% and improving maintainability",
+        "Mentored junior developers on Angular best practices, code patterns, and frontend architecture principles",
+        "Led code reviews and established frontend coding standards, improving code quality across the team"
       ]
     },
     {
