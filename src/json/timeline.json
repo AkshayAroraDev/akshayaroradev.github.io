@@ -6,12 +6,12 @@
       "description": "Wipro Limited, Bangalore | Leading enterprise frontend architecture and team of 5 engineers.",
       "logo": "wipro-white.svg",
       "details": [
-        "Owned frontend architecture for large-scale enterprise platform with strategic UI decisions",
-        "Led and mentored 5 engineers, improving delivery quality and consistency",
-        "Migrated 6 production-grade applications from Blazor to Angular with modular, scalable architecture",
-        "Reduced JavaScript bundle size by ~30% using code splitting and lazy loading, improving initial load time by ~40%",
-        "Improved Time to Interactive (TTI) by ~35% by optimizing change detection and rendering paths",
-        "Led production rollout and resolved performance regressions and critical UI defects"
+        "Owned end-to-end frontend architecture for a large-scale customer-facing platform, driving decisions on UI structure, performance strategy, and long-term maintainability",
+        "Spearheaded a team of 5 engineers, improving delivery quality, consistency, and execution",
+        "Migrated 6 production-grade applications from Blazor to Angular with a modular, scalable architecture",
+        "Reduced JavaScript bundle size by 30% using code splitting and lazy loading, cutting page latency and improving initial load time by 40%",
+        "Improved Time to Interactive (TTI) by 35% through change detection tuning and rendering paths optimization",
+        "Led production rollout and ensured smooth transition by resolving performance regressions and critical UI defects"
       ]
     },
     {
@@ -20,10 +20,10 @@
       "description": "Harman International Industries, Bangalore | Designed reusable components and dynamic UI framework.",
       "logo": "harman-international-logo.svg",
       "details": [
-        "Designed and shipped 30+ production-ready reusable Angular components used across 6+ different products",
-        "Architected JSON-driven dynamic UI rendering framework, improving feature delivery speed by ~10×",
-        "Introduced TDD practices achieving 60% unit test coverage and reducing post-release defects by ~50%",
-        "Worked closely with multiple product teams to onboard the rendering framework and standardize UI patterns"
+        "Drove adoption of a JSON-driven, API-backed dynamic UI rendering framework across 6+ product teams, standardizing frontend architecture and reducing per-feature development effort by 60%",
+        "Implemented virtualized rendering for 10k+ record accordion views, minimizing DOM footprint and ensuring consistent UI responsiveness as dataset size scaled",
+        "Built the UI for a Sound Pressure Level (SPL) visualization platform used to map and optimize acoustics for a 125k-capacity venue",
+        "Partnered with QA and business stakeholders to define acceptance criteria for 4 different modules, achieving zero critical production defects across 3 consecutive releases"
       ]
     },
     {
@@ -32,12 +32,10 @@
       "description": "Harman International Industries, Bangalore | Owned critical frontend modules using Angular and RxJS.",
       "logo": "harman-international-logo.svg",
       "details": [
-        "Owned and developed critical frontend modules using Angular, TypeScript, and RxJS for automotive infotainment systems",
-        "Collaborated closely with UX, backend, and product teams to deliver features on aggressive timelines",
-        "Improved UI reliability and responsiveness by resolving performance bottlenecks and production defects",
-        "Implemented advanced state management using RxJS, reducing component complexity by 40% and improving maintainability",
-        "Mentored junior developers on Angular best practices, code patterns, and frontend architecture principles",
-        "Led code reviews and established frontend coding standards, improving code quality across the team"
+        "Designed and shipped 30+ reusable Angular components adopted across 6+ products, improving development consistency and reuse",
+        "Introduced Test-Driven Development (TDD), achieving 60% coverage and reducing post-release defects by 50%",
+        "Developed and owned 8 critical frontend modules using Angular, TypeScript, and RxJS",
+        "Resolved performance bottlenecks, reducing average page response time by 30% across key user workflows"
       ]
     },
     {
@@ -46,10 +44,9 @@
       "description": "Conduent Business Services, Bangalore | Built secure document processing workflows.",
       "logo": "conduent-white.svg",
       "details": [
-        "Designed configurable UI modules supporting 36 customer-specific workflows",
-        "Built secure Patient Health Information document processing workflows used by 150+ hospitals",
-        "Led migration from Silverlight to Angular, reducing installer size by ~75%",
-        "Validated workflows with QA and business stakeholders to meet healthcare compliance requirements"
+        "Delivered configurable UI modules supporting 36 customer-specific workflows with responsive design",
+        "Built secure, high-reliability document processing user interfaces and REST APIs used by 150+ customer organizations",
+        "Drove migration from Silverlight to Angular, reducing installer size by 75%"
       ]
     },
     {

@@ -16,8 +16,8 @@
         { "name": "HTML", "icon": "HTML5.svg" },
         { "name": "CSS", "icon": "CSS3.svg" },
         { "name": "Git", "icon": "git.svg" },
-        { "name": "Jira", "icon": "jira.svg" },
-        { "name": "Bootstrap", "icon": "bootstrap.svg" }
+        { "name": "Node.js", "icon": "nodejs.svg" },
+        { "name": "Lighthouse", "icon": "lighthouse.svg" }
       ]
     }
   ]

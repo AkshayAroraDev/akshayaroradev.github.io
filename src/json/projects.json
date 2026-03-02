@@ -9,11 +9,10 @@
       "period": "2020-2024",
       "technologies": ["Angular", "TypeScript", "RxJS", "Angular Material", "Chart.js"],
       "highlights": [
-        "Designed and shipped 30+ production-ready reusable Angular components used across 6+ different products",
-        "Architected JSON-driven dynamic UI rendering framework, improving feature delivery speed by ~10×",
-        "Owned and developed critical frontend modules using Angular, TypeScript, and RxJS",
-        "Introduced TDD practices achieving 60% unit test coverage and reducing post-release defects by ~50%",
-        "Collaborated closely with UX, backend, and product teams to deliver scalable solutions"
+        "Built the UI for a Sound Pressure Level (SPL) visualization platform used to map and optimize acoustics for a 125k-capacity venue",
+        "Implemented virtualized rendering for 10k+ record accordion views, minimizing DOM footprint and ensuring consistent UI responsiveness as dataset size scaled",
+        "Drove adoption of a JSON-driven, API-backed dynamic UI rendering framework, standardizing frontend architecture and reducing per-feature development effort by 60%",
+        "Partnered with QA and business stakeholders to define acceptance criteria for 4 different modules, achieving zero critical production defects across 3 consecutive releases"
       ],
       "images": [
         {
