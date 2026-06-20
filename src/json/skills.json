@@ -4,8 +4,8 @@
       "title": "Left Skills",
       "skills": [
         { "name": "TypeScript", "icon": "typeScript.svg" },
-        { "name": "JavaScript (ES6+)", "icon": "javaScript.svg" },
         { "name": "Angular (v9+)", "icon": "angular.svg" },
+        { "name": "React", "icon": "React.svg" },
         { "name": "RxJS", "icon": "rxJS.svg" },
         { "name": "NgRx", "icon": "NGRX.svg" }
       ]
@@ -13,11 +13,11 @@
     {
       "title": "Right Skills",
       "skills": [
+        { "name": "JavaScript (ES6+)", "icon": "javaScript.svg" },
         { "name": "HTML", "icon": "HTML5.svg" },
         { "name": "CSS", "icon": "CSS3.svg" },
         { "name": "Git", "icon": "git.svg" },
-        { "name": "Node.js", "icon": "nodejs.svg" },
-        { "name": "Lighthouse", "icon": "lighthouse.svg" }
+        { "name": "Node.js", "icon": "nodejs.svg" }
       ]
     }
   ]
