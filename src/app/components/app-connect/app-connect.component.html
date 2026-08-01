@@ -1,18 +1,227 @@
 <section class="connect">
-  <div class="connect__container">
-    <div class="connect__header">
-      <h2 class="connect__title">Let's Connect</h2>
-    </div>
+  <div class="connect__desktop-shell">
+    <om-dotpattern
+      [patternColor]="'rgba(var(--theme-primary-rgb), 0.08)'"
+      styleClass="connect__desktop-dotpattern"
+    >
+      <div class="connect__desktop-frame">
+        <div class="connect__header">
+          <p class="connect__eyebrow">Available for thoughtful collaboration</p>
+          <h2 class="connect__title">Let's Connect</h2>
+          <p class="connect__intro">
+            Drag each card toward its destination to unlock a direct line.
+          </p>
+        </div>
 
-    <div class="connect__icons">
-      <a *ngFor="let link of connectLinks"
-         [href]="link.url"
-         target="_blank"
-         rel="noopener noreferrer"
-         [attr.aria-label]="link.label"
-         class="connect__icon">
-        <img [src]="link.iconPath" [alt]="link.label" class="connect__icon-img" loading="lazy" />
-      </a>
+        <div
+          #boardRef
+          class="connect__board"
+          [class.connect__board--complete]="allConnected"
+        >
+          <div #desktopStage class="connect__interaction">
+            <div class="connect__docks">
+              <a
+                *ngFor="let item of desktopLinks; trackBy: trackById"
+                #dockRef
+                class="connect__dock"
+                [class.connect__dock--connected]="item.connected"
+                [class.connect__dock--button]="allConnected"
+                [class.connect__dock--reject]="item.reject"
+                [attr.data-id]="item.id"
+                [attr.href]="allConnected ? item.url : null"
+                [attr.target]="allConnected ? '_blank' : null"
+                [attr.rel]="allConnected ? 'noopener noreferrer' : null"
+                (click)="handleDockClick($event, item)"
+                (mouseenter)="setConnectorHover(item.id, true)"
+                (mouseleave)="setConnectorHover(item.id, false)"
+              >
+                <div class="connect__dock-surface">
+                  <span class="connect__dock-icon-shell" aria-hidden="true">
+                    <svg [attr.viewBox]="item.icon.viewBox">
+                      <path
+                        *ngFor="let path of item.icon.paths"
+                        [attr.d]="path.d"
+                        [attr.fill-rule]="path.fillRule || null"
+                        [attr.clip-rule]="path.clipRule || null"
+                      ></path>
+                    </svg>
+                  </span>
+
+                  <div class="connect__dock-copy">
+                    <span class="connect__dock-label">{{ item.label }}</span>
+                    <span class="connect__dock-hint">{{ item.description }}</span>
+                    <span class="connect__dock-status-row">
+                      <span class="connect__dock-status">{{ getDockStatus(item) }}</span>
+                      <span class="connect__dock-arrow" [class.connect__dock-arrow--visible]="allConnected">
+                        <svg viewBox="0 0 20 20" aria-hidden="true">
+                          <path d="M6 4.75a.75.75 0 0 1 .75-.75h6.5A.75.75 0 0 1 14 4.75v6.5a.75.75 0 0 1-1.5 0V6.56l-5.97 5.97a.75.75 0 1 1-1.06-1.06l5.97-5.97H6.75A.75.75 0 0 1 6 4.75Z"></path>
+                        </svg>
+                      </span>
+                    </span>
+                  </div>
+
+                  <div
+                    #receiverRef
+                    class="connect__dock-receiver"
+                    [class.connect__dock-receiver--active]="item.connected"
+                    [attr.data-id]="item.id"
+                  >
+                    <span *ngIf="!item.merged" class="connect__dock-receiver-placeholder"></span>
+                    <span *ngIf="item.merged" class="connect__dock-receiver-shell">
+                      <span class="connect__dock-receiver-icon" aria-hidden="true">
+                        <svg viewBox="0 0 20 20">
+                          <path d="M16.53 5.47a.75.75 0 0 1 0 1.06l-7 7a.75.75 0 0 1-1.06 0l-3-3a.75.75 0 1 1 1.06-1.06L9 11.94l6.47-6.47a.75.75 0 0 1 1.06 0Z"></path>
+                        </svg>
+                      </span>
+                    </span>
+                  </div>
+
+                  <span
+                    *ngIf="item.showCheck"
+                    #checkRef
+                    class="connect__dock-check"
+                    [attr.data-id]="item.id"
+                  >
+                    <svg viewBox="0 0 20 20" aria-hidden="true">
+                      <path d="M16.53 5.47a.75.75 0 0 1 0 1.06l-7 7a.75.75 0 0 1-1.06 0l-3-3a.75.75 0 1 1 1.06-1.06L9 11.94l6.47-6.47a.75.75 0 0 1 1.06 0Z"></path>
+                    </svg>
+                  </span>
+                </div>
+              </a>
+            </div>
+
+            <div
+              #floatingStageRef
+              class="connect__stage"
+              [class.connect__stage--complete]="allConnected"
+            >
+              <div class="connect__stage-surface">
+                <ng-container *ngIf="!allConnected; else completeStatePanel">
+                  <div #statusPanelRef class="connect__status-panel" aria-live="polite">
+                    <span class="connect__status-title">Connection Status</span>
+                    <span class="connect__status-value">{{ connectionStatusCountText }}</span>
+                    <span class="connect__status-hint">Drag each floating card into its matching dock.</span>
+                  </div>
+                </ng-container>
+
+                <ng-template #completeStatePanel>
+                  <div class="connect__success-panel" aria-live="polite">
+                    <span class="connect__success-check" aria-hidden="true">
+                      <svg viewBox="0 0 20 20">
+                        <path d="M16.53 5.47a.75.75 0 0 1 0 1.06l-7 7a.75.75 0 0 1-1.06 0l-3-3a.75.75 0 1 1 1.06-1.06L9 11.94l6.47-6.47a.75.75 0 0 1 1.06 0Z"></path>
+                      </svg>
+                    </span>
+                    <span class="connect__success-title">All Contact Methods Unlocked</span>
+                    <span class="connect__success-hint">Thanks for taking the time to explore my portfolio.</span>
+                    <span class="connect__success-hint">Whether you'd like to discuss software engineering, frontend architecture, full-stack development, or an exciting opportunity, I'd love to connect.</span>
+                    <span class="connect__success-hint">Choose any connected card above to continue the conversation.</span>
+                  </div>
+                </ng-template>
+              </div>
+            </div>
+
+            <svg
+              *ngIf="traceGuides.length"
+              class="connect__connector"
+              [attr.viewBox]="'0 0 ' + connectorLayerWidth + ' ' + connectorLayerHeight"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <g
+                *ngFor="let trace of traceGuides; trackBy: trackByTraceId"
+                class="connect__connector-trace"
+                [class.connect__connector-trace--hover]="trace.hovered"
+                [class.connect__connector-trace--active]="trace.active"
+                [class.connect__connector-trace--connected]="trace.connected"
+              >
+                <path
+                  class="connect__connector-path connect__connector-path--glow"
+                  [attr.d]="trace.path"
+                ></path>
+                <path
+                  [attr.id]="'connector-trace-path-' + trace.id"
+                  class="connect__connector-path"
+                  [attr.d]="trace.path"
+                ></path>
+                <circle
+                  class="connect__connector-particle"
+                  r="1.8"
+                >
+                  <animateMotion
+                    [attr.dur]="trace.particleDuration"
+                    [attr.begin]="trace.particleDelay"
+                    repeatCount="indefinite"
+                    rotate="auto"
+                  >
+                    <mpath
+                      [attr.href]="'#connector-trace-path-' + trace.id"
+                      [attr.xlink:href]="'#connector-trace-path-' + trace.id"
+                    ></mpath>
+                  </animateMotion>
+                </circle>
+              </g>
+            </svg>
+
+            <ng-container *ngIf="cardsInitialized">
+              <button
+                *ngFor="let item of desktopLinks; trackBy: trackById"
+                #cardRef
+                type="button"
+                class="connect__card"
+                [class.connect__card--connected]="item.connected"
+                [class.connect__card--merged]="item.merged"
+                [attr.data-id]="item.id"
+                [style.--card-rotation]="item.seedRotation"
+                [style.--float-delay.ms]="item.floatDelay"
+                (pointerdown)="onCardPointerDown($event, item)"
+                (mouseenter)="setConnectorHover(item.id, true)"
+                (mouseleave)="setConnectorHover(item.id, false)"
+              >
+                <span class="connect__card-inner">
+                  <span class="connect__card-float"></span>
+                  <span class="connect__card-icon">
+                    <svg [attr.viewBox]="item.icon.viewBox" aria-hidden="true">
+                      <path
+                        *ngFor="let path of item.icon.paths"
+                        [attr.d]="path.d"
+                        [attr.fill-rule]="path.fillRule || null"
+                        [attr.clip-rule]="path.clipRule || null"
+                      ></path>
+                    </svg>
+                  </span>
+                  <span class="connect__card-label">{{ item.label }}</span>
+                </span>
+              </button>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </om-dotpattern>
+  </div>
+
+  <div class="connect__mobile">
+    <div class="connect__container">
+      <div class="connect__header">
+        <h2 class="connect__title">Let's Connect</h2>
+      </div>
+
+      <div class="connect__icons">
+        <a
+          *ngFor="let link of connectLinks"
+          [href]="link.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          [attr.aria-label]="link.label"
+          class="connect__icon"
+        >
+          <img
+            [src]="link.iconPath"
+            [alt]="link.label"
+            class="connect__icon-img"
+            loading="lazy"
+          />
+        </a>
+      </div>
     </div>
   </div>
 </section>

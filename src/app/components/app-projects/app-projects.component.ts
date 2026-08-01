@@ -1,6 +1,6 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Project, ProjectsData } from '../../models';
+import { Project, ProjectCardLayoutValues, ProjectsData } from '../../models';
 import projectsData from '../../../json/projects.json';
 import { ProjectModalComponent } from '../project-modal/project-modal.component';
 import { CharMagnifyDirective } from '../../directives/proximity-magnify.directive';
@@ -118,5 +118,52 @@ export class AppProjectsComponent implements AfterViewInit {
     this.selectedProject = null;
     // Restore body scroll
     document.body.style.overflow = '';
+  }
+
+  getCardStyleVars(project: Project): Record<string, string> {
+    const styles: Record<string, string> = {};
+    const layout = project.cardLayout;
+
+    if (!layout) {
+      return styles;
+    }
+
+    this.applyLayoutSet(styles, '', layout.desktop);
+    this.applyLayoutSet(styles, '-1200', layout.max1200);
+    this.applyLayoutSet(styles, '-1024', layout.max1024);
+    this.applyLayoutSet(styles, '-900', layout.max900);
+    this.applyLayoutSet(styles, '-800', layout.max800);
+    this.applyLayoutSet(styles, '-768', layout.max768);
+    this.applyLayoutSet(styles, '-767', layout.max767);
+
+    return styles;
+  }
+
+  private applyLayoutSet(
+    styles: Record<string, string>,
+    suffix: string,
+    layout?: ProjectCardLayoutValues
+  ) {
+    if (!layout) {
+      return;
+    }
+
+    this.applyStyleVar(styles, `--card-width${suffix}`, layout.width);
+    this.applyStyleVar(styles, `--card-height${suffix}`, layout.height);
+    this.applyStyleVar(styles, `--card-left${suffix}`, layout.left);
+    this.applyStyleVar(styles, `--card-right${suffix}`, layout.right);
+    this.applyStyleVar(styles, `--card-top${suffix}`, layout.top);
+    this.applyStyleVar(styles, `--card-bottom${suffix}`, layout.bottom);
+    this.applyStyleVar(styles, `--card-transform${suffix}`, layout.transform);
+    this.applyStyleVar(styles, `--card-hover-transform${suffix}`, layout.hoverTransform);
+    this.applyStyleVar(styles, `--card-gallery-height${suffix}`, layout.galleryHeight);
+    this.applyStyleVar(styles, `--card-content-padding${suffix}`, layout.contentPadding);
+    this.applyStyleVar(styles, `--card-title-size${suffix}`, layout.titleSize);
+  }
+
+  private applyStyleVar(styles: Record<string, string>, key: string, value?: string) {
+    if (value) {
+      styles[key] = value;
+    }
   }
 }

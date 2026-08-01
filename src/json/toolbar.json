@@ -25,22 +25,10 @@
       "type": "navigation"
     },
     {
-      "icon": "in",
-      "label": "LinkedIn",
-      "sectionId": "https://www.linkedin.com/in/akshay10103401",
-      "type": "external"
-    },
-    {
-      "icon": "◆",
-      "label": "GitHub",
-      "sectionId": "https://github.com/AkshayAroraDev",
-      "type": "external"
-    },
-    {
-      "icon": "✉",
-      "label": "Email",
-      "sectionId": "mailto:akshayarora.work@gmail.com",
-      "type": "external"
+      "icon": "💬",
+      "label": "Contact Me",
+      "sectionId": "connect",
+      "type": "navigation"
     },
     {
       "icon": "📄",

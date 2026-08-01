@@ -8,9 +8,32 @@
   z-index: 1000;
   padding: 20px 0;
   width: 100%;
+  isolation: isolate;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: 0 auto;
+    width: min(920px, calc(100% - 24px));
+    height: 88px;
+    top: 6px;
+    background: radial-gradient(
+      ellipse at center top,
+      rgba(var(--theme-primary-rgb), 0.16) 0%,
+      rgba(var(--theme-secondary-rgb), 0.08) 28%,
+      transparent 72%
+    );
+    filter: blur(18px);
+    opacity: 0.58;
+    pointer-events: none;
+    z-index: 0;
+  }
 }
 
 .toolbar__container {
+  position: relative;
+  z-index: 1;
   max-width: fit-content;
   margin: 20px auto 0;
   display: flex;
@@ -18,9 +41,59 @@
   align-items: center;
   gap: 16px;
   padding: 16px 24px;
-  background: rgba(tokens.$bg-base, 0.35);
-  backdrop-filter: blur(12px);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(var(--theme-primary-rgb), 0.14) 0%,
+      rgba(var(--theme-secondary-rgb), 0.08) 42%,
+      rgba(tokens.$bg-base, 0.46) 100%
+    );
+  backdrop-filter: blur(18px) saturate(145%);
+  -webkit-backdrop-filter: blur(18px) saturate(145%);
   border-radius: 24px;
+  border: 1px solid rgba(var(--theme-primary-rgb), 0.14);
+  box-shadow:
+    0 10px 34px rgba(0, 0, 0, 0.28),
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset,
+    0 0 24px rgba(var(--theme-primary-rgb), 0.08),
+    0 0 48px rgba(var(--theme-secondary-rgb), 0.04);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.34) 0%,
+      rgba(255, 255, 255, 0.12) 16%,
+      rgba(var(--theme-primary-rgb), 0.08) 100%
+    );
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0.75;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.08) 0%,
+      rgba(255, 255, 255, 0.03) 18%,
+      transparent 46%
+    );
+    pointer-events: none;
+  }
 }
 
 .toolbar__branding {
@@ -150,28 +223,54 @@
 
 /* Theme Menu Button */
 .theme-menu-btn {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--theme-color), rgba(var(--theme-primary-rgb), 0.6));
-  border: 2px solid transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  opacity: 0.8;
+  @include tokens.icon-button();
 
-  &:hover {
-    opacity: 1;
-    transform: scale(1.1);
+  cursor: pointer;
+  position: relative;
+  color: var(--accent-primary);
+  background: rgba(var(--theme-primary-rgb), 0.08);
+  border-color: rgba(var(--theme-primary-rgb), 0.15);
+  box-shadow: tokens.$inset-base;
+  transition: all 0.3s ease;
+
+  &:hover,
+  &:focus-visible {
+    background: rgba(var(--theme-primary-rgb), 0.14);
+    border-color: rgba(var(--theme-primary-rgb), 0.34);
+    color: var(--accent-primary);
+    box-shadow: 0 0 16px rgba(var(--theme-primary-rgb), 0.18), tokens.$inset-hover;
+  }
+
+  &:focus-visible {
+    outline: none;
+    transform: translateY(-8px);
+  }
+
+  &:active {
+    transform: translateY(-6px) scale(0.98);
   }
 
   &--active {
-    opacity: 1;
+    background: rgba(var(--theme-primary-rgb), 0.16);
     border-color: var(--accent-primary);
-    box-shadow: 0 0 12px rgba(var(--theme-primary-rgb), 0.6);
+    color: var(--accent-primary);
+    box-shadow: 0 0 20px rgba(var(--theme-primary-rgb), 0.26), tokens.$inset-hover;
+    transform: translateY(-8px);
+  }
+
+  &__icon {
+    font-size: 24px;
+    line-height: 1;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24;
   }
 }
 

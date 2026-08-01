@@ -79,7 +79,12 @@ export class AppToolbarComponent implements OnInit {
       if (link.sectionId === 'resume') {
         this.downloadResume();
       } else {
-        const element = document.getElementById(link.sectionId);
+        const isMobileViewport = window.innerWidth <= 1024;
+        const targetSectionId =
+          link.label === 'Contact Me'
+            ? (isMobileViewport ? 'footer' : 'connect')
+            : link.sectionId;
+        const element = document.getElementById(targetSectionId);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }

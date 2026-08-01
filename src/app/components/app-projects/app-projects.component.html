@@ -16,7 +16,7 @@
       <article 
         *ngFor="let project of projects; let i = index" 
         class="project-card"
-        [ngClass]="'project-card--position-' + (i + 1)"
+        [ngStyle]="getCardStyleVars(project)"
         (click)="openProjectModal(project)">
 
         <div class="project-card__gallery">

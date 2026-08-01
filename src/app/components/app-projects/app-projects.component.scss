@@ -107,6 +107,13 @@
 
 .project-card {
   position: absolute;
+  width: var(--card-width, 360px);
+  height: var(--card-height, 270px);
+  left: var(--card-left, auto);
+  right: var(--card-right, auto);
+  top: var(--card-top, auto);
+  bottom: var(--card-bottom, auto);
+  transform: var(--card-transform, rotateZ(0deg));
   background: linear-gradient(
     135deg,
     rgba(var(--theme-primary-rgb), 0.08) 0%,
@@ -131,30 +138,8 @@
     z-index: 100;
   }
 
-  // Different sizes for each card
-  &:nth-child(1) {
-    width: 420px;
-    transform: rotateZ(-3deg);
-  }
-
-  &:nth-child(2) {
-    width: 360px;
-    transform: translateX(-50%) rotateZ(2.5deg);
-  }
-
-  &:nth-child(3) {
-    width: 390px;
-    transform: rotateZ(-2deg);
-  }
-
-  // Uniform height for all cards
-  &:nth-child(1),
-  &:nth-child(2),
-  &:nth-child(3) {
-    height: 270px;
-  }
-
   &:hover {
+    transform: var(--card-hover-transform, translateY(-15px) scale(1.08));
     border-color: rgba(var(--theme-primary-rgb), 0.5);
     box-shadow: 0 30px 60px rgba(var(--theme-primary-rgb), 0.5);
     filter: brightness(1.1);
@@ -171,41 +156,9 @@
     }
   }
 
-  // Rotation on hover - different direction for each card
-  &:nth-child(1):hover {
-    transform: translateY(-15px) rotateZ(8deg) scale(1.1);
-  }
-
-  &:nth-child(2):hover {
-    transform: translateX(-50%) translateY(-15px) rotateZ(-7deg) scale(1.1);
-  }
-
-  &:nth-child(3):hover {
-    transform: translateY(-15px) rotateZ(7deg) scale(1.1);
-  }
-
-  // Position 1: Bottom Left (Venue Synthesis) - left: 180px, top: 629px
-  &--position-1 {
-    left: clamp(60px, 12%, 180px);
-    top: clamp(400px, 75%, 629px);
-  }
-
-  // Position 2: Top Center (AI Mode Toggle) - left: 918px, top: 240px
-  &--position-2 {
-    left: 50%;
-    top: clamp(120px, 27%, 240px);
-    transform: translateX(-50%) rotateZ(2.5deg);
-  }
-
-  // Position 3: Bottom Right (Emergency Time) - left: 1200px
-  &--position-3 {
-    right: clamp(60px, 16%, 240px);
-    bottom: clamp(80px, 12%, 160px);
-  }
-
   &__gallery {
     width: 100%;
-    height: 180px;
+    height: var(--card-gallery-height, 180px);
     background: rgba(0, 0, 0, 0.4);
     overflow: hidden;
     position: relative;
@@ -239,7 +192,7 @@
   }
 
   &__content {
-    padding: 16px;
+    padding: var(--card-content-padding, 16px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -247,7 +200,7 @@
   }
 
   &__title {
-    font-size: 18px;
+    font-size: var(--card-title-size, 18px);
     font-weight: 700;
     color: tokens.$text-primary;
     margin: 0;
@@ -296,19 +249,28 @@
 // Large Tablet/Smaller Desktop: 1024px - 1200px
 @media (max-width: 1200px) {
   .project-card {
-    &:nth-child(1) {
-      width: 380px;
-      height: 440px;
+    width: var(--card-width-1200, var(--card-width, 360px));
+    height: var(--card-height-1200, var(--card-height, 270px));
+    left: var(--card-left-1200, var(--card-left, auto));
+    right: var(--card-right-1200, var(--card-right, auto));
+    top: var(--card-top-1200, var(--card-top, auto));
+    bottom: var(--card-bottom-1200, var(--card-bottom, auto));
+    transform: var(--card-transform-1200, var(--card-transform, rotateZ(0deg)));
+
+    &:hover {
+      transform: var(--card-hover-transform-1200, var(--card-hover-transform, translateY(-15px) scale(1.08)));
     }
 
-    &:nth-child(2) {
-      width: 330px;
-      height: 260px;
+    &__gallery {
+      height: var(--card-gallery-height-1200, var(--card-gallery-height, 180px));
     }
 
-    &:nth-child(3) {
-      width: 360px;
-      height: 410px;
+    &__content {
+      padding: var(--card-content-padding-1200, var(--card-content-padding, 16px));
+    }
+
+    &__title {
+      font-size: var(--card-title-size-1200, var(--card-title-size, 18px));
     }
   }
 }
@@ -316,34 +278,28 @@
 // Tablet: Aggressive reduction - 1024px
 @media (max-width: 1024px) {
   .project-card {
-    &:nth-child(1) {
-      width: 320px;
-      height: 380px;
+    width: var(--card-width-1024, var(--card-width-1200, var(--card-width, 360px)));
+    height: var(--card-height-1024, var(--card-height-1200, var(--card-height, 270px)));
+    left: var(--card-left-1024, var(--card-left-1200, var(--card-left, auto)));
+    right: var(--card-right-1024, var(--card-right-1200, var(--card-right, auto)));
+    top: var(--card-top-1024, var(--card-top-1200, var(--card-top, auto)));
+    bottom: var(--card-bottom-1024, var(--card-bottom-1200, var(--card-bottom, auto)));
+    transform: var(--card-transform-1024, var(--card-transform-1200, var(--card-transform, rotateZ(0deg))));
+
+    &:hover {
+      transform: var(--card-hover-transform-1024, var(--card-hover-transform-1200, var(--card-hover-transform, translateY(-15px) scale(1.08))));
     }
 
-    &:nth-child(2) {
-      width: 280px;
-      height: 220px;
+    &__gallery {
+      height: var(--card-gallery-height-1024, var(--card-gallery-height-1200, var(--card-gallery-height, 180px)));
     }
 
-    &:nth-child(3) {
-      width: 300px;
-      height: 360px;
+    &__content {
+      padding: var(--card-content-padding-1024, var(--card-content-padding-1200, var(--card-content-padding, 16px)));
     }
 
-    // Adjust positions for smaller screens
-    &--position-1 {
-      top: clamp(50px, 7vh, 100px);
-      left: clamp(30px, 4vw, 80px);
-    }
-
-    &--position-2 {
-      top: clamp(30px, 5vh, 80px);
-    }
-
-    &--position-3 {
-      bottom: clamp(50px, 7vh, 100px);
-      right: clamp(30px, 4vw, 80px);
+    &__title {
+      font-size: var(--card-title-size-1024, var(--card-title-size-1200, var(--card-title-size, 18px)));
     }
   }
 }
@@ -351,34 +307,28 @@
 // Small Tablet: Very aggressive reduction - 900px
 @media (max-width: 900px) {
   .project-card {
-    &:nth-child(1) {
-      width: 280px;
-      height: 340px;
+    width: var(--card-width-900, var(--card-width-1024, var(--card-width, 360px)));
+    height: var(--card-height-900, var(--card-height-1024, var(--card-height, 270px)));
+    left: var(--card-left-900, var(--card-left-1024, var(--card-left, auto)));
+    right: var(--card-right-900, var(--card-right-1024, var(--card-right, auto)));
+    top: var(--card-top-900, var(--card-top-1024, var(--card-top, auto)));
+    bottom: var(--card-bottom-900, var(--card-bottom-1024, var(--card-bottom, auto)));
+    transform: var(--card-transform-900, var(--card-transform-1024, var(--card-transform, rotateZ(0deg))));
+
+    &:hover {
+      transform: var(--card-hover-transform-900, var(--card-hover-transform-1024, var(--card-hover-transform, translateY(-15px) scale(1.08))));
     }
 
-    &:nth-child(2) {
-      width: 240px;
-      height: 190px;
+    &__gallery {
+      height: var(--card-gallery-height-900, var(--card-gallery-height-1024, var(--card-gallery-height, 180px)));
     }
 
-    &:nth-child(3) {
-      width: 260px;
-      height: 320px;
+    &__content {
+      padding: var(--card-content-padding-900, var(--card-content-padding-1024, var(--card-content-padding, 16px)));
     }
 
-    // Further adjust positions
-    &--position-1 {
-      top: clamp(40px, 6vh, 80px);
-      left: clamp(25px, 3vw, 60px);
-    }
-
-    &--position-2 {
-      top: clamp(25px, 4vh, 60px);
-    }
-
-    &--position-3 {
-      bottom: clamp(40px, 6vh, 80px);
-      right: clamp(25px, 3vw, 60px);
+    &__title {
+      font-size: var(--card-title-size-900, var(--card-title-size-1024, var(--card-title-size, 18px)));
     }
   }
 }
@@ -386,34 +336,28 @@
 // Extra small tablet: Maximum reduction before mobile - 800px
 @media (max-width: 800px) {
   .project-card {
-    &:nth-child(1) {
-      width: 240px;
-      height: 290px;
+    width: var(--card-width-800, var(--card-width-900, var(--card-width, 360px)));
+    height: var(--card-height-800, var(--card-height-900, var(--card-height, 270px)));
+    left: var(--card-left-800, var(--card-left-900, var(--card-left, auto)));
+    right: var(--card-right-800, var(--card-right-900, var(--card-right, auto)));
+    top: var(--card-top-800, var(--card-top-900, var(--card-top, auto)));
+    bottom: var(--card-bottom-800, var(--card-bottom-900, var(--card-bottom, auto)));
+    transform: var(--card-transform-800, var(--card-transform-900, var(--card-transform, rotateZ(0deg))));
+
+    &:hover {
+      transform: var(--card-hover-transform-800, var(--card-hover-transform-900, var(--card-hover-transform, translateY(-15px) scale(1.08))));
     }
 
-    &:nth-child(2) {
-      width: 210px;
-      height: 165px;
+    &__gallery {
+      height: var(--card-gallery-height-800, var(--card-gallery-height-900, var(--card-gallery-height, 180px)));
     }
 
-    &:nth-child(3) {
-      width: 225px;
-      height: 275px;
+    &__content {
+      padding: var(--card-content-padding-800, var(--card-content-padding-900, var(--card-content-padding, 16px)));
     }
 
-    // Final adjustments before mobile
-    &--position-1 {
-      top: clamp(35px, 5vh, 70px);
-      left: clamp(20px, 2.5vw, 50px);
-    }
-
-    &--position-2 {
-      top: clamp(20px, 3.5vh, 50px);
-    }
-
-    &--position-3 {
-      bottom: clamp(35px, 5vh, 70px);
-      right: clamp(20px, 2.5vw, 50px);
+    &__title {
+      font-size: var(--card-title-size-800, var(--card-title-size-900, var(--card-title-size, 18px)));
     }
   }
 }
@@ -460,8 +404,8 @@
 
   .project-card {
     position: relative !important;
-    width: 70vw !important;
-    height: 60vh !important;
+    width: var(--card-width-768, 80vw) !important;
+    height: var(--card-height-768, 30vh) !important;
     cursor: default;
     top: auto !important;
     left: auto !important;
@@ -470,41 +414,21 @@
     transform: none !important;
     margin: 0 auto;
 
-    &:nth-child(1),
-    &:nth-child(2),
-    &:nth-child(3) {
-      width: 80vw !important;
-      height: 30vh !important;
-      transform: none !important;
-    }
-
-    &--position-1,
-    &--position-2,
-    &--position-3 {
-      top: auto !important;
-      left: auto !important;
-      right: auto !important;
-      bottom: auto !important;
-      transform: none !important;
-    }
-
     &:hover {
       transform: scale(1.02) !important;
       box-shadow: 0 30px 60px rgba(var(--theme-primary-rgb), 0.5);
     }
 
-    &:nth-child(1):hover,
-    &:nth-child(2):hover,
-    &:nth-child(3):hover {
-      transform: scale(1.02) !important;
+    &__gallery {
+      height: var(--card-gallery-height-768, 140px);
     }
 
-    &__gallery {
-      height: 140px;
+    &__content {
+      padding: var(--card-content-padding-768, 16px);
     }
 
     &__title {
-      font-size: 14px;
+      font-size: var(--card-title-size-768, 14px);
     }
   }
 }
@@ -532,32 +456,24 @@
     right: auto !important;
     bottom: auto !important;
     transform: none !important;
-    width: 100% !important;
+    width: var(--card-width-767, 100%) !important;
     max-width: 100%;
-    height: auto;
+    height: var(--card-height-767, auto) !important;
     margin: 1.5rem 0;
 
-    &:nth-child(1),
-    &:nth-child(2),
-    &:nth-child(3) {
-      height: auto;
-    }
-
     &__gallery {
-      height: 160px;
+      height: var(--card-gallery-height-767, 160px);
     }
 
     &__content {
-      padding: 12px;
+      padding: var(--card-content-padding-767, 12px);
+    }
+
+    &__title {
+      font-size: var(--card-title-size-767, 18px);
     }
 
     &:hover {
-      transform: none !important;
-    }
-
-    &:nth-child(1):hover,
-    &:nth-child(2):hover,
-    &:nth-child(3):hover {
       transform: none !important;
     }
   }

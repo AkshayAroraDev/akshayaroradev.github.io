@@ -4,6 +4,7 @@ import { CustomTimelineComponent } from './custom-timeline/custom-timeline.compo
 import { AppHeroComponent } from './components/app-hero/app-hero.component';
 import { AppSkillsComponent } from './components/app-skills/app-skills.component';
 import { AppProjectsComponent } from './components/app-projects/app-projects.component';
+import { AppConnectComponent } from './components/app-connect/app-connect.component';
 import { AppFooterComponent } from './components/app-footer/app-footer.component';
 import { AppToolbarComponent } from './components/app-toolbar/app-toolbar.component';
 import { AppScrollToTopComponent } from './components/app-scroll-to-top/app-scroll-to-top.component';
@@ -12,7 +13,7 @@ import { ThemeService } from './services/theme.service';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [NgxTracingBeamComponent, CustomTimelineComponent, AppHeroComponent, AppSkillsComponent, AppProjectsComponent, AppFooterComponent, AppToolbarComponent, AppScrollToTopComponent],
+  imports: [NgxTracingBeamComponent, CustomTimelineComponent, AppHeroComponent, AppSkillsComponent, AppProjectsComponent, AppConnectComponent, AppFooterComponent, AppToolbarComponent, AppScrollToTopComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

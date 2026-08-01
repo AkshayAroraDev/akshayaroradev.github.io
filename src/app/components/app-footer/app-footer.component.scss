@@ -53,6 +53,7 @@
 // ============================================================================
 
 .footer__connect {
+  display: none;
   text-align: center;
   margin-bottom: 60px;
   padding: 60px 20px;
@@ -159,7 +160,7 @@
 
 .footer__bottom {
   padding-top: 32px;
-  border-top: 1px solid rgba(var(--theme-primary-rgb), 0.1);
+  border-top: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -224,8 +225,15 @@
   }
 
   .footer__bottom {
+    border-top: 1px solid rgba(var(--theme-primary-rgb), 0.1);
     flex-direction: column;
     text-align: center;
+  }
+
+  .footer__connect {
+    display: block;
+    padding: 20px 12px 44px;
+    margin-bottom: 32px;
   }
 }
 

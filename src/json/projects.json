@@ -1,6 +1,123 @@
 {
   "projects": [
     {
+      "id": 4,
+      "title": "Frontend Interview Prep Tracker",
+      "company": "Personal Project",
+      "description": "AI-assisted interview preparation platform for senior frontend engineers to track learning progress, visualize technology coverage, organize preparation workflows, and support future AI coaching workflows.",
+      "role": "Full Stack - AI Ready",
+      "period": "2026 - Present",
+      "technologies": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Supabase",
+        "PostgreSQL",
+        "Google OAuth",
+        "JWT Authentication",
+        "Node.js",
+        "REST APIs",
+        "Gemini AI",
+        "React Markdown",
+        "Base UI",
+        "Lucide React",
+        "Vercel"
+      ],
+      "highlights": [
+        "Built a full-stack interview preparation platform from scratch using Next.js and React.",
+        "Designed a scalable roadmap system covering frontend, backend, databases, JavaScript, system design and DSA.",
+        "Implemented Google OAuth authentication with Supabase and secure user session management.",
+        "Built persistent cloud storage for user learning progress using Supabase.",
+        "Designed the application to support future LLM-powered coaching, personalized recommendations and roadmap generation.",
+        "Developed reusable component architecture using modern React patterns and TypeScript.",
+        "Built responsive dashboards with interactive progress tracking and clean UX.",
+        "Integrated Gemini AI as the foundation for future interview coaching workflows.",
+        "Optimized the project for deployment on Vercel with production-ready architecture."
+      ],
+      "images": [
+        {
+          "src": "assets/projects/frontend-interview-prep-tracker/dashboard-overview.png",
+          "alt": "Frontend Interview Prep Tracker dashboard overview",
+          "caption": "Dashboard overview"
+        },
+        {
+          "src": "assets/projects/frontend-interview-prep-tracker/technology-roadmap.png",
+          "alt": "Frontend Interview Prep Tracker technology roadmap",
+          "caption": "Technology roadmap"
+        },
+        {
+          "src": "assets/projects/frontend-interview-prep-tracker/progress-tracking.png",
+          "alt": "Frontend Interview Prep Tracker progress tracking page",
+          "caption": "Progress tracking page"
+        },
+        {
+          "src": "assets/projects/frontend-interview-prep-tracker/ai-coach-chat-1.png",
+          "alt": "Frontend Interview Prep Tracker AI coach chat interface",
+          "caption": "AI Coach chat interface"
+        },
+        {
+          "src": "assets/projects/frontend-interview-prep-tracker/ai-coach-chat-2.png",
+          "alt": "Frontend Interview Prep Tracker analytics and learning insights interface",
+          "caption": "Analytics and learning insights"
+        }
+      ],
+      "links": {
+        "live": "https://frontend-prep-tracker.vercel.app"
+      },
+      "cardLayout": {
+        "desktop": {
+          "width": "440px",
+          "height": "290px",
+          "left": "clamp(70px, 11%, 170px)",
+          "top": "clamp(110px, 20%, 220px)",
+          "transform": "rotateZ(-2.5deg)",
+          "hoverTransform": "translateY(-15px) rotateZ(7deg) scale(1.08)"
+        },
+        "max1200": {
+          "width": "400px",
+          "height": "260px",
+          "left": "clamp(48px, 9%, 130px)",
+          "top": "clamp(96px, 18%, 180px)"
+        },
+        "max1024": {
+          "width": "340px",
+          "height": "230px",
+          "left": "clamp(30px, 5%, 90px)",
+          "top": "clamp(90px, 15%, 150px)"
+        },
+        "max900": {
+          "width": "300px",
+          "height": "210px",
+          "left": "clamp(20px, 4%, 70px)",
+          "top": "clamp(84px, 13%, 130px)"
+        },
+        "max800": {
+          "width": "270px",
+          "height": "190px",
+          "left": "clamp(14px, 3%, 44px)",
+          "top": "clamp(74px, 11%, 110px)"
+        },
+        "max768": {
+          "width": "80vw",
+          "height": "30vh",
+          "transform": "none",
+          "hoverTransform": "scale(1.02)",
+          "galleryHeight": "140px",
+          "titleSize": "14px"
+        },
+        "max767": {
+          "width": "100%",
+          "height": "auto",
+          "transform": "none",
+          "hoverTransform": "none",
+          "galleryHeight": "160px",
+          "contentPadding": "12px",
+          "titleSize": "18px"
+        }
+      }
+    },
+    {
       "id": 1,
       "title": "Venue Synthesis",
       "company": "Harman International Industries",
@@ -38,6 +155,55 @@
       ],
       "links": {
         "live": "https://jblpro.com/en/products/venue-synthesis"
+      },
+      "cardLayout": {
+        "desktop": {
+          "width": "420px",
+          "height": "270px",
+          "left": "clamp(60px, 12%, 180px)",
+          "top": "clamp(400px, 75%, 629px)",
+          "transform": "rotateZ(-3deg)",
+          "hoverTransform": "translateY(-15px) rotateZ(8deg) scale(1.1)"
+        },
+        "max1200": {
+          "width": "380px",
+          "height": "440px"
+        },
+        "max1024": {
+          "width": "320px",
+          "height": "380px",
+          "left": "clamp(30px, 4vw, 80px)",
+          "top": "clamp(50px, 7vh, 100px)"
+        },
+        "max900": {
+          "width": "280px",
+          "height": "340px",
+          "left": "clamp(25px, 3vw, 60px)",
+          "top": "clamp(40px, 6vh, 80px)"
+        },
+        "max800": {
+          "width": "240px",
+          "height": "290px",
+          "left": "clamp(20px, 2.5vw, 50px)",
+          "top": "clamp(35px, 5vh, 70px)"
+        },
+        "max768": {
+          "width": "80vw",
+          "height": "30vh",
+          "transform": "none",
+          "hoverTransform": "scale(1.02)",
+          "galleryHeight": "140px",
+          "titleSize": "14px"
+        },
+        "max767": {
+          "width": "100%",
+          "height": "auto",
+          "transform": "none",
+          "hoverTransform": "none",
+          "galleryHeight": "160px",
+          "contentPadding": "12px",
+          "titleSize": "18px"
+        }
       }
     },
     {
@@ -63,6 +229,63 @@
       ],
       "links": {
         "live": "https://jsfiddle.net/u9ecy0vj/"
+      },
+      "cardLayout": {
+        "desktop": {
+          "width": "280px",
+          "height": "210px",
+          "left": "50%",
+          "top": "clamp(120px, 27%, 240px)",
+          "transform": "translateX(-50%) rotateZ(2.5deg)",
+          "hoverTransform": "translateX(-50%) translateY(-15px) rotateZ(-7deg) scale(1.1)",
+          "galleryHeight": "140px",
+          "contentPadding": "12px",
+          "titleSize": "16px"
+        },
+        "max1200": {
+          "width": "258px",
+          "height": "203px",
+          "galleryHeight": "135px"
+        },
+        "max1024": {
+          "width": "218px",
+          "height": "172px",
+          "top": "clamp(30px, 5vh, 80px)",
+          "galleryHeight": "116px",
+          "titleSize": "14px"
+        },
+        "max900": {
+          "width": "187px",
+          "height": "148px",
+          "top": "clamp(25px, 4vh, 60px)",
+          "galleryHeight": "100px",
+          "contentPadding": "10px",
+          "titleSize": "13px"
+        },
+        "max800": {
+          "width": "164px",
+          "height": "129px",
+          "top": "clamp(20px, 3.5vh, 50px)",
+          "galleryHeight": "88px",
+          "titleSize": "12px"
+        },
+        "max768": {
+          "width": "62vw",
+          "height": "24vh",
+          "transform": "none",
+          "hoverTransform": "scale(1.02)",
+          "galleryHeight": "110px",
+          "titleSize": "14px"
+        },
+        "max767": {
+          "width": "85%",
+          "height": "auto",
+          "transform": "none",
+          "hoverTransform": "none",
+          "galleryHeight": "160px",
+          "contentPadding": "12px",
+          "titleSize": "18px"
+        }
       }
     },
     {
@@ -85,7 +308,56 @@
           "alt": "EmergencyTime Project",
           "caption": "Disaster preparedness web application"
         }
-      ]
+      ],
+      "cardLayout": {
+        "desktop": {
+          "width": "390px",
+          "height": "270px",
+          "right": "clamp(60px, 16%, 240px)",
+          "bottom": "clamp(80px, 12%, 160px)",
+          "transform": "rotateZ(-2deg)",
+          "hoverTransform": "translateY(-15px) rotateZ(7deg) scale(1.1)"
+        },
+        "max1200": {
+          "width": "360px",
+          "height": "410px"
+        },
+        "max1024": {
+          "width": "300px",
+          "height": "360px",
+          "right": "clamp(30px, 4vw, 80px)",
+          "bottom": "clamp(50px, 7vh, 100px)"
+        },
+        "max900": {
+          "width": "260px",
+          "height": "320px",
+          "right": "clamp(25px, 3vw, 60px)",
+          "bottom": "clamp(40px, 6vh, 80px)"
+        },
+        "max800": {
+          "width": "225px",
+          "height": "275px",
+          "right": "clamp(20px, 2.5vw, 50px)",
+          "bottom": "clamp(35px, 5vh, 70px)"
+        },
+        "max768": {
+          "width": "80vw",
+          "height": "30vh",
+          "transform": "none",
+          "hoverTransform": "scale(1.02)",
+          "galleryHeight": "140px",
+          "titleSize": "14px"
+        },
+        "max767": {
+          "width": "100%",
+          "height": "auto",
+          "transform": "none",
+          "hoverTransform": "none",
+          "galleryHeight": "160px",
+          "contentPadding": "12px",
+          "titleSize": "18px"
+        }
+      }
     }
   ]
 }
