@@ -14,10 +14,10 @@
       "title": "Right Skills",
       "skills": [
         { "name": "JavaScript (ES6+)", "icon": "javaScript.svg" },
-        { "name": "HTML", "icon": "HTML5.svg" },
-        { "name": "CSS", "icon": "CSS3.svg" },
-        { "name": "Git", "icon": "git.svg" },
-        { "name": "Node.js", "icon": "nodejs.svg" }
+        { "name": "Node.js", "icon": "nodejs.svg" },
+        { "name": "Express.js", "icon": "expressjs.svg" },
+        { "name": "Next.js", "icon": "nextjs.svg" },
+        { "name": "Vercel", "icon": "vercel.svg" }
       ]
     }
   ]
