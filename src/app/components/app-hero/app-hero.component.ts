@@ -117,10 +117,13 @@ export class AppHeroComponent implements AfterViewInit, OnDestroy {
     link.click();
   }
 
-  scrollToFooter() {
-    const footer = document.getElementById('footer');
-    if (footer) {
-      footer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  scrollToContact() {
+    const isMobileViewport = window.innerWidth <= 1024;
+    const targetSectionId = isMobileViewport ? 'footer' : 'connect';
+    const targetSection = document.getElementById(targetSectionId);
+
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 }
